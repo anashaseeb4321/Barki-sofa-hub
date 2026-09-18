@@ -105,3 +105,39 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 .foot-brand img{width:34px;height:34px;object-fit:contain}
 .foot-brand b{font-family:var(--serif);font-size:1.05rem}
 .foot-bottom{border-top:1px solid rgba(248,245,239,.14);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;opacity:.7}
+
+/* product gallery */
+.pgal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.pthumb{padding:0;border:1px solid var(--cream-2);background:none;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;line-height:0;transition:.18s}
+.pthumb img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.pthumb:hover,.pthumb:focus-visible{border-color:var(--gold)}
+.pthumb[aria-current="true"]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-soft)}
+@media(max-width:520px){.pgal{gap:6px}}
+
+/* footer legal nav */
+.foot-legal{display:flex;gap:14px;flex-wrap:wrap}
+.foot-legal a{color:inherit}
+.foot-legal a:hover{color:var(--gold-soft);opacity:1}
+
+/* legal / info pages */
+.legal h2{margin:30px 0 10px;font-size:1.25rem}
+.legal h3{margin:22px 0 8px;font-size:1.02rem}
+.legal p,.legal li{margin-bottom:10px;color:var(--muted);line-height:1.75}
+.legal ul{padding-left:20px;margin-bottom:14px}
+.legal .updated{font-size:.85rem;opacity:.7;margin-bottom:26px}
+
+/* cookie consent bar */
+.cookiebar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;background:var(--card,#fff);
+  border:1px solid var(--cream-2);border-radius:var(--radius-sm);box-shadow:0 10px 40px rgba(0,0,0,.18);
+  padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
+.cookiebar[hidden]{display:none}
+.cookiebar p{margin:0;color:var(--muted);line-height:1.6;flex:1;min-width:240px}
+.cookiebar a{text-decoration:underline}
+.cookiebar__btns{display:flex;gap:10px;flex-shrink:0}
+.cookiebar .btn{cursor:pointer;font-family:inherit}
+@media(max-width:520px){.cookiebar{padding:14px 16px}.cookiebar__btns{width:100%}.cookiebar__btns .btn{flex:1;justify-content:center}}
+
+/* inline links in body copy need to look like links */
+.sec p a,.faq p a,.legal p a,.legal li a,.phead .lede a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.sec p a:hover,.faq p a:hover,.legal a:hover{color:var(--gold)}
