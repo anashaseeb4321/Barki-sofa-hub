@@ -19,7 +19,7 @@
         var m = q.match(/interested in (?:the )?(.+?)\.?$/i);
         sofa = m ? m[1] : '';
       } catch (err) {}
-      send('generate_lead', { method: 'whatsapp', link_text: label, sofa_name: sofa, page_title: document.title });
+      send('whatsapp_click', { link_text: label, sofa_name: sofa, page_title: document.title }); /* the lead itself is sent by barki-lead.js when the order form is submitted */
     } else if (/^mailto:/i.test(href)) {
       send('generate_lead', { method: 'email', link_text: label });
     } else if (/^tel:/i.test(href)) {

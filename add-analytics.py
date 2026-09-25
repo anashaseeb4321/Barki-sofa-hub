@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Barki Sofa Hub - make sure every page has Google Analytics + click tracking.
+"""Barki Sofa Hub - make sure every page has Google Analytics, click tracking,
+and the Meta Pixel + WhatsApp order form (barki-lead.js).
 
 Run this from the website folder after adding or editing any page:
     python3 add-analytics.py
@@ -12,6 +13,7 @@ import glob, os, sys
 GA_ID = "G-9FS7L9SGWF"
 GA_MARKER = "googletagmanager.com/gtag/js"
 TRACK_TAG = '<script src="barki-track.js" defer></script>'
+LEAD_TAG = '<script src="barki-lead.js" defer></script>'
 GA_BLOCK = f"""<!-- Google Analytics with UK consent mode -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
@@ -35,6 +37,8 @@ for path in sorted(glob.glob("*.html")):
         html = html.replace("</head>", GA_BLOCK + "</head>", 1); changed.append("added Google Analytics")
     if "barki-track.js" not in html:
         html = html.replace("</head>", TRACK_TAG + "\n</head>", 1); changed.append("added click tracking")
+    if "barki-lead.js" not in html:
+        html = html.replace("</head>", LEAD_TAG + "\n</head>", 1); changed.append("added Meta Pixel + order form")
     if "id=\"cookiebar\"" not in html:
         print(f"WARNING {path}: has no cookie banner - copy the cookiebar block from index.html")
     if changed:

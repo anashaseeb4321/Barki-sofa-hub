@@ -378,55 +378,9 @@
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 
   /* ── PRE-WHATSAPP QUALIFY FORM ── */
-  .qz-overlay{display:none;position:fixed;inset:0;z-index:5000;background:rgba(15,58,54,.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px}
-  .qz-overlay.open{display:flex}
-  .qz-modal{background:var(--white);width:100%;max-width:440px;max-height:92vh;overflow-y:auto;border-radius:var(--radius);box-shadow:0 30px 60px -20px rgba(15,58,54,.5);position:relative;animation:qzPop .22s ease}
-  @keyframes qzPop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
-  .qz-header{padding:24px 28px 16px;border-bottom:1px solid #ECE6DA;position:sticky;top:0;background:var(--white);border-radius:var(--radius) var(--radius) 0 0}
-  .qz-eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-  .qz-title{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--ink);line-height:1.2;margin:0}
-  .qz-sub{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
-  .qz-close{position:absolute;top:18px;right:20px;background:none;border:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px}
-  .qz-close:hover{color:var(--ink)}
-  .qz-body{padding:20px 28px 8px;font-family:var(--sans)}
-  .qz-q{margin-bottom:22px}
-  .qz-q-label{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px;display:block}
-  .qz-q-label .qz-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--cream-2);color:var(--teal);font-size:12px;font-weight:800;margin-right:8px}
-  .qz-opts{display:flex;flex-direction:column;gap:8px}
-  .qz-opt{display:flex;align-items:center;gap:10px;padding:11px 14px;border:1.5px solid #E4DECF;border-radius:var(--radius-sm);cursor:pointer;font-size:14px;color:var(--ink);transition:border-color .15s,background .15s;user-select:none}
-  .qz-opt:hover{border-color:var(--gold-soft)}
-  .qz-opt.selected{border-color:var(--gold);background:rgba(190,154,92,.08)}
-  .qz-opt .qz-dot{width:16px;height:16px;border-radius:50%;border:2px solid #D6CFBE;flex-shrink:0;position:relative;transition:border-color .15s}
-  .qz-opt.selected .qz-dot{border-color:var(--gold)}
-  .qz-opt.selected .qz-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--gold)}
-  .qz-reveal{display:none;margin-top:10px}
-  .qz-reveal.show{display:block}
-  .qz-input,.qz-select{width:100%;padding:11px 13px;border:1.5px solid #E4DECF;border-radius:var(--radius-sm);font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--white)}
-  .qz-input:focus,.qz-select:focus{outline:none;border-color:var(--gold)}
-  .qz-footer{padding:8px 28px 26px;font-family:var(--sans)}
-  .qz-submit{width:100%;padding:14px;border:none;border-radius:var(--radius-sm);background:#25D366;color:#0B3D24;font-family:var(--sans);font-size:15px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:opacity .15s}
-  .qz-submit svg{width:18px;height:18px}
-  .qz-submit:disabled{background:var(--cream-2);color:#A79E88;cursor:not-allowed}
-  .qz-hint{font-size:12px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.4}
-  @media (max-width:480px){.qz-header,.qz-body,.qz-footer{padding-left:20px;padding-right:20px}.qz-title{font-size:21px}}
 </style>
 
-<!-- Meta Pixel Code (Barki Sofa Hub) -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1000251226315100');   /* Barki Sofa Hub dataset */
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1000251226315100&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- Meta Pixel: now loaded by barki-lead.js, only after cookie consent -->
 
 <!-- Local business / address (for search & maps) -->
 <script type="application/ld+json">
@@ -859,6 +813,7 @@ gtag('js',new Date());
 gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 </script>
 <script src="barki-track.js" defer></script>
+<script src="barki-lead.js" defer></script>
 </head>
 <body>
 
@@ -1391,166 +1346,9 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   };
 </script>
 
-<!-- ── PRE-WHATSAPP QUALIFY FORM ── -->
-<div class="qz-overlay" id="qzOverlay" role="dialog" aria-modal="true" aria-labelledby="qzTitle">
-  <div class="qz-modal">
-    <div class="qz-header">
-      <button class="qz-close" id="qzClose" aria-label="Close">&times;</button>
-      <div class="qz-eyebrow">Almost there</div>
-      <h3 class="qz-title" id="qzTitle">A few quick questions</h3>
-      <p class="qz-sub">Answer these so our team can help you fast on WhatsApp — no waiting around.</p>
-    </div>
-    <div class="qz-body">
-      <div class="qz-q" data-q="sofa">
-        <span class="qz-q-label"><span class="qz-num">1</span>Which sofa are you interested in?</span>
-        <div class="qz-opts">
-          <div class="qz-opt" id="qzSameOpt" data-val="same"><span class="qz-dot"></span><span>Yes — <b id="qzSofaName">this sofa</b></span></div>
-          <div class="qz-opt" data-val="other"><span class="qz-dot"></span><span>A different sofa</span></div>
-        </div>
-        <div class="qz-reveal" id="qzSofaReveal">
-          <select class="qz-select" id="qzSofaSelect">
-            <option value="">Choose the sofa you'd like...</option>
-            <option>U-Shape Sofa</option>
-            <option>Alaska Corner Sofa</option>
-            <option>Ashton Corner Sofa</option>
-            <option>Alaska 2+3 Seater Sofa</option>
-            <option>Lilly U-Shape Sofa</option>
-            <option>Lilly L-Shape Sofa</option>
-            <option>Ashton 2+3 Seater Sofa</option>
-            <option>Ashton L-Shape Sofa</option>
-            <option>Harrison Corner Sofa</option>
-            <option>Harrison 2+3 Seater Sofa</option>
-            <option>Olympia Corner Sofa</option>
-            <option>Meralane Corner Sofa</option>
-            <option>Meralane 2+3 Seater Sofa</option>
-            <option>L-Shape Sofa</option>
-            <option>Chesterfield Sofa</option>
-            <option>Borius Sofa</option>
-            <option>Ambassador Sofa</option>
-            <option>Marilain Sofa</option>
-            <option>Aurelia Sofa</option>
-            <option>Not sure — need a recommendation</option>
-          </select>
-        </div>
-      </div>
-      <div class="qz-q" data-q="colour">
-        <span class="qz-q-label"><span class="qz-num">2</span>Do you have a colour or fabric in mind?</span>
-        <div class="qz-opts">
-          <div class="qz-opt" data-val="have"><span class="qz-dot"></span><span>Yes, I have a colour in mind</span></div>
-          <div class="qz-opt" data-val="show"><span class="qz-dot"></span><span>Not yet — I'd like to see the options</span></div>
-        </div>
-        <div class="qz-reveal" id="qzColourReveal">
-          <input class="qz-input" id="qzColourInput" type="text" placeholder="e.g. grey, beige, dark blue...">
-        </div>
-      </div>
-      <div class="qz-q" data-q="size">
-        <span class="qz-q-label"><span class="qz-num">3</span>Which measurements do you need?</span>
-        <div class="qz-opts">
-          <div class="qz-opt" data-val="standard"><span class="qz-dot"></span><span>Your standard sizes (please share them)</span></div>
-          <div class="qz-opt" data-val="custom"><span class="qz-dot"></span><span>Custom sizes to fit my room</span></div>
-        </div>
-        <div class="qz-reveal" id="qzSizeReveal">
-          <input class="qz-input" id="qzSizeInput" type="text" placeholder="Optional: your room space or required size...">
-        </div>
-      </div>
-    </div>
-    <div class="qz-footer">
-      <button class="qz-submit" id="qzSubmit" disabled>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.118 1.528 5.845L.057 23.25a.75.75 0 00.927.928l5.432-1.465A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.925 0-3.734-.504-5.303-1.385l-.38-.221-3.924 1.059 1.078-3.817-.247-.396A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Continue to WhatsApp
-      </button>
-      <p class="qz-hint">Answer all three to open the chat with your details ready.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  var overlay=document.getElementById('qzOverlay'); if(!overlay) return;
-  var sofaNameEl=document.getElementById('qzSofaName');
-  var sofaReveal=document.getElementById('qzSofaReveal'), sofaSelect=document.getElementById('qzSofaSelect');
-  var colourReveal=document.getElementById('qzColourReveal'), colourInput=document.getElementById('qzColourInput');
-  var sizeReveal=document.getElementById('qzSizeReveal'), sizeInput=document.getElementById('qzSizeInput');
-  var submitBtn=document.getElementById('qzSubmit');
-  var WA_NUMBER='447424333739';
-  var state={sofa:null,colour:null,size:null,product:''};
-
-  window.openQualify=function(productName){
-    state={sofa:null,colour:null,size:null,product:productName||''};
-    var sameOpt=document.getElementById('qzSameOpt');
-    overlay.querySelectorAll('.qz-opt').forEach(function(o){o.classList.remove('selected');});
-    [sofaReveal,colourReveal,sizeReveal].forEach(function(r){r.classList.remove('show');});
-    sofaSelect.value='';colourInput.value='';sizeInput.value='';
-    if(productName){ sameOpt.style.display=''; sofaNameEl.textContent=productName; }
-    else{
-      sameOpt.style.display='none'; state.sofa='other';
-      overlay.querySelector('.qz-q[data-q="sofa"] .qz-opt[data-val="other"]').classList.add('selected');
-      sofaReveal.classList.add('show');
-    }
-    validate(); overlay.classList.add('open'); document.body.style.overflow='hidden';
-  };
-  function closeQualify(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
-
-  overlay.querySelectorAll('.qz-q').forEach(function(q){
-    var key=q.dataset.q;
-    q.querySelectorAll('.qz-opt').forEach(function(opt){
-      opt.addEventListener('click',function(){
-        q.querySelectorAll('.qz-opt').forEach(function(o){o.classList.remove('selected');});
-        opt.classList.add('selected');
-        var val=opt.dataset.val;
-        if(key==='sofa'){state.sofa=val;sofaReveal.classList.toggle('show',val==='other');}
-        if(key==='colour'){state.colour=val;colourReveal.classList.toggle('show',val==='have');}
-        if(key==='size'){state.size=val;sizeReveal.classList.toggle('show',val==='custom');}
-        validate();
-      });
-    });
-  });
-  [sofaSelect,colourInput,sizeInput].forEach(function(el){el.addEventListener('input',validate);el.addEventListener('change',validate);});
-
-  function validate(){
-    var ok=true;
-    if(!state.sofa) ok=false;
-    if(state.sofa==='other'&&!sofaSelect.value) ok=false;
-    if(!state.colour) ok=false;
-    if(state.colour==='have'&&!colourInput.value.trim()) ok=false;
-    if(!state.size) ok=false;
-    submitBtn.disabled=!ok;
-  }
-
-  submitBtn.addEventListener('click',function(){
-    if(submitBtn.disabled) return;
-    var sofa=(state.sofa==='other')?sofaSelect.value:(state.product||'a sofa');
-    var colourLine=(state.colour==='have')?('*Colour/Fabric:* '+colourInput.value.trim()):'*Colour/Fabric:* Please show me the available options';
-    var sizeLine;
-    if(state.size==='custom'){var ex=sizeInput.value.trim();sizeLine='*Measurements:* Custom sizes'+(ex?(' — '+ex):'');}
-    else{sizeLine='*Measurements:* Your standard sizes — please share the measurements';}
-    var msg='Hi Barki Sofa Hub \uD83D\uDC4B I\'d like to order — here are my details:\n\n*Sofa:* '+sofa+'\n'+colourLine+'\n'+sizeLine+'\n\n_Sent via the website_';
-    try{ if(typeof fbq==='function') fbq('track','Lead',{content_name:sofa,currency:'GBP'}); }catch(e){}
-    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
-    closeQualify();
-  });
-
-  document.getElementById('qzClose').addEventListener('click',closeQualify);
-  overlay.addEventListener('click',function(e){if(e.target===overlay)closeQualify();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('open'))closeQualify();});
-
-  // Intercept EVERY WhatsApp tap → open the qualify form first (capture phase stops the old Lead-on-tap).
-  document.addEventListener('click',function(e){
-    var link=e.target.closest('a[href*="wa.me"]');
-    if(!link) return;
-    e.preventDefault(); e.stopImmediatePropagation();
-    var product='';
-    if(link.id==='dOrder'){ product=(window.__barkiCurrentDetailName?window.__barkiCurrentDetailName():''); }
-    else{
-      var card=link.closest('.pcard');
-      if(card){ var n=card.querySelector('.pcard__name'); if(n) product=n.textContent.trim(); }
-    }
-    openQualify(product);
-  }, true);
-})();
-</script>
+<!-- Order form before WhatsApp: now built by barki-lead.js (same design, on every page) -->
 <div class="cookiebar" id="cookiebar" hidden role="dialog" aria-label="Cookie choice">
-  <p>We would like to use Google Analytics to see which pages people actually find useful. It stays off unless you say yes, and it never affects your order. <a href="privacy.html">Privacy policy</a></p>
+  <p>We would like to use cookies from Google Analytics (to see which pages people find useful) and Meta (to measure our Facebook and Instagram adverts). They stay off unless you say yes, and they never affect your order. <a href="privacy.html">Privacy policy</a></p>
   <div class="cookiebar__btns">
     <button type="button" class="btn btn--ghost" id="ckNo">Decline</button>
     <button type="button" class="btn btn--solid" id="ckYes">Accept</button>
