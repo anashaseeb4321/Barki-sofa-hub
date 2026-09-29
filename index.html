@@ -814,6 +814,22 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 </script>
 <script src="barki-track.js" defer></script>
 <script src="barki-lead.js" defer></script>
+<style>
+/* cookie consent popup — centred on first visit, Accept and Decline equally clear (UK ICO guidance) */
+.cookiebar{position:fixed;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);z-index:9999;
+  width:calc(100% - 32px);max-width:440px;margin:0;background:#FCFAF5;border:1px solid #F1EBDF;border-radius:18px;
+  box-shadow:0 0 0 100vmax rgba(15,58,54,.45),0 24px 60px -20px rgba(0,0,0,.45);
+  padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch;font-size:.92rem;font-family:inherit}
+.cookiebar[hidden]{display:none}
+.cookiebar:before{content:"Cookies on Barki Sofa Hub";font-weight:800;font-size:1.05rem;color:#1C302E}
+.cookiebar p{margin:0;color:#5B6D68;line-height:1.6;min-width:0;flex:none}
+.cookiebar a{text-decoration:underline;color:#144E4A}
+.cookiebar__btns{display:flex;gap:10px;width:100%}
+.cookiebar .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;
+  font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.5px solid #144E4A;transition:.18s}
+.cookiebar .btn--ghost,.cookiebar .btn--ghost:hover{background:#FFFFFF;color:#144E4A;border-color:#144E4A}
+.cookiebar .btn--solid,.cookiebar .btn--solid:hover{background:#144E4A;color:#F8F5EF;border-color:#144E4A}
+</style>
 </head>
 <body>
 
