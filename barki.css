@@ -218,3 +218,6 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* product photos keep their 4:3 shape on every screen (the width/height attributes were stretching them) */
 .pimg img,.pthumb img{height:auto}
+.fablink{margin:-12px 0 22px;font-size:.88rem;font-weight:700}
+.fablink a{color:var(--teal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fablink a:hover{color:var(--gold)}

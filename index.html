@@ -201,9 +201,11 @@
   .fabrics-copy .rule::before{display:none}
   .fabrics-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
   .fabrics-copy p{color:var(--muted);margin:14px 0 24px}
-  .swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .sw{background:var(--card);border:1px solid rgba(190,154,92,.28);border-radius:var(--radius-sm);overflow:hidden}
-  .sw__chip{height:74px}
+  .sw__chip{height:74px;background-repeat:no-repeat}
+  a.sw{display:block;transition:border-color .15s,transform .15s}
+  a.sw:hover{border-color:var(--gold);transform:translateY(-2px)}
   .sw__label{padding:10px 12px}
   .sw__label b{font-size:.9rem;display:block}
   .sw__label span{font-size:.72rem;color:var(--muted)}
@@ -1023,16 +1025,19 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <span class="eyebrow solo">Materials</span>
       <div class="rule"><span>◆</span></div>
       <h2>Premium fabrics, your colour</h2>
-      <p>All our sofas are upholstered in hard-wearing, easy-clean fabrics. Choose a texture below and we'll send you the full colour card on WhatsApp.</p>
+      <p>Choose from 8 fabrics and 93 colours — from soft plush velvet to cosy bouclé. Tap a fabric to see every shade, or ask us for close-up photos on WhatsApp.</p>
       <a class="btn btn--dark" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20please%20send%20the%20full%20fabric%20and%20colour%20card." target="_blank" rel="noopener">Request fabric card</a>
+      <a class="btn" href="fabrics-and-colours.html" style="margin:8px 0 0 6px;border:1.5px solid var(--teal);color:var(--teal);background:transparent">See all 93 colours</a>
     </div>
     <div class="swatches">
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#8a9a94,#6f827b)"></div><div class="sw__label"><b>Plush</b><span>Soft velvet touch</span></div></div>
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#c9bda6,#a8987c)"></div><div class="sw__label"><b>Naple</b><span>Woven texture</span></div></div>
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#5b6d68,#3f4f4b)"></div><div class="sw__label"><b>Kensington</b><span>Premium weave</span></div></div>
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#b8a17e,#957f5c)"></div><div class="sw__label"><b>Chenille</b><span>Warm & durable</span></div></div>
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#7a5b52,#5c4139)"></div><div class="sw__label"><b>Crush Velvet</b><span>Rich sheen</span></div></div>
-      <div class="sw"><div class="sw__chip" style="background:linear-gradient(135deg,#9a8f7a,#7d735f)"></div><div class="sw__label"><b>Jumbo Cord</b><span>Chunky ribbed</span></div></div>
+      <a class="sw" href="fabrics-and-colours.html#plush"><div class="sw__chip" style="background-image:url(images/fabrics/plush.jpg);background-size:1700% auto;background-position:43.75% 50%"></div><div class="sw__label"><b>Plush</b><span>Soft, rich velvet · 17 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#chenille"><div class="sw__chip" style="background-image:url(images/fabrics/chenille.jpg);background-size:1000% auto;background-position:33.33% 50%"></div><div class="sw__label"><b>Chenille</b><span>Warm &amp; forgiving · 10 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#crush-velvet"><div class="sw__chip" style="background-image:url(images/fabrics/crush-velvet.jpg);background-size:1300% auto;background-position:16.67% 50%"></div><div class="sw__label"><b>Crush Velvet</b><span>Rippled sheen · 13 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#boucle"><div class="sw__chip" style="background-image:url(images/fabrics/boucle.jpg);background-size:900% auto;background-position:25% 50%"></div><div class="sw__label"><b>Bouclé</b><span>Soft, curly texture · 9 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#naple"><div class="sw__chip" style="background-image:url(images/fabrics/naple.jpg);background-size:1000% auto;background-position:11.11% 50%"></div><div class="sw__label"><b>Naple</b><span>Hard-wearing weave · 10 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#kensington"><div class="sw__chip" style="background-image:url(images/fabrics/kensington.jpg);background-size:1500% auto;background-position:78.57% 50%"></div><div class="sw__label"><b>Kensington</b><span>Dense, textured weave · 15 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#jumbo-cord"><div class="sw__chip" style="background-image:url(images/fabrics/jumbo-cord.jpg);background-size:800% auto;background-position:57.14% 50%"></div><div class="sw__label"><b>Jumbo Cord</b><span>Chunky ribs · 8 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#velour"><div class="sw__chip" style="background-image:url(images/fabrics/velour.jpg);background-size:1100% auto;background-position:50% 50%"></div><div class="sw__label"><b>Velour</b><span>Fine ribbed velour · 11 colours</span></div></a>
     </div>
   </div>
 </section>
@@ -1119,7 +1124,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <li><a href="chesterfield-sofas.html">Chesterfield sofas</a></li>
           <li><a href="guides.html">Buying guides</a></li>
           <li><a href="made-to-order-sofas-blackburn.html">Sofas in Blackburn</a></li>
-          <li><a href="#fabrics">Fabrics</a></li>
+          <li><a href="fabrics-and-colours.html">Fabrics &amp; colours</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
