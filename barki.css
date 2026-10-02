@@ -221,3 +221,13 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 .fablink{margin:-12px 0 22px;font-size:.88rem;font-weight:700}
 .fablink a{color:var(--teal);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .fablink a:hover{color:var(--gold)}
+
+/* sofa lists: 1 per row on phones (Oct 2026) */
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr;gap:18px}
+  .card{border-radius:16px}
+  .card .cb{padding:14px 18px 18px}
+  .card h3{font-size:1.18rem}
+  .card .cp{font-size:1rem}
+  .card .cd{display:block;font-size:.88rem}
+}
