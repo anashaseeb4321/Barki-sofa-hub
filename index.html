@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barki Sofa Hub — Made-to-Order Sofas UK | Custom Sizes &amp; Fabrics, Free Delivery</title>
-<meta name="description" content="Made-to-order corner, U-shape, L-shape &amp; Chesterfield sofas with custom sizes and fabrics. Free UK delivery and cash on delivery. £350 — order on WhatsApp.">
+<meta name="description" content="Made-to-order corner, U-shape, L-shape &amp; Chesterfield sofas with custom sizes and fabrics. Free UK delivery and cash on delivery. Prices start at £599 — order on WhatsApp.">
 <link rel="canonical" href="https://barkisofahub.co.uk/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="geo.region" content="GB-LAN">
@@ -745,7 +745,7 @@
         "@type": "Product",
         "name": "Chesterfield Sofa",
         "image": "https://barkisofahub.co.uk/images/chesterfield/chesterfield-1.jpg",
-        "description": "An icon of British design — deep button tufting and rolled arms. Buy by the piece, or save as a set.",
+        "description": "An icon of British design — deep button tufting and rolled arms, sold as a full 3+2+1 set.",
         "brand": {
           "@type": "Brand",
           "name": "Barki Sofa Hub"
@@ -753,7 +753,7 @@
         "offers": {
           "@type": "Offer",
           "priceCurrency": "GBP",
-          "price": "350",
+          "price": "1350",
           "availability": "https://schema.org/InStock",
           "url": "https://barkisofahub.co.uk/chesterfield-sofa.html"
         }
@@ -1276,7 +1276,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     {name:'Olympia 2+3 Seater Sofa', collection:'2+3 Seater Collection', cat:'seater', price:'650', desc:'Rolled arms with decorative studs and a deep-buttoned front, finished with plush scatter cushions. The Olympia two-seater and three-seater set, sold as a matching pair.', images:['images/verona-set/verona-set-2.jpg','images/verona-set/verona-set-1.jpg','images/verona-set/verona-set-3.jpg','images/elaska/elaska-2.jpg'], features:['Includes a 2-seater + 3-seater','Rolled arms with stud detail','Available in multiple fabric options','Custom size available']},
     {name:'Lilly Fixed Seat Sofa', collection:'2+3 Seater Collection', cat:'seater', price:'900', desc:'Fluted, channel-stitched velvet with a gold metal base and gold arm details, and fixed seat cushions that keep their shape. Available as a 3+2 set or a 2C2 corner sofa.', images:['images/lilly-fixed/lilly-fixed-1.jpg','images/lilly-fixed/lilly-fixed-2.jpg','images/lilly-fixed/lilly-fixed-3.jpg'], features:['3+2 set or 2C2 corner sofa','Fluted, channel-stitched back and arms','Gold metal base and arm details','Fixed seat cushions that hold their shape']},
     {name:'L-Shape Sofa', collection:'L-Shape Collection', cat:'lshape', price:'649', desc:'A space-smart L-shape sofa that fits neatly into modern rooms without sacrificing comfort or seating.', images:['images/lshape/lshape-cream-fluted.jpg','images/lshape/lshape-black-storage-chaise.jpg'], features:['Two styles: fluted or plain arms','Chaise on the left or right','Available in multiple fabric options','Custom size available']},
-    {name:'Chesterfield Sofa', collection:'Chesterfield Collection', cat:'chesterfield', price:'350', desc:'An icon of British design — deep button tufting and rolled arms. Buy by the piece, or save as a set.', images:['images/chesterfield/chesterfield-1.jpg'], features:['Authentic button-tufted upholstery','Rolled arms with gold-trim base','Solid hardwood frame','Available in velvet'], tiers:[['1 Seater','350'],['2 Seater','500'],['3 Seater','600'],['Coffee Table','200']], sets:[['3+2 Seater Set','100','1,000'],['Full Set 3+2+1','250','1,200']], note:'Add the coffee table to any set for £200 · incl. free UK delivery', setPrice:'1,200'},
+    {name:'Chesterfield Sofa', collection:'Chesterfield Collection', cat:'chesterfield', price:'1,350', desc:'An icon of British design — deep button tufting and rolled arms, sold as a full 3+2+1 set.', images:['images/chesterfield/chesterfield-1.jpg'], features:['Authentic button-tufted upholstery','Rolled arms with gold-trim base','Solid hardwood frame','Available in velvet'], tiers:[['Full Set 3+2+1','1,350'],['Coffee Table (optional)','200']], sets:[], note:'Sold as a full 3+2+1 set · free UK delivery'},
     {name:'Borius Sofa', collection:'Borius Collection', cat:'borius', price:'649', desc:'Bold proportions and sumptuous cushioning. The Borius makes a powerful statement without sacrificing everyday comfort.', images:['images/borius/borius-2.jpg','images/borius/borius-3.jpg','images/borius/borius-1.jpg'], features:['Bold generous proportions','Sumptuous cushion depth','Premium upholstery options','Free UK delivery']},
     {name:'Ambassador Sofa', collection:'Ambassador Collection', cat:'ambassador', price:'850', desc:'Commanding presence, exceptional comfort. The Ambassador is built for those who don\'t compromise on their living space.', images:['images/ambassador/ambassador-1.jpg'], features:['Bold commanding silhouette','Premium upholstery','Generous seating depth','Free UK delivery']},
     {name:'Ashton Chesterfield Sofa', collection:'Chesterfield Collection', cat:'chesterfield', price:'800', desc:'Square Chesterfield arms and base, deep-buttoned all over, with plump scatter back cushions and bolsters. The Ashton Chesterfield makes a statement in any living room.', images:['images/elaska/elaska-5.jpg','images/elaska/elaska-1.jpg'], features:['Deep-buttoned Chesterfield arms and base','Scatter back with bolster cushions','Available in multiple fabric options','Custom size available']},
@@ -1372,7 +1372,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   let selAddons = new Set();
 
   function orderLink(p){
-    let msg = p.tiers
+    let msg = p.setPrice
       ? `Hi Barki Sofa Hub, I'd like to order the ${p.name} — pieces £${p.price}${p.setPrice?`, full set £${p.setPrice}`:''}.`
       : `Hi Barki Sofa Hub, I'm interested in the ${p.name} (£${p.price}).`;
     const chosen = [...selAddons].map(k => ADDONS.find(a=>a.key===k)).filter(Boolean);
