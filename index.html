@@ -316,6 +316,26 @@
   .d-feat li{position:relative;padding-left:22px;font-size:.94rem}
   .d-feat li::before{content:"◆";position:absolute;left:0;color:var(--gold);font-size:.7rem;top:4px}
 
+  /* ---------- extras: matching tables & stools ---------- */
+  .section--extras{padding-top:0}
+  .xgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .xcard{background:var(--white);border:1px solid rgba(190,154,92,.22);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .xcard__img{aspect-ratio:4/3;background:#fff;overflow:hidden}
+  .xcard__img img{width:100%;height:100%;object-fit:cover;display:block}
+  .xcard__body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .xcard__body h3{font-family:var(--serif);font-size:1.3rem;font-weight:600}
+  .xcard__body p{color:var(--muted);font-size:.9rem;margin:0;flex:1}
+  .xcard__foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(190,154,92,.22);padding-top:14px;margin-top:4px}
+  .xcard__price{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+  .xnote{text-align:center;color:var(--muted);font-size:.85rem;margin:22px auto 0;max-width:640px}
+  @media(max-width:940px){.xgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.xgrid{grid-template-columns:1fr;gap:18px}}
+  /* ---------- live total in sofa pop-up ---------- */
+  .d-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 14px;padding:14px 16px;border:1px solid rgba(190,154,92,.35);border-radius:12px;background:rgba(190,154,92,.08)}
+  .d-total__lines{font-size:.82rem;color:var(--muted);line-height:1.5;min-width:0}
+  .d-total__lines b{color:var(--ink);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+  .d-total__sum{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);white-space:nowrap}
+
   /* ---------- responsive ---------- */
   @media(max-width:1280px){
     .grid{grid-template-columns:repeat(3,1fr)}
@@ -363,7 +383,7 @@
     .hero .eyebrow::before,.hero .eyebrow::after{width:18px}
     .hero h1{font-size:clamp(1.75rem,7.4vw,2.15rem);line-height:1.15;margin:13px 0 14px}
     .hero-copy p{font-size:.97rem;margin-bottom:22px}
-    .hero-meta{gap:0;margin-top:26px;grid-template-columns:repeat(3,1fr);display:grid}
+    .hero-meta{gap:14px 0;margin-top:26px;grid-template-columns:repeat(2,1fr);display:grid}
     .hero-meta div{border-left:2px solid var(--gold);padding-left:10px}
     .hero-meta b{font-size:1.02rem}
     .hero-meta span{font-size:.6rem;letter-spacing:.08em}
@@ -1022,6 +1042,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         <div><b>2–3 days</b><span>Made to order</span></div>
         <div><b>Free</b><span>UK delivery</span></div>
         <div><b>COD</b><span>Pay on delivery</span></div>
+        <div><b>93 colours</b><span>8 fabrics</span></div>
       </div>
     </div>
   </div>
@@ -1062,6 +1083,47 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     <div class="grid" id="grid">
       <!-- cards injected by JS -->
     </div>
+  </div>
+</section>
+
+<!-- EXTRAS -->
+<section class="section section--extras" id="extras">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow solo">Complete your set</span>
+      <h2>Matching tables &amp; stools</h2>
+      <p>Made in the same fabric and colour as your sofa, delivered together for free. Add one when you order, or ask us on WhatsApp.</p>
+    </div>
+    <div class="xgrid">
+      <article class="xcard">
+        <div class="xcard__img"><img src="images/addons/coffee-table.jpg" alt="Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__body">
+          <h3>Coffee Table</h3>
+          <p>Upholstered with a glass top, made in the same fabric as your sofa.</p>
+          <div class="xcard__foot"><span class="xcard__price">£170</span>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Coffee%20Table%20%28%C2%A3170%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+        </div>
+      </article>
+      <article class="xcard">
+        <div class="xcard__img"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__body">
+          <h3>Fix Seat Stool</h3>
+          <p>A firm, boxy stool covered to match your sofa.</p>
+          <div class="xcard__foot"><span class="xcard__price">£100</span>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Fix%20Seat%20Stool%20%28%C2%A3100%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+        </div>
+      </article>
+      <article class="xcard">
+        <div class="xcard__img"><img src="images/addons/lilly-stool.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__body">
+          <h3>Footstool</h3>
+          <p>A soft cushioned top, covered to match your sofa.</p>
+          <div class="xcard__foot"><span class="xcard__price">£120</span>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Footstool%20%28%C2%A3120%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="xnote">The matching footstool for the Alaska Corner is £150, and for the Ashton Corner £200, because they are made larger to suit those sofas.</p>
   </div>
 </section>
 
@@ -1241,6 +1303,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         </div>
         <div class="d-tiers" id="dTiers"></div>
         <div class="d-addons" id="dAddons"></div>
+        <div class="d-total" id="dTotal" hidden></div>
         <div class="d-buy">
           <a class="btn btn--wa" id="dOrder" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
@@ -1370,13 +1433,24 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   let lastFocus = null;
   let curProduct = null;
   let selAddons = new Set();
+  const num = v => Number(String(v).replace(/,/g,''));
+  const gbp = n => '£' + n.toLocaleString('en-GB');
+  function chosenAddons(){ return [...selAddons].map(k => ADDONS.find(a=>a.key===k)).filter(Boolean); }
+  function addonTotal(p){ return num(p.price) + chosenAddons().reduce((t,a)=>t + num(addonPrice(p,a)), 0); }
+  function renderTotal(p){
+    const box = document.getElementById('dTotal');
+    if(!p || p.tiers){ box.hidden = true; box.innerHTML = ''; return; }
+    const lines = [`${p.name} ${gbp(num(p.price))}`].concat(chosenAddons().map(a=>`+ ${a.name} ${gbp(num(addonPrice(p,a)))}`));
+    box.innerHTML = `<div class="d-total__lines"><b>Your total</b><br>${lines.join('<br>')}</div><div class="d-total__sum">${gbp(addonTotal(p))}</div>`;
+    box.hidden = false;
+  }
 
   function orderLink(p){
     let msg = p.setPrice
       ? `Hi Barki Sofa Hub, I'd like to order the ${p.name} — pieces £${p.price}${p.setPrice?`, full set £${p.setPrice}`:''}.`
       : `Hi Barki Sofa Hub, I'm interested in the ${p.name} (£${p.price}).`;
     const chosen = [...selAddons].map(k => ADDONS.find(a=>a.key===k)).filter(Boolean);
-    if(chosen.length) msg += ` Add-ons: ${chosen.map(a=>`${a.name} (+£${addonPrice(p,a)})`).join(', ')}.`;
+    if(chosen.length) msg += ` Add-ons: ${chosen.map(a=>`${a.name} (+£${addonPrice(p,a)})`).join(', ')}. Total: ${gbp(addonTotal(p))}.`;
     msg += ` Please share fabric options and delivery details.`;
     return `https://wa.me/${WAP}?text=${encodeURIComponent(msg)}`;
   }
@@ -1423,6 +1497,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       </button>`).join('');
     setDMain(p.images[0]);
     dOrder.href = orderLink(p);
+    renderTotal(p);
 
     detail.classList.add('open');
     detail.scrollTop = 0;
@@ -1455,7 +1530,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     const on = card.classList.toggle('sel');
     if(on) selAddons.add(key); else selAddons.delete(key);
     card.querySelector('.d-addon__btn').textContent = on ? '✓ Added' : '+ Add to order';
-    if(curProduct) dOrder.href = orderLink(curProduct);
+    if(curProduct){ dOrder.href = orderLink(curProduct); renderTotal(curProduct); }
   });
   dBack.addEventListener('click', closeDetail);
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && detail.classList.contains('open')) closeDetail(); });
