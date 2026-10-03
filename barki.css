@@ -231,3 +231,6 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
   .card .cp{font-size:1rem}
   .card .cd{display:block;font-size:.88rem}
 }
+/* "New" label on sofa lists */
+.card{position:relative}
+.cbadge{position:absolute;top:10px;left:10px;z-index:1;background:var(--gold);color:var(--teal-deep, #0f3a36);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35em .8em;border-radius:999px;box-shadow:0 4px 12px -4px rgba(0,0,0,.35)}
