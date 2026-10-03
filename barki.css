@@ -1,3 +1,5 @@
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
 
 :root{
   --teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
@@ -250,3 +252,9 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 .adpick__btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .allhead{font-size:1.3rem;margin:0}
 @media(max-width:760px){.adpick{grid-template-columns:1fr;gap:16px;padding:14px}.adpick__btns{flex-direction:column}.adpick__btns .btn{justify-content:center;width:100%}}
+
+/* ===== Oct 2026: one menu for every page, no wrapping ===== */
+.navlinks a{white-space:nowrap}
+.brand small{white-space:nowrap}
+@media(min-width:901px) and (max-width:1180px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
+.foot-social{margin-top:14px}

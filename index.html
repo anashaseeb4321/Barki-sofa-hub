@@ -30,10 +30,12 @@
 
 <link rel="icon" type="image/png" href="images/barki-icon.png">
      <meta name="p:domain_verify" content="3065513e044518e8bcb23f6705ecb3e9"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="images/hero.jpg" as="image" fetchpriority="high">
 <style>
+  @font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
+  @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
   :root{
     --teal:#144E4A;
     --teal-deep:#0F3A36;
@@ -244,7 +246,7 @@
 
   /* ---------- footer ---------- */
   footer{background:var(--teal-deep);color:rgba(248,245,239,.75);padding:60px 0 30px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
   .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .foot-brand img{height:44px;width:44px;border-radius:10px}
   .foot-brand b{font-family:var(--serif);color:var(--cream);font-size:1.15rem}
@@ -416,7 +418,7 @@
 }
 </script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://barkisofahub.co.uk/#business", "name": "Barki Sofa Hub", "alternateName": "Barki Sofa Hub - Made-to-Order Sofas", "url": "https://barkisofahub.co.uk/", "logo": "https://barkisofahub.co.uk/images/barki-icon.png", "image": "https://barkisofahub.co.uk/images/hero.jpg", "description": "Made-to-order fabric sofas, corner suites, Chesterfields and sofa beds, based in Blackburn and delivered free across mainland UK. Delivery only - no public showroom.", "telephone": "+447424333739", "email": "barkisofahub739@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "location": {"@type": "Place", "name": "Barki Sofa Hub storage and dispatch unit", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.7478, "longitude": -2.482}, "publicAccess": false, "description": "Storage and dispatch unit. Not open to the public - all orders are arranged remotely and delivered."}, "areaServed": {"@type": "Country", "name": "United Kingdom"}, "sameAs": ["https://www.facebook.com/profile.php?id=61592460665012", "https://www.instagram.com/barkisofahub739", "https://www.pinterest.com/barkisofahub739"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://barkisofahub.co.uk/#business", "name": "Barki Sofa Hub", "alternateName": "Barki Sofa Hub - Made-to-Order Sofas", "url": "https://barkisofahub.co.uk/", "logo": "https://barkisofahub.co.uk/images/barki-icon.png", "image": "https://barkisofahub.co.uk/images/hero.jpg", "description": "Made-to-order fabric sofas, corner suites, and Chesterfields, based in Blackburn and delivered free across mainland UK. Delivery only - no public showroom.", "telephone": "+447424333739", "email": "barkisofahub739@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "location": {"@type": "Place", "name": "Barki Sofa Hub storage and dispatch unit", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.7478, "longitude": -2.482}, "publicAccess": false, "description": "Storage and dispatch unit. Not open to the public - all orders are arranged remotely and delivered."}, "areaServed": {"@type": "Country", "name": "United Kingdom"}, "sameAs": ["https://www.facebook.com/profile.php?id=61592460665012", "https://www.instagram.com/barkisofahub739", "https://www.pinterest.com/barkisofahub739"]}</script>
 
 <script type="application/ld+json">
 {
@@ -938,6 +940,13 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .pcard__foot .btn--order{justify-content:center;width:100%}
 }
 
+  /* Oct 2026: menu stays on one line */
+  .navlinks a{white-space:nowrap}
+  .brand small{white-space:nowrap}
+  @media(min-width:641px) and (max-width:1280px){.navlinks{gap:18px}.navlinks a{font-size:.86rem}}
+  @media(min-width:641px) and (max-width:1100px){.brand small{display:none}.navlinks{gap:13px}.navlinks a{font-size:.8rem}.nav-cta .btn--wa{padding:.7em 1.1em}}
+  @media(min-width:641px) and (max-width:940px){.navlinks{position:fixed;inset:72px 0 auto 0;background:var(--cream);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(190,154,92,.3);transform:translateY(-140%);transition:transform .3s ease;box-shadow:var(--shadow)}.navlinks.open{transform:translateY(0)}.navlinks a{font-size:1rem}.burger{display:flex}.brand small{display:block}}
+
 /* ===== Mobile refresh — Oct 2026 ===== */
 @media(max-width:940px){
   .hero{display:block;min-height:0;background:#0f3a36}
@@ -1006,12 +1015,13 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
     </a>
     <nav class="navlinks" id="navlinks">
-      <a href="#collection">Collection</a>
+      <a href="all-sofas.html">All Sofas</a>
       <a href="corner-sofas.html">Corner Sofas</a>
+      <a href="u-shape-sofas.html">U-Shape</a>
+      <a href="l-shape-sofas.html">L-Shape</a>
+      <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
       <a href="chesterfield-sofas.html">Chesterfield</a>
-      <a href="#fabrics">Fabrics</a>
-      <a href="guides.html">Guides</a>
-      <a href="#faq">FAQ</a>
+      <a href="fabrics-and-colours.html">Fabrics</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20see%20your%20sofa%20range." target="_blank" rel="noopener">
@@ -1025,17 +1035,17 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <img class="hero-bg" id="heroImg" src="images/hero.jpg" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)">
+  <img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)">
   <div class="hero-overlay"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <span class="eyebrow">Made to order for your home</span>
       <h1>Sofas made to<br><em>fit your home</em>, not the other way round.</h1>
-      <p>Corner suites, recliners and sofa beds — made to order in your choice of fabric, colour and size. Delivered free across the UK.</p>
+      <p>Corner, U-shape, L-shape and Chesterfield sofas — made to order in your choice of fabric, colour and size. Delivered free across the UK.</p>
       <div class="hero-actions">
         <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20quote%20and%20fabric%20options." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-          Get a quote
+          Order on WhatsApp
         </a>
         <a class="btn btn--ghost" href="#collection">View collection</a>
       </div>
@@ -1102,7 +1112,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <h3>Coffee Table</h3>
           <p>Upholstered with a glass top, made in the same fabric as your sofa.</p>
           <div class="xcard__foot"><span class="xcard__price">£170</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Coffee%20Table%20%28%C2%A3170%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Coffee%20Table%20%28%C2%A3170%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Order on WhatsApp</a></div>
         </div>
       </article>
       <article class="xcard">
@@ -1111,7 +1121,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <h3>Fix Seat Stool</h3>
           <p>A firm, boxy stool covered to match your sofa.</p>
           <div class="xcard__foot"><span class="xcard__price">£100</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Fix%20Seat%20Stool%20%28%C2%A3100%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Fix%20Seat%20Stool%20%28%C2%A3100%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Order on WhatsApp</a></div>
         </div>
       </article>
       <article class="xcard">
@@ -1120,7 +1130,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <h3>Footstool</h3>
           <p>A soft cushioned top, covered to match your sofa.</p>
           <div class="xcard__foot"><span class="xcard__price">£120</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Footstool%20%28%C2%A3120%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Ask on WhatsApp</a></div>
+            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Footstool%20%28%C2%A3120%29%20with%20my%20sofa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Order on WhatsApp</a></div>
         </div>
       </article>
     </div>
@@ -1221,30 +1231,39 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="images/barki-icon.png" alt="Barki Sofa Hub"><b>Barki Sofa Hub</b></div>
-        <p style="max-width:320px;font-size:.9rem">Made-to-order fabric sofas with custom sizes and fabrics, delivered free across the UK. Sofas for every home.</p>
+        <p style="max-width:320px;font-size:.88rem;opacity:.85">Made-to-order fabric sofas with custom sizes and fabrics, delivered free across the UK. Sofas for every home.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4>Collections</h4>
         <ul>
-          <li><a href="all-sofas.html">All sofas</a></li>
-          <li><a href="corner-sofas.html">Corner sofas</a></li>
-          <li><a href="u-shape-sofas.html">U-shape sofas</a></li>
-          <li><a href="l-shape-sofas.html">L-shape sofas</a></li>
-          <li><a href="2-3-seater-sofa-sets.html">2+3 seater sets</a></li>
-          <li><a href="chesterfield-sofas.html">Chesterfield sofas</a></li>
-          <li><a href="guides.html">Buying guides</a></li>
-          <li><a href="made-to-order-sofas-blackburn.html">Sofas in Blackburn</a></li>
+          <li><a href="corner-sofas.html">Corner Sofas</a></li>
+          <li><a href="u-shape-sofas.html">U-Shape Sofas</a></li>
+          <li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
+          <li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
+          <li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="how-to-measure-for-a-corner-sofa.html">Measuring for a corner sofa</a></li>
+          <li><a href="sofa-fabric-guide.html">Sofa fabric guide</a></li>
           <li><a href="fabrics-and-colours.html">Fabrics &amp; colours</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="chesterfield-sofa-buying-guide.html">Chesterfield buying guide</a></li>
+          <li><a href="corner-vs-l-shape-vs-u-shape-sofa.html">Corner vs L-shape vs U-shape</a></li>
+          <li><a href="cash-on-delivery-sofas-uk.html">Cash on delivery explained</a></li>
+          <li><a href="guides.html">All guides</a></li>
         </ul>
       </div>
       <div>
         <h4>Get in touch</h4>
         <ul>
           <li><a href="https://wa.me/447424333739" target="_blank" rel="noopener">WhatsApp: +44 7424 333739</a></li>
-          <li><a href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub" target="_blank" rel="noopener">Start an order</a></li>
-          <li style="margin-top:16px">
-            <div style="display:flex;gap:12px;align-items:center">
+          <li><a href="tel:+447424333739">Call: +44 7424 333739</a></li>
+          <li><a href="mailto:barkisofahub739@gmail.com">barkisofahub739@gmail.com</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="made-to-order-sofas-blackburn.html">Delivery in Blackburn</a></li>
+          <li class="foot-social"><div style="display:flex;gap:12px;align-items:center">
               <a href="https://www.facebook.com/profile.php?id=61592460665012" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Facebook" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg>
               </a>
@@ -1257,14 +1276,13 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
               <a href="https://wa.me/447424333739" target="_blank" rel="noopener" aria-label="Message Barki Sofa Hub on WhatsApp" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.6.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.9.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.7.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
               </a>
-            </div>
-          </li>
-          <li style="margin-top:14px;opacity:.72">Based in Blackburn, Lancashire<br>Delivered free across the UK</li>
+            </div></li>
+          <li style="margin-top:12px;opacity:.7">Based in Blackburn, Lancashire<br>Delivered UK-wide · Dispatch unit not open to visitors</li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="yr"></span> Barki Sofa Hub. All rights reserved.</span>
+      <span>© 2026 Barki Sofa Hub. All rights reserved.</span>
       <span class="foot-legal"><a href="about.html">About</a><span class="sep" aria-hidden="true"> &middot; </span><a href="contact.html">Contact</a><span class="sep" aria-hidden="true"> &middot; </span><a href="delivery.html">Delivery</a><span class="sep" aria-hidden="true"> &middot; </span><a href="returns.html">Returns &amp; Cancellations</a><span class="sep" aria-hidden="true"> &middot; </span><a href="terms.html">Terms</a><span class="sep" aria-hidden="true"> &middot; </span><a href="privacy.html">Privacy</a></span>
     </div>
   </div>
@@ -1275,7 +1293,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   <div><b>Barki Sofa Hub</b><span>Free UK delivery • COD</span></div>
   <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20order." target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-    Order now
+    Order on WhatsApp
   </a>
 </div>
 
@@ -1324,6 +1342,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
 <script>
   const products = [
+    {name:'Lilly Fixed Seat Sofa', collection:'2+3 Seater Collection', cat:'seater', price:'900', badge:'New', desc:'Fluted, channel-stitched velvet with a gold metal base and gold arm details, and fixed seat cushions that keep their shape. Available as a 3+2 set or a 2C2 corner sofa.', images:['images/lilly-fixed/lilly-fixed-1.jpg','images/lilly-fixed/lilly-fixed-2.jpg','images/lilly-fixed/lilly-fixed-3.jpg'], features:['3+2 set or 2C2 corner sofa','Fluted, channel-stitched back and arms','Gold metal base and arm details','Fixed seat cushions that hold their shape']},
     {name:'U-Shape Sofa', collection:'U-Shape Collection', cat:'ushape', price:'699', desc:'The ultimate family sofa. Our U-Shape collection wraps your room in comfort with generous seating for the whole household.', images:['images/ushape/ushape-2.jpg','images/ushape/ushape-3.jpg','images/ushape/ushape-4.jpg','images/ushape/ushape-5.jpg','images/ushape/ushape-6.jpg','images/ushape/ushape-7.jpg','images/ushape/ushape-8.jpg','images/ushape/ushape-1.jpg'], features:['Seats 6–8 people comfortably','Available in multiple fabric options','Modular configuration','UK-wide delivery included']},
     {name:'Alaska Corner Sofa', collection:'Corner Collection', cat:'corner', price:'680', stool:150, desc:'Soft channel-stitched styling with plush, pillow-back comfort. The Alaska corner is a warm, inviting centrepiece for any family living room.', images:['images/lilly-corner/lilly-corner-3.jpg','images/lilly-corner/lilly-corner-7.jpg','images/lilly-corner/lilly-corner-8.jpg','images/lilly-corner/lilly-corner-1.jpg'], features:['Available in multiple fabric options','Sturdy hardwood frame','Deep foam & fibre cushions','Custom size available']},
     {name:'Ashton Corner Sofa', collection:'Corner Collection', cat:'corner', price:'750', stool:200, desc:'Deep-buttoned Chesterfield-style arms and base with plump scatter back cushions. The Ashton corner is a statement centrepiece for any living room.', images:['images/ashton-corner/ashton-corner-2.jpg','images/ashton-corner/ashton-corner-3.jpg','images/ashton-corner/ashton-corner-4.jpg','images/ashton-corner/ashton-corner-1.jpg'], features:['Available in multiple fabric options','Sturdy hardwood frame','Deep foam & fibre cushions','Custom size available']},
@@ -1338,7 +1357,6 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     {name:'Olympia Corner Sofa', collection:'Corner Collection', cat:'corner', price:'649', desc:'Rolled arms with decorative studs and a deep-buttoned front, with plush back cushions. The Olympia corner offers generous seating for the whole family.', images:['images/olympia-corner/olympia-corner-2.jpg','images/olympia-corner/olympia-corner-4.jpg','images/olympia-corner/olympia-corner-1.jpg'], features:['Available in multiple fabric options','Sturdy hardwood frame','Deep foam & fibre cushions','Custom size available']},
     {name:'Verona Corner Sofa', collection:'Corner Collection', cat:'corner', price:'599', badge:'New', desc:'Classic scroll arms with button detail, in your choice of scatter back or fullback. The Verona is a statement corner sofa for any living room.', images:['images/verona-corner/verona-corner-2.jpg','images/verona-corner/verona-corner-3.jpg','images/verona-corner/verona-corner-4.jpg','images/verona-corner/verona-corner-5.jpg','images/lshape/lshape-1.jpg','images/lshape/lshape-6.jpg','images/lshape/lshape-3.jpg','images/lshape/lshape-5.jpg','images/lshape/lshape-4.jpg','images/verona-corner/verona-corner-1.jpg'], features:['Scatter back or fullback','Available in multiple fabric options','Sturdy hardwood frame','Deep foam & fibre cushions','Custom size available']},
     {name:'Olympia 2+3 Seater Sofa', collection:'2+3 Seater Collection', cat:'seater', price:'650', desc:'Rolled arms with decorative studs and a deep-buttoned front, finished with plush scatter cushions. The Olympia two-seater and three-seater set, sold as a matching pair.', images:['images/verona-set/verona-set-2.jpg','images/verona-set/verona-set-1.jpg','images/verona-set/verona-set-3.jpg','images/elaska/elaska-2.jpg'], features:['Includes a 2-seater + 3-seater','Rolled arms with stud detail','Available in multiple fabric options','Custom size available']},
-    {name:'Lilly Fixed Seat Sofa', collection:'2+3 Seater Collection', cat:'seater', price:'900', badge:'New', desc:'Fluted, channel-stitched velvet with a gold metal base and gold arm details, and fixed seat cushions that keep their shape. Available as a 3+2 set or a 2C2 corner sofa.', images:['images/lilly-fixed/lilly-fixed-1.jpg','images/lilly-fixed/lilly-fixed-2.jpg','images/lilly-fixed/lilly-fixed-3.jpg'], features:['3+2 set or 2C2 corner sofa','Fluted, channel-stitched back and arms','Gold metal base and arm details','Fixed seat cushions that hold their shape']},
     {name:'L-Shape Sofa', collection:'L-Shape Collection', cat:'lshape', price:'649', desc:'A space-smart L-shape sofa that fits neatly into modern rooms without sacrificing comfort or seating.', images:['images/lshape/lshape-cream-fluted.jpg','images/lshape/lshape-black-storage-chaise.jpg'], features:['Two styles: fluted or plain arms','Chaise on the left or right','Available in multiple fabric options','Custom size available']},
     {name:'Chesterfield Sofa', collection:'Chesterfield Collection', cat:'chesterfield', price:'1,350', desc:'An icon of British design — deep button tufting and rolled arms, sold as a full 3+2+1 set.', images:['images/chesterfield/chesterfield-1.jpg'], features:['Authentic button-tufted upholstery','Rolled arms with gold-trim base','Solid hardwood frame','Available in velvet'], tiers:[['Full Set 3+2+1','1,350'],['Coffee Table (optional)','200']], sets:[], note:'Sold as a full 3+2+1 set · free UK delivery'},
     {name:'Borius Sofa', collection:'Borius Collection', cat:'borius', price:'649', desc:'Bold proportions and sumptuous cushioning. The Borius makes a powerful statement without sacrificing everyday comfort.', images:['images/borius/borius-2.jpg','images/borius/borius-3.jpg','images/borius/borius-1.jpg'], features:['Bold generous proportions','Sumptuous cushion depth','Premium upholstery options','Free UK delivery']},
@@ -1549,7 +1567,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     nav.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false');
   }));
 
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  var yrEl=document.getElementById('yr'); if(yrEl) yrEl.textContent = new Date().getFullYear();
 
   // Extras ticked in the sofa pop-up carry over into the order form.
   window.__barkiSelectedAddons = function(){ return [...selAddons]; };
