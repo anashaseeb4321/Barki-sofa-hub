@@ -1549,6 +1549,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
+  // Extras ticked in the sofa pop-up carry over into the order form.
+  window.__barkiSelectedAddons = function(){ return [...selAddons]; };
   // Expose product name lookup for the qualify form (from the detail modal).
   window.__barkiCurrentDetailName = function(){
     var el = document.getElementById('dName');
