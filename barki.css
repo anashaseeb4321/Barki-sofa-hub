@@ -234,3 +234,19 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 /* "New" label on sofa lists */
 .card{position:relative}
 .cbadge{position:absolute;top:10px;left:10px;z-index:1;background:var(--gold);color:var(--teal-deep, #0f3a36);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35em .8em;border-radius:999px;box-shadow:0 4px 12px -4px rgba(0,0,0,.35)}
+/* "As seen in our ad" spot on All Sofas */
+.adpick{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius);padding:22px;margin:8px 0 34px;box-shadow:var(--shadow)}
+.adpick__img{display:block;border-radius:var(--radius-sm);overflow:hidden;background:#fff}
+.adpick__img img{width:100%;height:auto;display:block}
+.adpick__body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.adpick__tag{align-self:flex-start;background:var(--gold);color:var(--teal-deep);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4em .9em;border-radius:999px}
+.adpick h2{font-size:clamp(1.5rem,3.2vw,2rem);margin:0}
+.adpick p{margin:0;color:var(--muted)}
+.adpick__price{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--ink)}
+.adpick__price small{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--muted);margin-left:6px}
+.adpick__note{font-size:.88rem}
+.adpick__ticks{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;padding:0;font-size:.88rem;font-weight:700;color:var(--teal)}
+.adpick__ticks li::before{content:"✓ ";color:var(--gold)}
+.adpick__btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.allhead{font-size:1.3rem;margin:0}
+@media(max-width:760px){.adpick{grid-template-columns:1fr;gap:16px;padding:14px}.adpick__btns{flex-direction:column}.adpick__btns .btn{justify-content:center;width:100%}}
