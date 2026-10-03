@@ -27,7 +27,7 @@ header{background:var(--white);border-bottom:1px solid var(--cream-2);position:s
 .brand small{font-size:.7rem;color:var(--muted);letter-spacing:.04em}
 .navlinks{display:flex;gap:22px;font-size:.88rem;font-weight:600}
 .navlinks a:hover{color:var(--gold)}
-@media(max-width:900px){.navlinks{display:none}}
+@media(max-width:1100px){.navlinks{display:none}}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem;padding:11px 20px;border-radius:999px;border:1px solid transparent;transition:.18s}
 .btn--wa{background:#25D366;color:#fff}
 .btn--wa:hover{background:#1da851}
@@ -165,7 +165,7 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 .wrap.phead{padding-left:22px;padding-right:22px}
 
 /* phone menu: collections as a swipeable row under the logo */
-@media(max-width:900px){
+@media(max-width:1100px){
   .nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
   .navlinks{display:flex;order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px;gap:8px;overflow-x:auto;
     scrollbar-width:none;-webkit-overflow-scrolling:touch;font-size:.8rem}
@@ -256,5 +256,5 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 /* ===== Oct 2026: one menu for every page, no wrapping ===== */
 .navlinks a{white-space:nowrap}
 .brand small{white-space:nowrap}
-@media(min-width:901px) and (max-width:1180px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
+@media(min-width:1101px) and (max-width:1320px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
 .foot-social{margin-top:14px}
