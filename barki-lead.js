@@ -189,6 +189,10 @@
       state.sofa = 'other';
       overlay.querySelector('.qz-q[data-q="sofa"] .qz-opt[data-val="other"]').classList.add('selected');
       sofaReveal.classList.add('show');
+             // No sofa chosen yet: start on "Not sure" so the form can be sent in a couple of taps.
+      for (var si = 0; si < sofaSelect.options.length; si++) {
+        if (/^Not sure/i.test(sofaSelect.options[si].text)) { sofaSelect.selectedIndex = si; break; }
+      }
     }
     setFabOpen(false);
     overlay.querySelectorAll('.qz-q').forEach(function (q) { q.classList.remove('qz-miss'); });
