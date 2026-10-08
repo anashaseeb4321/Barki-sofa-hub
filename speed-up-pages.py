@@ -11,6 +11,15 @@ What it does to every page (safe to run again and again; finished pages are left
      instead of competing with the photos. Consent mode is unchanged.
   4. Product photo galleries keep working with the new photos.
   5. Homepage fabric cards download one small colour sample instead of a whole strip.
+  6. The design rules from barki.css are copied into each page, so the browser
+     can draw the page straight away instead of fetching a separate file first.
+     barki.css stays the master copy: AFTER EDITING barki.css, RUN THIS SCRIPT
+     AGAIN so every page gets the change.
+  7. Fonts no longer hold the whole page blank while they download; text shows
+     at once and switches to the website fonts as soon as they arrive.
+  8. Photos keep their space reserved while loading, so nothing jumps.
+  9. While your fonts download, the backup fonts are sized to take up the same
+     space as Manrope and Fraunces, so text doesn't jump when the real fonts arrive.
 
 Run it from the website folder, after make-webp.py:
     python3 make-webp.py
@@ -167,6 +176,72 @@ def fabric_chips(html):
     return pat.sub(cut, html)
 
 
+
+# Backup fonts sized to match Manrope and Fraunces (worked out from the font files)
+FALLBACK_FACES = """@font-face{font-family:"Manrope Fallback";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Liberation Sans"),local("LiberationSans");font-weight:100 550;size-adjust:102.04%;ascent-override:104.47%;descent-override:29.40%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold"),local("Helvetica-Bold"),local("Liberation Sans Bold"),local("LiberationSans-Bold");font-weight:551 900;size-adjust:100.18%;ascent-override:106.41%;descent-override:29.95%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto"),local("Roboto-Regular"),local("Roboto Regular");font-weight:100 550;size-adjust:102.92%;ascent-override:103.57%;descent-override:29.15%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:551 900;size-adjust:106.47%;ascent-override:100.12%;descent-override:28.18%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("LiberationSerif");font-weight:100 550;size-adjust:115.36%;ascent-override:84.78%;descent-override:22.10%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman Bold"),local("TimesNewRomanPS-BoldMT"),local("Liberation Serif Bold"),local("LiberationSerif-Bold");font-weight:551 900;size-adjust:109.14%;ascent-override:89.61%;descent-override:23.36%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif"),local("NotoSerif-Regular"),local("Noto Serif Regular");font-weight:100 550;size-adjust:99.99%;ascent-override:97.81%;descent-override:25.50%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif Bold"),local("NotoSerif-Bold");font-weight:551 900;size-adjust:93.96%;ascent-override:104.08%;descent-override:27.14%;line-gap-override:0.00%}"""
+SANS_OLD = '--sans:"Manrope",system-ui'
+SANS_NEW = '--sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui'
+SERIF_OLD = '--serif:"Fraunces",Georgia'
+SERIF_NEW = '--serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia'
+
+
+def fallback_fonts(text):
+    """Add the size-matched backup fonts after the Manrope @font-face rule."""
+    if "Manrope Fallback" not in text:
+        i = text.find("@font-face{font-family:\"Manrope\"")
+        if i < 0:
+            return text
+        j = text.index("}", i) + 1
+        text = text[:j] + "\n" + FALLBACK_FACES + text[j:]
+    return text.replace(SANS_OLD, SANS_NEW).replace(SERIF_OLD, SERIF_NEW)
+
+
+CSS_LINK = '<link rel="stylesheet" href="barki.css">'
+FONT_PRELOAD = re.compile(r'[ \t]*<link rel="preload" href="fonts/[^"]+\.woff2" as="font"[^>]*>\n?')
+
+
+def source_sizes(html):
+    """Give each <source> the same width/height as its photo, so space is kept while it loads."""
+    def fix(m):
+        pic = m.group(0)
+        img = re.search(r"<img\b[^>]*>", pic).group(0)
+        w = re.search(r'\swidth="(\d+)"', img); h = re.search(r'\sheight="(\d+)"', img)
+        src = re.search(r"<source\b[^>]*>", pic).group(0)
+        if not (w and h) or re.search(r'\swidth="', src):
+            return pic
+        return pic.replace("<source ", f'<source width="{w.group(1)}" height="{h.group(1)}" ', 1)
+    return re.sub(r"<picture><source\b.*?</picture>", fix, html, flags=re.S)
+
+
+def inline_css(html, css):
+    block = ('<style id="barki-css">/* copy of barki.css - after editing barki.css run speed-up-pages.py */\n'
+             + css.strip() + "\n</style>")
+    if CSS_LINK in html:
+        return html.replace(CSS_LINK, block, 1)
+    m = re.search(r'<style id="barki-css">.*?</style>', html, flags=re.S)
+    if m and m.group(0) != block:
+        return html[:m.start()] + block + html[m.end():]
+    return html
+
+
+# barki.css: the rule that keeps photos inside <picture> laid out normally
+css = open("barki.css", encoding="utf-8").read()
+css2 = css.replace("/* light WebP photos sit inside <picture>; let the photo keep its normal layout */",
+                   "/* light WebP photos sit inside a picture element; let the photo keep its normal layout */")
+if "picture{display:contents}" not in css2:
+    css2 += "\n/* light WebP photos sit inside a picture element; let the photo keep its normal layout */\npicture{display:contents}\n"
+css2 = fallback_fonts(css2)
+if css2 != css:
+    open("barki.css", "w", encoding="utf-8").write(css2); css = css2
+    print("barki.css: updated")
+
 changed_any = 0
 for path in sorted(glob.glob("*.html")):
     if path.startswith("google"):
@@ -178,6 +253,9 @@ for path in sorted(glob.glob("*.html")):
         html = html.replace(GA_OLD, GA_NEW, 1); notes.append("analytics loads after the page")
     if path == "index.html":
         html = homepage(html)
+        html2 = fallback_fonts(html)
+        if html2 != html:
+            notes.append("size-matched backup fonts"); html = html2
     html, n = wrap_photos(html)
     if n:
         notes.append(f"{n} photos made lighter")
@@ -186,14 +264,17 @@ for path in sorted(glob.glob("*.html")):
         html2 = html2.replace(GALLERY_OLD, GALLERY_NEW, 1)
     if html2 != html:
         notes.append("gallery updated"); html = html2
+    html2 = source_sizes(html)
+    if html2 != html:
+        notes.append("photo space kept"); html = html2
+    html2 = FONT_PRELOAD.sub("", html)
+    if html2 != html:
+        notes.append("fonts no longer hold the page"); html = html2
+    html2 = inline_css(html, css)
+    if html2 != html:
+        notes.append("design rules built in"); html = html2
     if html != orig:
         open(path, "w", encoding="utf-8").write(html)
         changed_any += 1
         print(f"{path}: " + ", ".join(notes or ["updated"]))
-
-css = open("barki.css", encoding="utf-8").read()
-if "picture{display:contents}" not in css:
-    open("barki.css", "a", encoding="utf-8").write(
-        "\n/* light WebP photos sit inside <picture>; let the photo keep its normal layout */\npicture{display:contents}\n")
-    print("barki.css: added picture rule")
 print(f"Done. {changed_any} pages changed.")

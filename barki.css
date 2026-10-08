@@ -1,13 +1,21 @@
 @font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
 @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
+@font-face{font-family:"Manrope Fallback";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Liberation Sans"),local("LiberationSans");font-weight:100 550;size-adjust:102.04%;ascent-override:104.47%;descent-override:29.40%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold"),local("Helvetica-Bold"),local("Liberation Sans Bold"),local("LiberationSans-Bold");font-weight:551 900;size-adjust:100.18%;ascent-override:106.41%;descent-override:29.95%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto"),local("Roboto-Regular"),local("Roboto Regular");font-weight:100 550;size-adjust:102.92%;ascent-override:103.57%;descent-override:29.15%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:551 900;size-adjust:106.47%;ascent-override:100.12%;descent-override:28.18%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("LiberationSerif");font-weight:100 550;size-adjust:115.36%;ascent-override:84.78%;descent-override:22.10%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman Bold"),local("TimesNewRomanPS-BoldMT"),local("Liberation Serif Bold"),local("LiberationSerif-Bold");font-weight:551 900;size-adjust:109.14%;ascent-override:89.61%;descent-override:23.36%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif"),local("NotoSerif-Regular"),local("Noto Serif Regular");font-weight:100 550;size-adjust:99.99%;ascent-override:97.81%;descent-override:25.50%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif Bold"),local("NotoSerif-Bold");font-weight:551 900;size-adjust:93.96%;ascent-override:104.08%;descent-override:27.14%;line-gap-override:0.00%}
 
 :root{
   --teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
   --cream:#F8F5EF; --cream-2:#F1EBDF; --ink:#1C302E; --muted:#5B6D68;
   --white:#fff; --card:#FCFAF5; --radius:18px; --radius-sm:12px;
   --shadow:0 18px 40px -24px rgba(18,58,52,.45); --wrap:1180px;
-  --sans:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -259,5 +267,5 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 @media(min-width:1101px) and (max-width:1320px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
 .foot-social{margin-top:14px}
 
-/* light WebP photos sit inside <picture>; let the photo keep its normal layout */
+/* light WebP photos sit inside a picture element; let the photo keep its normal layout */
 picture{display:contents}

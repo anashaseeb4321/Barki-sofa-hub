@@ -30,12 +30,18 @@
 
 <link rel="icon" type="image/png" href="images/barki-icon.png">
      <meta name="p:domain_verify" content="3065513e044518e8bcb23f6705ecb3e9"/>
-<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" imagesizes="(max-width:940px) calc(100vw - 44px), 100vw">
 <style>
   @font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
   @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
+@font-face{font-family:"Manrope Fallback";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Liberation Sans"),local("LiberationSans");font-weight:100 550;size-adjust:102.04%;ascent-override:104.47%;descent-override:29.40%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold"),local("Helvetica-Bold"),local("Liberation Sans Bold"),local("LiberationSans-Bold");font-weight:551 900;size-adjust:100.18%;ascent-override:106.41%;descent-override:29.95%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto"),local("Roboto-Regular"),local("Roboto Regular");font-weight:100 550;size-adjust:102.92%;ascent-override:103.57%;descent-override:29.15%;line-gap-override:0.00%}
+@font-face{font-family:"Manrope Fallback R";src:local("Roboto Bold"),local("Roboto-Bold");font-weight:551 900;size-adjust:106.47%;ascent-override:100.12%;descent-override:28.18%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("LiberationSerif");font-weight:100 550;size-adjust:115.36%;ascent-override:84.78%;descent-override:22.10%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman Bold"),local("TimesNewRomanPS-BoldMT"),local("Liberation Serif Bold"),local("LiberationSerif-Bold");font-weight:551 900;size-adjust:109.14%;ascent-override:89.61%;descent-override:23.36%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif"),local("NotoSerif-Regular"),local("Noto Serif Regular");font-weight:100 550;size-adjust:99.99%;ascent-override:97.81%;descent-override:25.50%;line-gap-override:0.00%}
+@font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif Bold"),local("NotoSerif-Bold");font-weight:551 900;size-adjust:93.96%;ascent-override:104.08%;descent-override:27.14%;line-gap-override:0.00%}
   :root{
     --teal:#144E4A;
     --teal-deep:#0F3A36;
@@ -51,8 +57,8 @@
     --radius-sm:12px;
     --shadow:0 18px 40px -24px rgba(18,58,52,.45);
     --wrap:1180px;
-    --sans:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -1038,7 +1044,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <picture><source type="image/webp" srcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(max-width:940px) calc(100vw - 44px), 100vw"><img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)"></picture>
+  <picture><source width="1200" height="896" type="image/webp" srcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(max-width:940px) calc(100vw - 44px), 100vw"><img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)"></picture>
   <div class="hero-overlay"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -1110,7 +1116,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     </div>
     <div class="xgrid">
       <article class="xcard">
-        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/coffee-table-480.webp 480w, images/addons/coffee-table-800.webp 800w, images/addons/coffee-table-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/coffee-table.jpg" alt="Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
+        <div class="xcard__img"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/coffee-table-480.webp 480w, images/addons/coffee-table-800.webp 800w, images/addons/coffee-table-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/coffee-table.jpg" alt="Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Coffee Table</h3>
           <p>Upholstered with a glass top, made in the same fabric as your sofa.</p>
@@ -1119,7 +1125,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         </div>
       </article>
       <article class="xcard">
-        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/fix-seat-stool-480.webp 480w, images/addons/fix-seat-stool-800.webp 800w, images/addons/fix-seat-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
+        <div class="xcard__img"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/fix-seat-stool-480.webp 480w, images/addons/fix-seat-stool-800.webp 800w, images/addons/fix-seat-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Fix Seat Stool</h3>
           <p>A firm, boxy stool covered to match your sofa.</p>
@@ -1128,7 +1134,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         </div>
       </article>
       <article class="xcard">
-        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/lilly-stool-480.webp 480w, images/addons/lilly-stool-800.webp 800w, images/addons/lilly-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/lilly-stool.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
+        <div class="xcard__img"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/lilly-stool-480.webp 480w, images/addons/lilly-stool-800.webp 800w, images/addons/lilly-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/lilly-stool.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Footstool</h3>
           <p>A soft cushioned top, covered to match your sofa.</p>
