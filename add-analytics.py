@@ -15,7 +15,7 @@ GA_MARKER = "googletagmanager.com/gtag/js"
 TRACK_TAG = '<script src="barki-track.js" defer></script>'
 LEAD_TAG = '<script src="barki-lead.js" defer></script>'
 GA_BLOCK = f"""<!-- Google Analytics with UK consent mode -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>/* Google Analytics loads just after the page has shown (faster on phones) */window.addEventListener('load',function(){{setTimeout(function(){{var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id={GA_ID}';document.head.appendChild(s);}},1500);}});</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
 gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'}});

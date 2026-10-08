@@ -32,7 +32,7 @@
      <meta name="p:domain_verify" content="3065513e044518e8bcb23f6705ecb3e9"/>
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="images/hero.jpg" as="image" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" imagesizes="(max-width:940px) calc(100vw - 44px), 100vw">
 <style>
   @font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
   @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
@@ -403,6 +403,7 @@
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 
   /* ── PRE-WHATSAPP QUALIFY FORM ── */
+  picture{display:contents}
 </style>
 
 <!-- Meta Pixel: now loaded by barki-lead.js, only after cookie consent -->
@@ -892,7 +893,7 @@
 </script>
 
 <!-- Google Analytics with UK consent mode -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9FS7L9SGWF"></script>
+<script>/* Google Analytics loads just after the page has shown (faster on phones) */window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-9FS7L9SGWF';document.head.appendChild(s);},1500);});</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});
@@ -1037,7 +1038,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)">
+  <picture><source type="image/webp" srcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(max-width:940px) calc(100vw - 44px), 100vw"><img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)"></picture>
   <div class="hero-overlay"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -1109,7 +1110,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     </div>
     <div class="xgrid">
       <article class="xcard">
-        <div class="xcard__img"><img src="images/addons/coffee-table.jpg" alt="Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/coffee-table-480.webp 480w, images/addons/coffee-table-800.webp 800w, images/addons/coffee-table-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/coffee-table.jpg" alt="Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Coffee Table</h3>
           <p>Upholstered with a glass top, made in the same fabric as your sofa.</p>
@@ -1118,7 +1119,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         </div>
       </article>
       <article class="xcard">
-        <div class="xcard__img"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/fix-seat-stool-480.webp 480w, images/addons/fix-seat-stool-800.webp 800w, images/addons/fix-seat-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Fix Seat Stool</h3>
           <p>A firm, boxy stool covered to match your sofa.</p>
@@ -1127,7 +1128,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
         </div>
       </article>
       <article class="xcard">
-        <div class="xcard__img"><img src="images/addons/lilly-stool.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></div>
+        <div class="xcard__img"><picture><source type="image/webp" srcset="images/addons/lilly-stool-480.webp 480w, images/addons/lilly-stool-800.webp 800w, images/addons/lilly-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/lilly-stool.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></div>
         <div class="xcard__body">
           <h3>Footstool</h3>
           <p>A soft cushioned top, covered to match your sofa.</p>
@@ -1152,14 +1153,14 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <a class="btn" href="fabrics-and-colours.html" style="margin:8px 0 0 6px;border:1.5px solid var(--teal);color:var(--teal);background:transparent">See all 93 colours</a>
     </div>
     <div class="swatches">
-      <a class="sw" href="fabrics-and-colours.html#plush"><div class="sw__chip" style="background-image:url(images/fabrics/plush.jpg);background-size:1700% auto;background-position:43.75% 50%"></div><div class="sw__label"><b>Plush</b><span>Soft, rich velvet · 17 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#chenille"><div class="sw__chip" style="background-image:url(images/fabrics/chenille.jpg);background-size:1000% auto;background-position:33.33% 50%"></div><div class="sw__label"><b>Chenille</b><span>Warm &amp; forgiving · 10 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#crush-velvet"><div class="sw__chip" style="background-image:url(images/fabrics/crush-velvet.jpg);background-size:1300% auto;background-position:16.67% 50%"></div><div class="sw__label"><b>Crush Velvet</b><span>Rippled sheen · 13 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#boucle"><div class="sw__chip" style="background-image:url(images/fabrics/boucle.jpg);background-size:900% auto;background-position:25% 50%"></div><div class="sw__label"><b>Bouclé</b><span>Soft, curly texture · 9 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#naple"><div class="sw__chip" style="background-image:url(images/fabrics/naple.jpg);background-size:1000% auto;background-position:11.11% 50%"></div><div class="sw__label"><b>Naple</b><span>Hard-wearing weave · 10 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#kensington"><div class="sw__chip" style="background-image:url(images/fabrics/kensington.jpg);background-size:1500% auto;background-position:78.57% 50%"></div><div class="sw__label"><b>Kensington</b><span>Dense, textured weave · 15 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#jumbo-cord"><div class="sw__chip" style="background-image:url(images/fabrics/jumbo-cord.jpg);background-size:800% auto;background-position:57.14% 50%"></div><div class="sw__label"><b>Jumbo Cord</b><span>Chunky ribs · 8 colours</span></div></a>
-      <a class="sw" href="fabrics-and-colours.html#velour"><div class="sw__chip" style="background-image:url(images/fabrics/velour.jpg);background-size:1100% auto;background-position:50% 50%"></div><div class="sw__label"><b>Velour</b><span>Fine ribbed velour · 11 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#plush"><div class="sw__chip" style="background-image:url(images/fabrics/chips/plush-8.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Plush</b><span>Soft, rich velvet · 17 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#chenille"><div class="sw__chip" style="background-image:url(images/fabrics/chips/chenille-4.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Chenille</b><span>Warm &amp; forgiving · 10 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#crush-velvet"><div class="sw__chip" style="background-image:url(images/fabrics/chips/crush-velvet-3.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Crush Velvet</b><span>Rippled sheen · 13 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#boucle"><div class="sw__chip" style="background-image:url(images/fabrics/chips/boucle-3.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Bouclé</b><span>Soft, curly texture · 9 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#naple"><div class="sw__chip" style="background-image:url(images/fabrics/chips/naple-2.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Naple</b><span>Hard-wearing weave · 10 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#kensington"><div class="sw__chip" style="background-image:url(images/fabrics/chips/kensington-12.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Kensington</b><span>Dense, textured weave · 15 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#jumbo-cord"><div class="sw__chip" style="background-image:url(images/fabrics/chips/jumbo-cord-5.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Jumbo Cord</b><span>Chunky ribs · 8 colours</span></div></a>
+      <a class="sw" href="fabrics-and-colours.html#velour"><div class="sw__chip" style="background-image:url(images/fabrics/chips/velour-6.jpg);background-size:cover;background-position:center"></div><div class="sw__label"><b>Velour</b><span>Fine ribbed velour · 11 colours</span></div></a>
     </div>
   </div>
 </section>
@@ -1386,6 +1387,9 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <p class="pcard__note">${p.note}</p>
     </div>`;
   }
+  // Light WebP copies of each photo (made by make-webp.py)
+  const wsrc = s => (/^images\/.+\.jpg$/.test(s) && !s.startsWith('images/fabrics/'))
+    ? [480,800,1200].map(w => s.replace(/\.jpg$/, '-'+w+'.webp')+' '+w+'w').join(', ') : '';
   function render(cat="all"){
     grid.innerHTML = products
       .map((p,idx)=>({p,idx}))
@@ -1397,8 +1401,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
             <h3 class="pcard__name">${p.name}</h3>
           </div>
           <button class="pcard__media" data-open="${idx}" aria-label="View ${p.name} details">
-            <img class="pcard__img" src="${p.images[0]}" alt="${p.name} - made-to-order sofa, ${p.collection}" loading="lazy"
-                 onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;">
+            ${wsrc(p.images[0])?`<picture><source type="image/webp" srcset="${wsrc(p.images[0])}" sizes="(max-width:940px) 46vw, (max-width:1280px) 31vw, 290px">`:''}<img class="pcard__img" src="${p.images[0]}" alt="${p.name} - made-to-order sofa, ${p.collection}" loading="lazy"
+                 onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;">${wsrc(p.images[0])?'</picture>':''}
             <span class="pcard__zoom">View details &rarr;</span>
             ${p.badge?`<span class="pbadge">${p.badge}</span>`:''}
           </button>

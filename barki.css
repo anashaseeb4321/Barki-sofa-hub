@@ -258,3 +258,6 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 .brand small{white-space:nowrap}
 @media(min-width:1101px) and (max-width:1320px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
 .foot-social{margin-top:14px}
+
+/* light WebP photos sit inside <picture>; let the photo keep its normal layout */
+picture{display:contents}
