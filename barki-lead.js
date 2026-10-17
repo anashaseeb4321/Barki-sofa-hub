@@ -296,7 +296,7 @@
       var tot = sp.p; chosenX.forEach(function (x) { tot += extraPrice(x, sofa); });
       totalLine = '\n*Total:* ' + gbp(tot) + ' (pay on delivery)';
     }
-    var msg = 'Hi Barki Sofa Hub 👋 I\'d like to order — here are my details:\n\n*Sofa:* ' + sofa +
+    var msg = 'Hi Barki Sofa Hub, I\'d like to order — here are my details:\n\n*Sofa:* ' + sofa +
       '\n' + sizeLine + '\n' + colourLine + extrasLine + totalLine +
       '\n\n_Sent via the website' + (cameFromAd() ? ' (Meta ad)' : '') + '_';
     var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
@@ -327,7 +327,7 @@
   document.getElementById('qzSkip').addEventListener('click', function (e) {
     e.preventDefault();
     var sofa = state.product || '';
-    var msg = 'Hi Barki Sofa Hub 👋 ' + (sofa ? ('I\'m interested in the ' + sofa + '. Can you help?') : 'I have a question about your sofas.') +
+    var msg = 'Hi Barki Sofa Hub, ' + (sofa ? ('I\'m interested in the ' + sofa + '. Can you help?') : 'I have a question about your sofas.') +
       '\n\n_Sent via the website' + (cameFromAd() ? ' (Meta ad)' : '') + '_';
     metaEvent('Contact', { content_name: (sofa || 'Website') + ' (skipped form)' });
     gaEvent('whatsapp_click', { method: 'skip', sofa_name: sofa });
