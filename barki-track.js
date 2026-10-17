@@ -13,13 +13,8 @@
     var href = a.getAttribute('href') || '';
     var label = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
     if (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)) {
-      var sofa = '';
-      try {
-        var q = new URL(href).searchParams.get('text') || '';
-        var m = q.match(/interested in (?:the )?(.+?)\.?$/i);
-        sofa = m ? m[1] : '';
-      } catch (err) {}
-      send('whatsapp_click', { link_text: label, sofa_name: sofa, page_title: document.title }); /* the lead itself is sent by barki-lead.js when the order form is submitted */
+      /* WhatsApp taps are tracked in barki-lead.js, only when WhatsApp actually opens (form, skip or direct). */
+      return;
     } else if (/^mailto:/i.test(href)) {
       send('generate_lead', { method: 'email', link_text: label });
     } else if (/^tel:/i.test(href)) {
