@@ -264,7 +264,9 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 /* ===== Oct 2026: one menu for every page, no wrapping ===== */
 .navlinks a{white-space:nowrap}
 .brand small{white-space:nowrap}
-@media(min-width:1101px) and (max-width:1320px){.navlinks{gap:14px;font-size:.83rem}.brand small{display:none}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
+@media(min-width:1101px) and (max-width:1320px){.navlinks{gap:14px;font-size:.83rem}.nav{gap:12px;padding:14px 16px}.nav .btn--wa{padding:10px 16px}}
+/* hide the tagline in the same range the homepage does, so the header matches */
+@media(min-width:1101px) and (max-width:1480px){.brand small{display:none}}
 /* phones: keep the logo, name and WhatsApp button on one row */
 @media(max-width:640px){.brand img{width:38px;height:38px}.brand b{font-size:1.05rem}.brand small{font-size:.5rem;letter-spacing:.22em}.nav{gap:10px;padding:12px 16px}.nav .btn--wa{padding:9px 15px;font-size:.84rem}}
 .foot-social{margin-top:14px}
