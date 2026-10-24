@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /*?*
 Disallow: /cgi-bin/
 
 Sitemap: https://barkisofahub.co.uk/sitemap.xml
