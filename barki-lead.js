@@ -81,9 +81,10 @@
   /* Sofa prices for the order form total (same as the website). Footstool and coffee table prices can differ per sofa. */
   var SOFA_PRICES = {"U-Shape Sofa":{"p":699},"Alaska Corner Sofa":{"p":680,"stool":150},"Ashton Corner Sofa":{"p":750,"stool":200},"Alaska 2+3 Seater Sofa":{"p":900},"Lilly U-Shape Sofa":{"p":749},"Lilly L-Shape Sofa":{"p":749},"Ashton 2+3 Seater Sofa":{"p":750},"Ashton L-Shape Sofa":{"p":749},"Harrison Corner Sofa":{"p":649},"Shannon Corner Sofa":{"p":649},"Harrison 2+3 Seater Sofa":{"p":699},"Olympia Corner Sofa":{"p":649},"Verona Corner Sofa":{"p":599},"Olympia 2+3 Seater Sofa":{"p":650},"Lilly Fixed Seat Sofa":{"p":900},"L-Shape Sofa":{"p":649},"Chesterfield Sofa":{"p":1350,"coffee":200},"Borius Sofa":{"p":649},"Ambassador Sofa":{"p":850},"Ashton Chesterfield Sofa":{"p":800},"Lilly Alaska Sofa":{"p":700},"Aurelia Chesterfield Sofa":{"p":899},"Lilly Channel Tufted 3 Seater Sofa":{"p":425},"Lilly Channel Tufted 3+2 Seater Set":{"p":750},"Borius Box-Arm 2 Seater Sofa with Footstool":{"p":370},"Olympia Armchair":{"p":320}};
   var EXTRAS = [
-    { k: 'coffee', n: 'Coffee Table', p: 170, img: 'images/addons/coffee-table.jpg' },
-    { k: 'fix-stool', n: 'Fix Seat Stool', p: 100, img: 'images/addons/fix-seat-stool.jpg' },
-    { k: 'lilly-stool', n: 'Footstool', p: 120, img: 'images/addons/lilly-stool.jpg' }
+    { k: 'coffee', n: 'Square Glass-Top Coffee Table', p: 150, img: 'images/addons/coffee-table-cream-glass-top.jpg' },
+    { k: 'round-table', n: 'Round Ottoman Coffee Table', p: 150, img: 'images/addons/round-coffee-table.jpg' },
+    { k: 'lilly-stool', n: 'Footstool', p: 120, img: 'images/addons/footstool-black-gold-legs.jpg' },
+    { k: 'fix-stool', n: 'Fix Seat Stool', p: 100, img: 'images/addons/fix-seat-stool.jpg' }
   ];
   function gbp(n) { return '£' + Number(n).toLocaleString('en-GB'); }
   function extraPrice(x, sofaName) {
