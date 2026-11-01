@@ -34,12 +34,12 @@
 @font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif Bold"),local("NotoSerif-Bold");font-weight:551 900;size-adjust:93.96%;ascent-override:104.08%;descent-override:27.14%;line-gap-override:0.00%}
 
 :root{
-  --teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
-  --cream:#F8F5EF; --cream-2:#F1EBDF; --ink:#1C302E; --muted:#5B6D68;
-  --white:#fff; --card:#FCFAF5; --radius:18px; --radius-sm:12px;
-  --shadow:0 18px 40px -24px rgba(18,58,52,.45); --wrap:1180px;
-  --sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  --serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
+--teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
+--cream:#F8F5EF; --cream-2:#F1EBDF; --ink:#1C302E; --muted:#5B6D68;
+--white:#fff; --card:#FCFAF5; --radius:18px; --radius-sm:12px;
+--shadow:0 18px 40px -24px rgba(18,58,52,.45); --wrap:1180px;
+--sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+--serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -163,9 +163,9 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* cookie consent bar */
 .cookiebar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;background:var(--card,#fff);
-  border:1px solid var(--cream-2);border-radius:var(--radius-sm);box-shadow:0 10px 40px rgba(0,0,0,.18);
-  padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
+border:1px solid var(--cream-2);border-radius:var(--radius-sm);box-shadow:0 10px 40px rgba(0,0,0,.18);
+padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
+flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
 .cookiebar[hidden]{display:none}
 .cookiebar p{margin:0;color:var(--muted);line-height:1.6;flex:1;min-width:240px}
 .cookiebar a{text-decoration:underline}
@@ -179,16 +179,16 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* cookie consent popup — centred on first visit, Accept and Decline equally clear (UK ICO guidance) */
 .cookiebar{position:fixed;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);z-index:9999;
-  width:calc(100% - 32px);max-width:440px;margin:0;background:#FCFAF5;border:1px solid #F1EBDF;border-radius:18px;
-  box-shadow:0 0 0 100vmax rgba(15,58,54,.45),0 24px 60px -20px rgba(0,0,0,.45);
-  padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch;font-size:.92rem;font-family:inherit}
+width:calc(100% - 32px);max-width:440px;margin:0;background:#FCFAF5;border:1px solid #F1EBDF;border-radius:18px;
+box-shadow:0 0 0 100vmax rgba(15,58,54,.45),0 24px 60px -20px rgba(0,0,0,.45);
+padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch;font-size:.92rem;font-family:inherit}
 .cookiebar[hidden]{display:none}
 .cookiebar:before{content:"Cookies on Barki Sofa Hub";font-weight:800;font-size:1.05rem;color:#1C302E}
 .cookiebar p{margin:0;color:#5B6D68;line-height:1.6;min-width:0;flex:none}
 .cookiebar a{text-decoration:underline;color:#144E4A}
 .cookiebar__btns{display:flex;gap:10px;width:100%}
 .cookiebar .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;
-  font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.5px solid #144E4A;transition:.18s}
+font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.5px solid #144E4A;transition:.18s}
 .cookiebar .btn--ghost,.cookiebar .btn--ghost:hover{background:#FFFFFF;color:#144E4A;border-color:#144E4A}
 .cookiebar .btn--solid,.cookiebar .btn--solid:hover{background:#144E4A;color:#F8F5EF;border-color:#144E4A}
 
@@ -198,51 +198,51 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* phone menu: collections as a swipeable row under the logo */
 @media(max-width:1100px){
-  .nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
-  .navlinks{display:flex;order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px;gap:8px;overflow-x:auto;
-    scrollbar-width:none;-webkit-overflow-scrolling:touch;font-size:.8rem}
-  .navlinks::-webkit-scrollbar{display:none}
-  .navlinks a{flex:none;padding:7px 14px;border:1px solid var(--cream-2);border-radius:999px;background:var(--card);white-space:nowrap}
-  .navlinks a:hover{border-color:var(--gold)}
-  .nav .btn--wa{padding:9px 16px}
+.nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
+.navlinks{display:flex;order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px;gap:8px;overflow-x:auto;
+scrollbar-width:none;-webkit-overflow-scrolling:touch;font-size:.8rem}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{flex:none;padding:7px 14px;border:1px solid var(--cream-2);border-radius:999px;background:var(--card);white-space:nowrap}
+.navlinks a:hover{border-color:var(--gold)}
+.nav .btn--wa{padding:9px 16px}
 }
 
 /* product pages: tidier photo strip on phones */
 @media(max-width:600px){
-  .pgal{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;padding-bottom:2px}
-  .pgal::-webkit-scrollbar{display:none}
-  .pthumb{flex:0 0 23%}
-  .phead{padding-top:18px;padding-bottom:24px}
+.pgal{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;padding-bottom:2px}
+.pgal::-webkit-scrollbar{display:none}
+.pthumb{flex:0 0 23%}
+.phead{padding-top:18px;padding-bottom:24px}
 }
 
 /* trust badges under the Enquire button */
 .trust{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .trust li{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--cream-2);border-radius:12px;
-  padding:11px 12px;font-size:.76rem;color:var(--muted);line-height:1.3}
+padding:11px 12px;font-size:.76rem;color:var(--muted);line-height:1.3}
 .trust svg{width:22px;height:22px;flex:none;color:var(--gold)}
 .trust b{display:block;color:var(--ink);font-size:.84rem;margin-bottom:1px}
 
 /* sticky "Enquire" bar on product pages (phones and tablets) */
 .pbar{display:none}
 @media(max-width:860px){
-  .pbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--cream-2);
-    box-shadow:0 -10px 30px -18px rgba(0,0,0,.35);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-    align-items:center;justify-content:space-between;gap:12px}
-  .pbar__txt{min-width:0}
-  .pbar__txt b{display:block;font-family:var(--serif);font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pbar__txt span{font-size:.74rem;color:var(--muted)}
-  .pbar .btn{flex:none;padding:12px 20px}
-  body.has-pbar{padding-bottom:78px}
+.pbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--cream-2);
+box-shadow:0 -10px 30px -18px rgba(0,0,0,.35);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+align-items:center;justify-content:space-between;gap:12px}
+.pbar__txt{min-width:0}
+.pbar__txt b{display:block;font-family:var(--serif);font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbar__txt span{font-size:.74rem;color:var(--muted)}
+.pbar .btn{flex:none;padding:12px 20px}
+body.has-pbar{padding-bottom:78px}
 }
 
 /* sofa lists: 2 per row on phones */
 @media(max-width:600px){
-  .cards{grid-template-columns:1fr 1fr;gap:12px}
-  .card{border-radius:14px}
-  .card .cb{padding:10px 12px 14px}
-  .card h3{font-size:.92rem}
-  .card .cp{font-size:.86rem}
-  .card .cd{display:none}
+.cards{grid-template-columns:1fr 1fr;gap:12px}
+.card{border-radius:14px}
+.card .cb{padding:10px 12px 14px}
+.card h3{font-size:.92rem}
+.card .cp{font-size:.86rem}
+.card .cd{display:none}
 }
 
 /* softer, more polished cards and buttons */
@@ -258,12 +258,12 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* sofa lists: 1 per row on phones (Oct 2026) */
 @media(max-width:600px){
-  .cards{grid-template-columns:1fr;gap:18px}
-  .card{border-radius:16px}
-  .card .cb{padding:14px 18px 18px}
-  .card h3{font-size:1.18rem}
-  .card .cp{font-size:1rem}
-  .card .cd{display:block;font-size:.88rem}
+.cards{grid-template-columns:1fr;gap:18px}
+.card{border-radius:16px}
+.card .cb{padding:14px 18px 18px}
+.card h3{font-size:1.18rem}
+.card .cp{font-size:1rem}
+.card .cd{display:block;font-size:.88rem}
 }
 /* "New" label on sofa lists */
 .card{position:relative}
@@ -314,205 +314,211 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 <body>
 <div class="topbar">Free UK delivery on every order &nbsp;•&nbsp; <strong>Made to order in 2–3 days</strong> &nbsp;•&nbsp; Cash on delivery available</div>
 <header>
-  <div class="nav">
-    <a href="index.html" class="brand" aria-label="Barki Sofa Hub home">
-      <img src="images/barki-icon.png" alt="Barki Sofa Hub logo">
-      <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
-    </a>
-    <nav class="navlinks">
-      <a href="all-sofas.html">All Sofas</a>
-      <a href="corner-sofas.html">Corner Sofas</a>
-      <a href="u-shape-sofas.html">U-Shape</a>
-      <a href="l-shape-sofas.html">L-Shape</a>
-      <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
-      <a href="chesterfield-sofas.html">Chesterfield</a>
-      <a href="tables-and-stools.html">Tables &amp; Stools</a>
-      <a href="fabrics-and-colours.html">Fabrics</a>
-      <a href="guides.html">Guides</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20see%20your%20sofa%20range." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> WhatsApp</a>
-  </div>
+<div class="nav">
+<a href="index.html" class="brand" aria-label="Barki Sofa Hub home">
+<img src="images/barki-icon.png" alt="Barki Sofa Hub logo">
+<span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
+</a>
+<nav class="navlinks">
+<a href="all-sofas.html">All Sofas</a>
+<a href="corner-sofas.html">Corner Sofas</a>
+<a href="u-shape-sofas.html">U-Shape</a>
+<a href="l-shape-sofas.html">L-Shape</a>
+<a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
+<a href="chesterfield-sofas.html">Chesterfield</a>
+<a href="tables-and-stools.html">Tables &amp; Stools</a>
+<a href="fabrics-and-colours.html">Fabrics</a>
+<a href="guides.html">Guides</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20see%20your%20sofa%20range." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> WhatsApp</a>
+</div>
 </header>
-
 <div class="wrap"><div class="crumb"><a href="index.html">Home</a><span>›</span><span style="opacity:1;margin:0;color:var(--ink)">Guides</span></div></div>
 <div class="wrap phead">
-  <span class="eyebrow">Advice from our team</span>
-  <h1>Sofa Buying Guides</h1>
-  <p class="lede">Practical advice from the Barki Sofa Hub team — measuring, fabrics, and how to tell a well-made sofa from a shortcut.</p>
-      <p style="margin-top:14px">Buying a sofa online is a big decision, especially when you can't sit on it first. These guides answer the questions our customers ask us most on WhatsApp, so you can choose the right size, shape and fabric before you order.</p>
-    <p style="margin-top:14px">Start with the measuring guides if you're not sure what will fit. They show typical UK sofa sizes in centimetres, how to measure a room for a corner sofa, and what to check about access before delivery day.</p>
-    <p style="margin-top:14px">If you're choosing a style, the shape guides compare corner, L-shape and U-shape sofas, explain where each one works best, and cover sofas for small living rooms. The fabric and care guides explain which upholstery lasts, how velvet holds up in a busy home, and how to keep fabric sofas clean.</p>
-    <p style="margin-top:14px">Every Barki Sofa Hub sofa is made to order, so you can choose custom sizes and pick from 93 colours across 8 fabrics. We deliver free across the UK, usually within 2–3 days once your fabric and colour are confirmed, and you can pay cash on delivery.</p>
-    <p style="margin-top:14px">Still not sure? Send us your room measurements on WhatsApp and we'll help you pick the right sofa.</p>
+<span class="eyebrow">Advice from our team</span>
+<h1>Sofa Buying Guides</h1>
+<p class="lede">Practical advice from the Barki Sofa Hub team — measuring, fabrics, and how to tell a well-made sofa from a shortcut.</p>
+<p style="margin-top:14px">Buying a sofa online is a big decision, especially when you can't sit on it first. These guides answer the questions our customers ask us most on WhatsApp, so you can choose the right size, shape and fabric before you order.</p>
+<p style="margin-top:14px">Start with the measuring guides if you're not sure what will fit. They show typical UK sofa sizes in centimetres, how to measure a room for a corner sofa, and what to check about access before delivery day.</p>
+<p style="margin-top:14px">If you're choosing a style, the shape guides compare corner, L-shape and U-shape sofas, explain where each one works best, and cover sofas for small living rooms. The fabric and care guides explain which upholstery lasts, how velvet holds up in a busy home, and how to keep fabric sofas clean.</p>
+<p style="margin-top:14px">Every Barki Sofa Hub sofa is made to order, so you can choose custom sizes and pick from 93 colours across 8 fabrics. We deliver free across the UK, usually within 2–3 days once your fabric and colour are confirmed, and you can pay cash on delivery.</p>
+<p style="margin-top:14px">Still not sure? Send us your room measurements on WhatsApp and we'll help you pick the right sofa.</p>
 </div>
 <div class="wrap"><div class="cards" style="margin-bottom:56px">
-  <a class="card" href="sofa-dimensions-uk.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">New guide</div>
-      <h3 style="margin-top:10px">Sofa Dimensions UK: 2 Seater, 3 Seater and Corner Sofa Sizes in cm</h3>
-      <div class="cd">Typical sizes for armchairs, 2 seaters, 3 seaters and corner sofas, how much space to leave, and how to check it fits through your door&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="best-sofa-for-small-living-room.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">New guide</div>
-      <h3 style="margin-top:10px">Best Sofa for a Small Living Room: A UK Guide to Shape and Size</h3>
-      <div class="cd">Which shapes work in small rooms, the measurements that matter, and why a made-to-order size often fits when a standard sofa won&rsquo;t&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="fast-sofa-delivery-uk.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">New guide</div>
-      <h3 style="margin-top:10px">Fast Sofa Delivery in the UK: How to Get a Sofa Quickly (and Before Christmas)</h3>
-      <div class="cd">Why most sofas take weeks, how to get one quickly without settling, and how to plan a delivery before Christmas&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="how-to-clean-a-velvet-sofa.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">New guide</div>
-      <h3 style="margin-top:10px">How to Clean a Velvet Sofa (and Other Fabric Sofas)</h3>
-      <div class="cd">Everyday care, spills, flattened pile and pet hair, plus chenille, cord, bouclé and woven fabrics&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="how-to-measure-for-a-corner-sofa.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">How to Measure Your Room for a Corner Sofa</h3>
-      <div class="cd">A step-by-step UK guide to measuring your living room for a corner sofa — including doorways, radiators and the access m…</div>
-    </div>
-  </a>
-  <a class="card" href="sofa-fabric-guide.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Sofa Fabric Guide: Which Upholstery Actually Lasts?</h3>
-      <div class="cd">Compare velvet, chenille, jumbo cord, Naple and Kensington sofa fabrics on durability, cleaning, pets and cost. A practi…</div>
-    </div>
-  </a>
-  <a class="card" href="chesterfield-sofa-buying-guide.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Chesterfield Sofa Buying Guide: What Actually Matters</h3>
-      <div class="cd">How to judge a Chesterfield sofa — buttoning, frame, arm height and fabric. A UK buying guide from Barki Sofa Hub in Blackburn …</div>
-    </div>
-  </a>
-  <a class="card" href="corner-sofa-in-middle-of-room.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Can You Put a Corner Sofa in the Middle of a Room?</h3>
-      <div class="cd">When a floating corner sofa works, how much space to leave around it, and how to make it look intentional&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="corner-vs-l-shape-vs-u-shape-sofa.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Corner vs L-Shape vs U-Shape: Which Sofa Shape Fits Your Room?</h3>
-      <div class="cd">What each shape actually means, how much floor space each one needs, and how many people they really seat&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="made-to-measure-sofas-uk.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Made to Measure Sofas UK: How Custom Sizes Work</h3>
-      <div class="cd">What you can change, how to measure, what it costs and how long it takes&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="made-to-order-vs-ready-made-sofas.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Made to Order vs Ready Made Sofas: Which Should You Buy?</h3>
-      <div class="cd">Fit, lead time, price and the cancellation rights that change depending on which one you choose&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="cash-on-delivery-sofas-uk.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Guide</div>
-      <h3 style="margin-top:10px">Cash on Delivery Sofas in the UK: How It Works and What to Check</h3>
-      <div class="cd">What COD protects you from, what it doesn't, and the questions worth asking a seller before you agree&hellip;</div>
-    </div>
-  </a>
-  <a class="card" href="sofa-delivery-lancashire.html">
-    <div class="cb" style="padding:24px">
-      <div class="eyebrow" style="font-size:.66rem">Delivery guide</div>
-      <h3 style="margin-top:10px">Sofa Delivery Across Lancashire and Greater Manchester</h3>
-      <div class="cd">Areas we cover, what happens on the day, and the access problems that catch people out in older terraced housing&hellip;</div>
-    </div>
-  </a></div></div>
+<a class="card" href="how-to-choose-a-sofa-bed.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">New guide</div>
+<h3 style="margin-top:10px">How to Choose a Sofa Bed: An Honest Buying Guide</h3>
+<div class="cd">Mattress types, the opened and closed sizes nobody tells you, corner versus 2+3, and what to check before you order&hellip;</div>
+</div>
+</a>
+<a class="card" href="sofa-dimensions-uk.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">New guide</div>
+<h3 style="margin-top:10px">Sofa Dimensions UK: 2 Seater, 3 Seater and Corner Sofa Sizes in cm</h3>
+<div class="cd">Typical sizes for armchairs, 2 seaters, 3 seaters and corner sofas, how much space to leave, and how to check it fits through your door&hellip;</div>
+</div>
+</a>
+<a class="card" href="best-sofa-for-small-living-room.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">New guide</div>
+<h3 style="margin-top:10px">Best Sofa for a Small Living Room: A UK Guide to Shape and Size</h3>
+<div class="cd">Which shapes work in small rooms, the measurements that matter, and why a made-to-order size often fits when a standard sofa won&rsquo;t&hellip;</div>
+</div>
+</a>
+<a class="card" href="fast-sofa-delivery-uk.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">New guide</div>
+<h3 style="margin-top:10px">Fast Sofa Delivery in the UK: How to Get a Sofa Quickly (and Before Christmas)</h3>
+<div class="cd">Why most sofas take weeks, how to get one quickly without settling, and how to plan a delivery before Christmas&hellip;</div>
+</div>
+</a>
+<a class="card" href="how-to-clean-a-velvet-sofa.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">New guide</div>
+<h3 style="margin-top:10px">How to Clean a Velvet Sofa (and Other Fabric Sofas)</h3>
+<div class="cd">Everyday care, spills, flattened pile and pet hair, plus chenille, cord, bouclé and woven fabrics&hellip;</div>
+</div>
+</a>
+<a class="card" href="how-to-measure-for-a-corner-sofa.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">How to Measure Your Room for a Corner Sofa</h3>
+<div class="cd">A step-by-step UK guide to measuring your living room for a corner sofa — including doorways, radiators and the access m…</div>
+</div>
+</a>
+<a class="card" href="sofa-fabric-guide.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Sofa Fabric Guide: Which Upholstery Actually Lasts?</h3>
+<div class="cd">Compare velvet, chenille, jumbo cord, Naple and Kensington sofa fabrics on durability, cleaning, pets and cost. A practi…</div>
+</div>
+</a>
+<a class="card" href="chesterfield-sofa-buying-guide.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Chesterfield Sofa Buying Guide: What Actually Matters</h3>
+<div class="cd">How to judge a Chesterfield sofa — buttoning, frame, arm height and fabric. A UK buying guide from Barki Sofa Hub in Blackburn …</div>
+</div>
+</a>
+<a class="card" href="corner-sofa-in-middle-of-room.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Can You Put a Corner Sofa in the Middle of a Room?</h3>
+<div class="cd">When a floating corner sofa works, how much space to leave around it, and how to make it look intentional&hellip;</div>
+</div>
+</a>
+<a class="card" href="corner-vs-l-shape-vs-u-shape-sofa.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Corner vs L-Shape vs U-Shape: Which Sofa Shape Fits Your Room?</h3>
+<div class="cd">What each shape actually means, how much floor space each one needs, and how many people they really seat&hellip;</div>
+</div>
+</a>
+<a class="card" href="made-to-measure-sofas-uk.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Made to Measure Sofas UK: How Custom Sizes Work</h3>
+<div class="cd">What you can change, how to measure, what it costs and how long it takes&hellip;</div>
+</div>
+</a>
+<a class="card" href="made-to-order-vs-ready-made-sofas.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Made to Order vs Ready Made Sofas: Which Should You Buy?</h3>
+<div class="cd">Fit, lead time, price and the cancellation rights that change depending on which one you choose&hellip;</div>
+</div>
+</a>
+<a class="card" href="cash-on-delivery-sofas-uk.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Guide</div>
+<h3 style="margin-top:10px">Cash on Delivery Sofas in the UK: How It Works and What to Check</h3>
+<div class="cd">What COD protects you from, what it doesn't, and the questions worth asking a seller before you agree&hellip;</div>
+</div>
+</a>
+<a class="card" href="sofa-delivery-lancashire.html">
+<div class="cb" style="padding:24px">
+<div class="eyebrow" style="font-size:.66rem">Delivery guide</div>
+<h3 style="margin-top:10px">Sofa Delivery Across Lancashire and Greater Manchester</h3>
+<div class="cd">Areas we cover, what happens on the day, and the access problems that catch people out in older terraced housing&hellip;</div>
+</div>
+</a></div></div>
 
 <div class="wrap"><div class="cta">
-  <h2>Let's build your perfect sofa</h2>
-  <p>Send us your room measurements on WhatsApp and we'll come back with fabric options, sizing help and a firm price — usually within minutes.</p>
-  <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20quote%20and%20fabric%20options." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Message us on WhatsApp</a>
+<h2>Let's build your perfect sofa</h2>
+<p>Send us your room measurements on WhatsApp and we'll come back with fabric options, sizing help and a firm price — usually within minutes.</p>
+<a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20quote%20and%20fabric%20options." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> Message us on WhatsApp</a>
 </div></div>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand"><img src="images/barki-icon.png" alt="Barki Sofa Hub"><b>Barki Sofa Hub</b></div>
-        <p style="max-width:320px;font-size:.88rem;opacity:.85">Made-to-order fabric sofas with custom sizes and fabrics, delivered free across the UK. Sofas for every home.</p>
-      </div>
-      <div>
-        <h4>Collections</h4>
-        <ul>
-          <li><a href="corner-sofas.html">Corner Sofas</a></li>
-          <li><a href="u-shape-sofas.html">U-Shape Sofas</a></li>
-          <li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
-          <li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
-          <li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Guides</h4>
-        <ul>
-          <li><a href="how-to-measure-for-a-corner-sofa.html">Measuring for a corner sofa</a></li>
-          <li><a href="sofa-fabric-guide.html">Sofa fabric guide</a></li>
-          <li><a href="fabrics-and-colours.html">Fabrics &amp; colours</a></li>
-          <li><a href="chesterfield-sofa-buying-guide.html">Chesterfield buying guide</a></li>
-          <li><a href="corner-vs-l-shape-vs-u-shape-sofa.html">Corner vs L-shape vs U-shape</a></li>
-          <li><a href="cash-on-delivery-sofas-uk.html">Cash on delivery explained</a></li>
-          <li><a href="fast-sofa-delivery-uk.html">Fast sofa delivery</a></li>
-          <li><a href="guides.html">All guides</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul>
-          <li><a href="https://wa.me/447424333739" target="_blank" rel="noopener">WhatsApp: +44 7424 333739</a></li>
-          <li><a href="tel:+447424333739">Call: +44 7424 333739</a></li>
-          <li><a href="mailto:barkisofahub739@gmail.com">barkisofahub739@gmail.com</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="made-to-order-sofas-blackburn.html">Delivery in Blackburn</a></li>
-          <li class="foot-social"><div style="display:flex;gap:12px;align-items:center">
-              <a href="https://www.facebook.com/profile.php?id=61592460665012" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Facebook" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/barkisofahub739" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Instagram" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="width:16px;height:16px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
-              </a>
-              <a href="https://www.pinterest.com/barkisofahub739" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Pinterest" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.32-.09-.79-.17-2.01.03-2.88.18-.78 1.17-4.97 1.17-4.97s-.3-.6-.3-1.48c0-1.39.81-2.43 1.81-2.43.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24 1 .5 1.81 1.48 1.81 1.78 0 3.14-1.87 3.14-4.58 0-2.39-1.72-4.07-4.17-4.07-2.84 0-4.51 2.13-4.51 4.33 0 .86.33 1.78.74 2.28.08.1.09.19.07.29-.8.32-.25 1-.28 1.14-.4.19-.15.23-.34.14-1.25-.58-2.03-2.4-2.03-3.87 0-3.15 2.29-6.04 6.6-6.04 3.46 0 6.16 2.47 6.16 5.77 0 3.44-2.17 6.21-5.18 6.21-1.01 0-1.96-.53-2.29-1.15l-.62 2.37c-.22.87-.83 1.96-1.24 2.62.93.29 1.92.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-              </a>
-              <a href="https://wa.me/447424333739" target="_blank" rel="noopener" aria-label="Message Barki Sofa Hub on WhatsApp" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.6.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.9.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.7.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-              </a>
-            </div></li>
-          <li style="margin-top:12px;opacity:.7">Based in Blackburn, Lancashire<br>Delivered UK-wide · Dispatch unit not open to visitors</li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Barki Sofa Hub. All rights reserved.</span>
-      <span class="foot-legal"><a href="about.html">About</a><span class="sep" aria-hidden="true"> &middot; </span><a href="contact.html">Contact</a><span class="sep" aria-hidden="true"> &middot; </span><a href="delivery.html">Delivery</a><span class="sep" aria-hidden="true"> &middot; </span><a href="returns.html">Returns &amp; Cancellations</a><span class="sep" aria-hidden="true"> &middot; </span><a href="terms.html">Terms</a><span class="sep" aria-hidden="true"> &middot; </span><a href="privacy.html">Privacy</a></span>
-    </div>
-  </div>
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<div class="foot-brand"><img src="images/barki-icon.png" alt="Barki Sofa Hub"><b>Barki Sofa Hub</b></div>
+<p style="max-width:320px;font-size:.88rem;opacity:.85">Made-to-order fabric sofas with custom sizes and fabrics, delivered free across the UK. Sofas for every home.</p>
+</div>
+<div>
+<h4>Collections</h4>
+<ul>
+<li><a href="corner-sofas.html">Corner Sofas</a></li>
+<li><a href="u-shape-sofas.html">U-Shape Sofas</a></li>
+<li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
+<li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
+<li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
+</ul>
+</div>
+<div>
+<h4>Guides</h4>
+<ul>
+<li><a href="how-to-measure-for-a-corner-sofa.html">Measuring for a corner sofa</a></li>
+<li><a href="sofa-fabric-guide.html">Sofa fabric guide</a></li>
+<li><a href="fabrics-and-colours.html">Fabrics &amp; colours</a></li>
+<li><a href="chesterfield-sofa-buying-guide.html">Chesterfield buying guide</a></li>
+<li><a href="corner-vs-l-shape-vs-u-shape-sofa.html">Corner vs L-shape vs U-shape</a></li>
+<li><a href="cash-on-delivery-sofas-uk.html">Cash on delivery explained</a></li>
+<li><a href="fast-sofa-delivery-uk.html">Fast sofa delivery</a></li>
+<li><a href="guides.html">All guides</a></li>
+</ul>
+</div>
+<div>
+<h4>Get in touch</h4>
+<ul>
+<li><a href="https://wa.me/447424333739" target="_blank" rel="noopener">WhatsApp: +44 7424 333739</a></li>
+<li><a href="tel:+447424333739">Call: +44 7424 333739</a></li>
+<li><a href="mailto:barkisofahub739@gmail.com">barkisofahub739@gmail.com</a></li>
+<li><a href="contact.html">Contact us</a></li>
+<li><a href="made-to-order-sofas-blackburn.html">Delivery in Blackburn</a></li>
+<li class="foot-social"><div style="display:flex;gap:12px;align-items:center">
+<a href="https://www.facebook.com/profile.php?id=61592460665012" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Facebook" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg>
+</a>
+<a href="https://www.instagram.com/barkisofahub739" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Instagram" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="width:16px;height:16px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+</a>
+<a href="https://www.pinterest.com/barkisofahub739" target="_blank" rel="noopener" aria-label="Barki Sofa Hub on Pinterest" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.32-.09-.79-.17-2.01.03-2.88.18-.78 1.17-4.97 1.17-4.97s-.3-.6-.3-1.48c0-1.39.81-2.43 1.81-2.43.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24 1 .5 1.81 1.48 1.81 1.78 0 3.14-1.87 3.14-4.58 0-2.39-1.72-4.07-4.17-4.07-2.84 0-4.51 2.13-4.51 4.33 0 .86.33 1.78.74 2.28.08.1.09.19.07.29-.8.32-.25 1-.28 1.14-.4.19-.15.23-.34.14-1.25-.58-2.03-2.4-2.03-3.87 0-3.15 2.29-6.04 6.6-6.04 3.46 0 6.16 2.47 6.16 5.77 0 3.44-2.17 6.21-5.18 6.21-1.01 0-1.96-.53-2.29-1.15l-.62 2.37c-.22.87-.83 1.96-1.24 2.62.93.29 1.92.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+</a>
+<a href="https://wa.me/447424333739" target="_blank" rel="noopener" aria-label="Message Barki Sofa Hub on WhatsApp" style="display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid rgba(248,245,239,.28);border-radius:50%;transition:.18s" onmouseover="this.style.borderColor='#D9BE8E'" onmouseout="this.style.borderColor='rgba(248,245,239,.28)'">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+</a>
+</div></li>
+<li style="margin-top:12px;opacity:.7">Based in Blackburn, Lancashire<br>Delivered UK-wide · Dispatch unit not open to visitors</li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+<span>© 2026 Barki Sofa Hub. All rights reserved.</span>
+<span class="foot-legal"><a href="about.html">About</a><span class="sep" aria-hidden="true"> &middot; </span><a href="contact.html">Contact</a><span class="sep" aria-hidden="true"> &middot; </span><a href="delivery.html">Delivery</a><span class="sep" aria-hidden="true"> &middot; </span><a href="returns.html">Returns &amp; Cancellations</a><span class="sep" aria-hidden="true"> &middot; </span><a href="terms.html">Terms</a><span class="sep" aria-hidden="true"> &middot; </span><a href="privacy.html">Privacy</a></span>
+</div>
+</div>
 </footer>
 <div class="cookiebar" id="cookiebar" hidden role="dialog" aria-label="Cookie choice">
-  <p>We would like to use cookies from Google Analytics (to see which pages people find useful) and Meta (to measure our Facebook and Instagram adverts). They stay off unless you say yes, and they never affect your order. <a href="privacy.html">Privacy policy</a></p>
-  <div class="cookiebar__btns">
-    <button type="button" class="btn btn--ghost" id="ckNo">Decline</button>
-    <button type="button" class="btn btn--solid" id="ckYes">Accept</button>
-  </div>
+<p>We would like to use cookies from Google Analytics (to see which pages people find useful) and Meta (to measure our Facebook and Instagram adverts). They stay off unless you say yes, and they never affect your order. <a href="privacy.html">Privacy policy</a></p>
+<div class="cookiebar__btns">
+<button type="button" class="btn btn--ghost" id="ckNo">Decline</button>
+<button type="button" class="btn btn--solid" id="ckYes">Accept</button>
+</div>
 </div>
 <script>
 (function(){var b=document.getElementById('cookiebar');if(!b)return;
