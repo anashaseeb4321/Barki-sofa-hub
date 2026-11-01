@@ -114,6 +114,7 @@
   var pickReveal = document.getElementById('qzPickReveal'), fabsEl = document.getElementById('qzFabs'), chipsEl = document.getElementById('qzChips');
   var chipsLabel = document.getElementById('qzChipsLabel'), chipsName = document.getElementById('qzChipsName');
   var sizeReveal = document.getElementById('qzSizeReveal'), sizeInput = document.getElementById('qzSizeInput');
+  var stdLabel = document.querySelector('.qz-q[data-q="size"] .qz-opt[data-val="standard"] span:last-child');
   var submitBtn = document.getElementById('qzSubmit');
   var fabToggle = document.getElementById('qzFabToggle'), fabWrap = document.getElementById('qzFabWrap');
   function setFabOpen(open) { fabWrap.hidden = !open; fabToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }
@@ -153,7 +154,49 @@
   }
 
   var xtrasEl = document.getElementById('qzXtras'), totalEl = document.getElementById('qzTotal');
+
+  /* Standard sizes, confirmed 1 Nov 2026. Every sofa is 85cm deep and 76cm high
+     on short legs (81cm on tall legs), so only the widths change per model.
+     This is the single source of truth for sizes shown in the form. */
+  var SOFA_SIZES = {
+    'U-Shape Sofa': '310 cm middle, 190 cm sides',
+    'Lilly U-Shape Sofa': '310 cm middle, 190 cm sides',
+    'Lilly Corner Sofa': '240 \u00d7 240 cm',
+    'Lilly L-Shape Sofa': '240 \u00d7 240 cm',
+    'Harrison Corner Sofa': '240 \u00d7 240 cm',
+    'Shannon Corner Sofa': '240 \u00d7 240 cm',
+    'Olympia Corner Sofa': '240 \u00d7 240 cm',
+    'Verona Corner Sofa': '240 \u00d7 240 cm',
+    'Ashton L-Shape Sofa': '240 \u00d7 240 cm',
+    'Ashton Corner Sofa': '260 \u00d7 260 cm',
+    'Borius Sofa': '260 \u00d7 260 cm',
+    'Ambassador Sofa': '260 \u00d7 260 cm',
+    'Lilly 2+3 Seater Sofa': '3 seater 185 cm, 2 seater 157 cm',
+    'Lilly Fixed Seat Sofa': '3 seater 185 cm, 2 seater 157 cm',
+    'Lilly Alaska Sofa': '3 seater 185 cm, 2 seater 157 cm',
+    'Lilly 3+2 Seater Set': '3 seater 185 cm, 2 seater 157 cm',
+    'Lilly Chaise': '3 seater 185 cm, 2 seater 157 cm',
+    'Lilly 3 Seater Sofa': '185 cm wide',
+    'Harrison 2+3 Seater Sofa': '3 seater 195 cm, 2 seater 168 cm',
+    'Olympia 2+3 Seater Sofa': '3 seater 195 cm, 2 seater 168 cm',
+    'Ashton 2+3 Seater Sofa': '3 seater 220 cm, 2 seater 187 cm',
+    'Ashton Chesterfield Sofa': '3 seater 220 cm, 2 seater 187 cm',
+    'Aurelia Chesterfield Sofa': '3 seater 220 cm, 2 seater 187 cm',
+    'Chesterfield Sofa': '3 seater 220 cm, 2 seater 187 cm, armchair 110 cm',
+    'Borius 2 Seater Sofa with Footstool': '185 cm wide',
+    'Olympia Armchair': '100 cm wide'
+  };
+  var SIZE_SUFFIX = ', 85 cm deep, 76 cm high';
+  function sizeFor(name) { return SOFA_SIZES[name] || ''; }
+
   function currentSofa() { return state.sofa === 'other' ? sofaSelect.value : (state.sofa === 'same' ? state.product : ''); }
+
+  function refreshSizeLabel() {
+    if (!stdLabel) return;
+    var s = sizeFor(currentSofa());
+    stdLabel.textContent = s ? ('Standard size \u2014 ' + s) : 'Your standard sizes (please share them)';
+  }
+
   function renderExtras() {
     var sofa = currentSofa();
     xtrasEl.innerHTML = EXTRAS.map(function (x) {
@@ -231,7 +274,7 @@
         q.querySelectorAll('.qz-opt').forEach(function (o) { o.classList.remove('selected'); });
         opt.classList.add('selected');
         var val = opt.dataset.val;
-        if (key === 'sofa') { state.sofa = val; sofaReveal.classList.toggle('show', val === 'other'); renderExtras(); }
+        if (key === 'sofa') { state.sofa = val; sofaReveal.classList.toggle('show', val === 'other'); renderExtras(); refreshSizeLabel(); }
         if (key === 'colour') { state.colour = val; colourReveal.classList.toggle('show', val === 'have'); pickReveal.classList.toggle('show', val === 'pick'); }
         if (key === 'size') { state.size = val; sizeReveal.classList.toggle('show', val === 'custom'); }
         validate();
@@ -241,6 +284,7 @@
     });
   });
   sofaSelect.addEventListener('change', renderExtras);
+  sofaSelect.addEventListener('change', refreshSizeLabel);
   [sofaSelect, colourInput, sizeInput].forEach(function (el) {
     el.addEventListener('input', validate);
     el.addEventListener('change', validate);
@@ -288,7 +332,10 @@
       var extra = sizeInput.value.trim();
       sizeLine = '*Measurements:* Custom sizes' + (extra ? (' — ' + extra) : '');
     } else {
-      sizeLine = '*Measurements:* Your standard sizes — please share the measurements';
+      var std = sizeFor(sofa);
+      sizeLine = std
+        ? ('*Measurements:* Standard \u2014 ' + std + SIZE_SUFFIX)
+        : '*Measurements:* Your standard sizes \u2014 please share the measurements';
     }
     var extrasLine = '', chosenX = EXTRAS.filter(function (x) { return state.extras.indexOf(x.k) !== -1; });
     if (chosenX.length) extrasLine = '\n*Extras:* ' + chosenX.map(function (x) { return x.n + ' (' + gbp(extraPrice(x, sofa)) + ')'; }).join(', ');
