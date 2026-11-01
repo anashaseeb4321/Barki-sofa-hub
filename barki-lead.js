@@ -193,7 +193,10 @@
 
   function refreshSizeLabel() {
     if (!stdLabel) return;
-    var s = sizeFor(currentSofa());
+    /* Before they tap "Yes - this sofa", fall back to the product whose page they are on,
+       so the size is visible the moment the form opens. */
+    var name = currentSofa() || (state.sofa === null ? state.product : '');
+    var s = sizeFor(name);
     stdLabel.textContent = s ? ('Standard size \u2014 ' + s) : 'Your standard sizes (please share them)';
   }
 
@@ -254,6 +257,7 @@
     document.body.style.overflow = 'hidden';
     var first = overlay.querySelector('.qz-close');
     if (first) { try { first.focus({ preventScroll: true }); } catch (e) {} }
+    refreshSizeLabel();
     metaEvent('Contact', { content_name: productName || 'Order form' });
     gaEvent('order_form_open', { sofa_name: productName || '' });
   }
