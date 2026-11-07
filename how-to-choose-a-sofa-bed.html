@@ -34,12 +34,12 @@
 @font-face{font-family:"Fraunces Fallback N";src:local("Noto Serif Bold"),local("NotoSerif-Bold");font-weight:551 900;size-adjust:93.96%;ascent-override:104.08%;descent-override:27.14%;line-gap-override:0.00%}
 
 :root{
---teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
---cream:#F8F5EF; --cream-2:#F1EBDF; --ink:#1C302E; --muted:#5B6D68;
---white:#fff; --card:#FCFAF5; --radius:18px; --radius-sm:12px;
---shadow:0 18px 40px -24px rgba(18,58,52,.45); --wrap:1180px;
---sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
---serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
+  --teal:#144E4A; --teal-deep:#0F3A36; --gold:#BE9A5C; --gold-soft:#D9BE8E;
+  --cream:#F8F5EF; --cream-2:#F1EBDF; --ink:#1C302E; --muted:#5B6D68;
+  --white:#fff; --card:#FCFAF5; --radius:18px; --radius-sm:12px;
+  --shadow:0 18px 40px -24px rgba(18,58,52,.45); --wrap:1180px;
+  --sans:"Manrope","Manrope Fallback","Manrope Fallback R",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:"Fraunces","Fraunces Fallback","Fraunces Fallback N",Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -163,9 +163,9 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* cookie consent bar */
 .cookiebar{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;background:var(--card,#fff);
-border:1px solid var(--cream-2);border-radius:var(--radius-sm);box-shadow:0 10px 40px rgba(0,0,0,.18);
-padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
-flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
+  border:1px solid var(--cream-2);border-radius:var(--radius-sm);box-shadow:0 10px 40px rgba(0,0,0,.18);
+  padding:16px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
 .cookiebar[hidden]{display:none}
 .cookiebar p{margin:0;color:var(--muted);line-height:1.6;flex:1;min-width:240px}
 .cookiebar a{text-decoration:underline}
@@ -179,16 +179,16 @@ flex-wrap:wrap;max-width:860px;margin:0 auto;font-size:.88rem}
 
 /* cookie consent popup — centred on first visit, Accept and Decline equally clear (UK ICO guidance) */
 .cookiebar{position:fixed;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);z-index:9999;
-width:calc(100% - 32px);max-width:440px;margin:0;background:#FCFAF5;border:1px solid #F1EBDF;border-radius:18px;
-box-shadow:0 0 0 100vmax rgba(15,58,54,.45),0 24px 60px -20px rgba(0,0,0,.45);
-padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch;font-size:.92rem;font-family:inherit}
+  width:calc(100% - 32px);max-width:440px;margin:0;background:#FCFAF5;border:1px solid #F1EBDF;border-radius:18px;
+  box-shadow:0 0 0 100vmax rgba(15,58,54,.45),0 24px 60px -20px rgba(0,0,0,.45);
+  padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch;font-size:.92rem;font-family:inherit}
 .cookiebar[hidden]{display:none}
 .cookiebar:before{content:"Cookies on Barki Sofa Hub";font-weight:800;font-size:1.05rem;color:#1C302E}
 .cookiebar p{margin:0;color:#5B6D68;line-height:1.6;min-width:0;flex:none}
 .cookiebar a{text-decoration:underline;color:#144E4A}
 .cookiebar__btns{display:flex;gap:10px;width:100%}
 .cookiebar .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;
-font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.5px solid #144E4A;transition:.18s}
+  font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.5px solid #144E4A;transition:.18s}
 .cookiebar .btn--ghost,.cookiebar .btn--ghost:hover{background:#FFFFFF;color:#144E4A;border-color:#144E4A}
 .cookiebar .btn--solid,.cookiebar .btn--solid:hover{background:#144E4A;color:#F8F5EF;border-color:#144E4A}
 
@@ -198,51 +198,51 @@ font-weight:700;font-size:.95rem;padding:13px 18px;border-radius:999px;border:1.
 
 /* phone menu: collections as a swipeable row under the logo */
 @media(max-width:1100px){
-.nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
-.navlinks{display:flex;order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px;gap:8px;overflow-x:auto;
-scrollbar-width:none;-webkit-overflow-scrolling:touch;font-size:.8rem}
-.navlinks::-webkit-scrollbar{display:none}
-.navlinks a{flex:none;padding:7px 14px;border:1px solid var(--cream-2);border-radius:999px;background:var(--card);white-space:nowrap}
-.navlinks a:hover{border-color:var(--gold)}
-.nav .btn--wa{padding:9px 16px}
+  .nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
+  .navlinks{display:flex;order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px;gap:8px;overflow-x:auto;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;font-size:.8rem}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{flex:none;padding:7px 14px;border:1px solid var(--cream-2);border-radius:999px;background:var(--card);white-space:nowrap}
+  .navlinks a:hover{border-color:var(--gold)}
+  .nav .btn--wa{padding:9px 16px}
 }
 
 /* product pages: tidier photo strip on phones */
 @media(max-width:600px){
-.pgal{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;padding-bottom:2px}
-.pgal::-webkit-scrollbar{display:none}
-.pthumb{flex:0 0 23%}
-.phead{padding-top:18px;padding-bottom:24px}
+  .pgal{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;padding-bottom:2px}
+  .pgal::-webkit-scrollbar{display:none}
+  .pthumb{flex:0 0 23%}
+  .phead{padding-top:18px;padding-bottom:24px}
 }
 
 /* trust badges under the Enquire button */
 .trust{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .trust li{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--cream-2);border-radius:12px;
-padding:11px 12px;font-size:.76rem;color:var(--muted);line-height:1.3}
+  padding:11px 12px;font-size:.76rem;color:var(--muted);line-height:1.3}
 .trust svg{width:22px;height:22px;flex:none;color:var(--gold)}
 .trust b{display:block;color:var(--ink);font-size:.84rem;margin-bottom:1px}
 
 /* sticky "Enquire" bar on product pages (phones and tablets) */
 .pbar{display:none}
 @media(max-width:860px){
-.pbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--cream-2);
-box-shadow:0 -10px 30px -18px rgba(0,0,0,.35);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-align-items:center;justify-content:space-between;gap:12px}
-.pbar__txt{min-width:0}
-.pbar__txt b{display:block;font-family:var(--serif);font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pbar__txt span{font-size:.74rem;color:var(--muted)}
-.pbar .btn{flex:none;padding:12px 20px}
-body.has-pbar{padding-bottom:78px}
+  .pbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--cream-2);
+    box-shadow:0 -10px 30px -18px rgba(0,0,0,.35);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    align-items:center;justify-content:space-between;gap:12px}
+  .pbar__txt{min-width:0}
+  .pbar__txt b{display:block;font-family:var(--serif);font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pbar__txt span{font-size:.74rem;color:var(--muted)}
+  .pbar .btn{flex:none;padding:12px 20px}
+  body.has-pbar{padding-bottom:78px}
 }
 
 /* sofa lists: 2 per row on phones */
 @media(max-width:600px){
-.cards{grid-template-columns:1fr 1fr;gap:12px}
-.card{border-radius:14px}
-.card .cb{padding:10px 12px 14px}
-.card h3{font-size:.92rem}
-.card .cp{font-size:.86rem}
-.card .cd{display:none}
+  .cards{grid-template-columns:1fr 1fr;gap:12px}
+  .card{border-radius:14px}
+  .card .cb{padding:10px 12px 14px}
+  .card h3{font-size:.92rem}
+  .card .cp{font-size:.86rem}
+  .card .cd{display:none}
 }
 
 /* softer, more polished cards and buttons */
@@ -258,12 +258,12 @@ body.has-pbar{padding-bottom:78px}
 
 /* sofa lists: 1 per row on phones (Oct 2026) */
 @media(max-width:600px){
-.cards{grid-template-columns:1fr;gap:18px}
-.card{border-radius:16px}
-.card .cb{padding:14px 18px 18px}
-.card h3{font-size:1.18rem}
-.card .cp{font-size:1rem}
-.card .cd{display:block;font-size:.88rem}
+  .cards{grid-template-columns:1fr;gap:18px}
+  .card{border-radius:16px}
+  .card .cb{padding:14px 18px 18px}
+  .card h3{font-size:1.18rem}
+  .card .cp{font-size:1rem}
+  .card .cd{display:block;font-size:.88rem}
 }
 /* "New" label on sofa lists */
 .card{position:relative}
@@ -297,6 +297,60 @@ body.has-pbar{padding-bottom:78px}
 
 /* light WebP photos sit inside a picture element; let the photo keep its normal layout */
 picture{display:contents}
+
+/* ===== Design polish — Nov 2026 ===== */
+
+/* 1. Cards: deeper lift, slower photo zoom, warmer edge on hover */
+.card{border-radius:16px;box-shadow:0 1px 2px rgba(18,58,52,.05);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(18,58,52,.55);border-color:rgba(190,154,92,.5)}
+.card img{transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.card:hover img{transform:scale(1.06)}
+.card .cp{font-family:var(--serif);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
+
+/* 2. Gold hairline beside the list headings */
+.allhead{display:flex;align-items:center;gap:16px}
+.allhead:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(190,154,92,.55),rgba(190,154,92,0))}
+
+/* 3. Buttons: a little lift, and a clear outline for keyboard users */
+.btn--solid:hover,.btn--ghost:hover{transform:translateY(-1px)}
+.btn:focus-visible,.card:focus-visible,.pthumb:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* 4. Photos fade up gently as you scroll to them.
+      Only on browsers that can do it without JavaScript, and never for
+      people who ask their phone to reduce motion. Uses `translate` rather
+      than `transform` so the hover lift above still works. */
+@keyframes bk-rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .card,.adpick,.trust li,.faq details{animation:bk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+
+/* 5. A bit more room to breathe on phones */
+@media(max-width:600px){
+  .sec{padding:44px 0}
+  .cards{gap:20px}
+  .cta{padding:34px 22px;margin:40px 0}
+}
+
+/* 6. Menu now has 13 links: keep it on one line and never let it run under
+      the WhatsApp button — it scrolls sideways instead if a screen is narrow. */
+.brand b{white-space:nowrap}
+@media(min-width:1101px){
+  .navlinks{flex:1 1 auto;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+  .navlinks::-webkit-scrollbar{display:none}
+}
+@media(min-width:1101px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .brand small{display:none}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
+@media(min-width:1101px) and (max-width:1500px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Choose a Sofa Bed: An Honest UK Buying Guide", "description": "An honest guide to buying a sofa bed in the UK: mattress types, the opened and closed sizes nobody tells you, corner versus 2+3, and what to check before you order.", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "author": {"@type": "Organization", "name": "Barki Sofa Hub", "url": "https://barkisofahub.co.uk"}, "publisher": {"@type": "Organization", "name": "Barki Sofa Hub", "logo": {"@type": "ImageObject", "url": "https://barkisofahub.co.uk/images/barki-icon.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://barkisofahub.co.uk/how-to-choose-a-sofa-bed.html"}, "image": "https://barkisofahub.co.uk/images/hero.jpg"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://barkisofahub.co.uk"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://barkisofahub.co.uk/guides.html"}, {"@type": "ListItem", "position": 3, "name": "How to Choose a Sofa Bed"}]}</script>
@@ -322,18 +376,20 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
 </a>
 <nav class="navlinks">
-<a href="all-sofas.html">All Sofas</a>
-<a href="corner-sofas.html">Corner Sofas</a>
-<a href="u-shape-sofas.html">U-Shape</a>
-<a href="l-shape-sofas.html">L-Shape</a>
-<a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
-<a href="chesterfield-sofas.html">Chesterfield</a>
+      <a href="all-sofas.html">Sofas</a>
+      <a href="corner-sofas.html">Corner</a>
+      <a href="u-shape-sofas.html">U-Shape</a>
+      <a href="l-shape-sofas.html">L-Shape</a>
+      <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
+      <a href="chesterfield-sofa-beds.html">Sofa Beds</a>
       <a href="beds.html">Beds</a>
-<a href="tables-and-stools.html">Tables &amp; Stools</a>
-<a href="fabrics-and-colours.html">Fabrics</a>
-<a href="guides.html">Guides</a>
-<a href="contact.html">Contact</a>
-</nav>
+      <a href="olympia-armchair.html">Armchairs</a>
+      <a href="tables-and-stools.html">Tables</a>
+      <a href="chesterfield-sofas.html">Chesterfield</a>
+      <a href="fabrics-and-colours.html">Fabrics</a>
+      <a href="guides.html">Guides</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20see%20your%20sofa%20range." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg> WhatsApp</a>
 </div>
 </header>
@@ -431,7 +487,10 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 <li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
 <li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
 <li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
-          <li><a href="beds.html">Beds</a></li>
+<li><a href="chesterfield-sofa-beds.html">Sofa Beds</a></li>
+<li><a href="beds.html">Beds</a></li>
+<li><a href="olympia-armchair.html">Armchairs</a></li>
+<li><a href="tables-and-stools.html">Tables &amp; Stools</a></li>
 </ul>
 </div>
 <div>

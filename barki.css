@@ -273,3 +273,57 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* light WebP photos sit inside a picture element; let the photo keep its normal layout */
 picture{display:contents}
+
+/* ===== Design polish — Nov 2026 ===== */
+
+/* 1. Cards: deeper lift, slower photo zoom, warmer edge on hover */
+.card{border-radius:16px;box-shadow:0 1px 2px rgba(18,58,52,.05);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(18,58,52,.55);border-color:rgba(190,154,92,.5)}
+.card img{transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.card:hover img{transform:scale(1.06)}
+.card .cp{font-family:var(--serif);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
+
+/* 2. Gold hairline beside the list headings */
+.allhead{display:flex;align-items:center;gap:16px}
+.allhead:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(190,154,92,.55),rgba(190,154,92,0))}
+
+/* 3. Buttons: a little lift, and a clear outline for keyboard users */
+.btn--solid:hover,.btn--ghost:hover{transform:translateY(-1px)}
+.btn:focus-visible,.card:focus-visible,.pthumb:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* 4. Photos fade up gently as you scroll to them.
+      Only on browsers that can do it without JavaScript, and never for
+      people who ask their phone to reduce motion. Uses `translate` rather
+      than `transform` so the hover lift above still works. */
+@keyframes bk-rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .card,.adpick,.trust li,.faq details{animation:bk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+
+/* 5. A bit more room to breathe on phones */
+@media(max-width:600px){
+  .sec{padding:44px 0}
+  .cards{gap:20px}
+  .cta{padding:34px 22px;margin:40px 0}
+}
+
+/* 6. Menu now has 13 links: keep it on one line and never let it run under
+      the WhatsApp button — it scrolls sideways instead if a screen is narrow. */
+.brand b{white-space:nowrap}
+@media(min-width:1101px){
+  .navlinks{flex:1 1 auto;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+  .navlinks::-webkit-scrollbar{display:none}
+}
+@media(min-width:1101px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .brand small{display:none}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
+@media(min-width:1101px) and (max-width:1500px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}

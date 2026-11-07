@@ -1045,6 +1045,51 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .pcard__price{font-size:1.5rem}
   .pcard__foot .btn--order{width:auto;padding:.8em 1.4em;font-size:.9rem}
 }
+
+/* ===== Design polish — Nov 2026 (homepage) ===== */
+.pcard{box-shadow:0 1px 2px rgba(18,58,52,.05);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(18,58,52,.55);border-color:rgba(190,154,92,.5)}
+.pcard__img{transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.pcard:hover .pcard__img{transform:scale(1.06)}
+.btn:focus-visible,.tab:focus-visible,.pcard__media:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* cards fade up gently as you scroll to them — only where the browser can do it
+   without JavaScript, and never when the phone is set to reduce motion.
+   Uses `translate` rather than `transform` so the hover lift still works. */
+@keyframes bk-rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .pcard,.gsec{animation:bk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+
+/* filter buttons: one swipeable row on phones instead of several cramped lines */
+@media(max-width:760px){
+  .tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;gap:8px;margin:0 -22px 24px;padding:2px 22px 10px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;font-size:.82rem;padding:.52em 1.05em}
+  .tabs__sep{display:none}
+}
+
+/* menu: 13 links now — keep it on one line, scroll sideways if the screen is narrow */
+.brand b{white-space:nowrap}
+@media(min-width:1101px){
+  .navlinks{flex:1 1 auto;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+  .navlinks::-webkit-scrollbar{display:none}
+}
+@media(min-width:1101px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .navlinks a{font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .brand small{display:none}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
+@media(min-width:1101px) and (max-width:1500px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
 </style>
 </head>
 <body>
@@ -1088,14 +1133,16 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
     </a>
     <nav class="navlinks" id="navlinks">
-      <a href="all-sofas.html">All Sofas</a>
-      <a href="corner-sofas.html">Corner Sofas</a>
+      <a href="all-sofas.html">Sofas</a>
+      <a href="corner-sofas.html">Corner</a>
       <a href="u-shape-sofas.html">U-Shape</a>
       <a href="l-shape-sofas.html">L-Shape</a>
       <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
-      <a href="chesterfield-sofas.html">Chesterfield</a>
+      <a href="chesterfield-sofa-beds.html">Sofa Beds</a>
       <a href="beds.html">Beds</a>
-      <a href="tables-and-stools.html">Tables &amp; Stools</a>
+      <a href="olympia-armchair.html">Armchairs</a>
+      <a href="tables-and-stools.html">Tables</a>
+      <a href="chesterfield-sofas.html">Chesterfield</a>
       <a href="fabrics-and-colours.html">Fabrics</a>
       <a href="guides.html">Guides</a>
       <a href="contact.html">Contact</a>
@@ -1177,56 +1224,6 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     <div class="grid" id="grid">
       <!-- cards injected by JS -->
     </div>
-  </div>
-</section>
-
-<!-- EXTRAS -->
-<section class="section section--extras" id="extras">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow solo">Complete your set</span>
-      <h2>Matching tables &amp; stools</h2>
-      <p>Made in the same fabric and colour as your sofa, delivered together for free. Add one when you order, or ask us on WhatsApp.</p>
-    </div>
-    <div class="xgrid">
-      <article class="xcard">
-        <div class="xcard__img"><a href="square-glass-top-coffee-table.html"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/coffee-table-cream-glass-top-480.webp 480w, images/addons/coffee-table-cream-glass-top-800.webp 800w, images/addons/coffee-table-cream-glass-top-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/coffee-table-cream-glass-top.jpg" alt="Square Glass-Top Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></a></div>
-        <div class="xcard__body">
-          <h3><a href="square-glass-top-coffee-table.html" style="color:inherit;text-decoration:none">Square Glass-Top Coffee Table</a></h3>
-          <p>A padded velvet frame with a clear glass top, made in the same fabric as your sofa.</p>
-          <div class="xcard__foot"><span class="xcard__price">£169</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Square%20Glass-Top%20Coffee%20Table%20%28%C2%A3170%29%20with%20my%20sofa." target="_blank" rel="noopener">Order on WhatsApp</a></div>
-        </div>
-      </article>
-      <article class="xcard">
-        <div class="xcard__img"><a href="round-ottoman-coffee-table.html"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/round-coffee-table-marble-top-480.webp 480w, images/addons/round-coffee-table-marble-top-800.webp 800w, images/addons/round-coffee-table-marble-top-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/round-coffee-table-marble-top.jpg" alt="Round Ottoman Coffee Table by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></a></div>
-        <div class="xcard__body">
-          <h3><a href="round-ottoman-coffee-table.html" style="color:inherit;text-decoration:none">Round Ottoman Coffee Table</a></h3>
-          <p>Deep button tufting, a marble-effect top set in a polished gold rim.</p>
-          <div class="xcard__foot"><span class="xcard__price">£299</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Round%20Ottoman%20Coffee%20Table%20%28%C2%A3300%29%20with%20my%20sofa." target="_blank" rel="noopener">Order on WhatsApp</a></div>
-        </div>
-      </article>
-      <article class="xcard">
-        <div class="xcard__img"><a href="footstool.html"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/footstool-black-gold-legs-480.webp 480w, images/addons/footstool-black-gold-legs-800.webp 800w, images/addons/footstool-black-gold-legs-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/footstool-black-gold-legs.jpg" alt="Footstool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></a></div>
-        <div class="xcard__body">
-          <h3><a href="footstool.html" style="color:inherit;text-decoration:none">Footstool</a></h3>
-          <p>A soft cushioned top, covered to match your sofa. Legs in chrome or gold.</p>
-          <div class="xcard__foot"><span class="xcard__price">£119</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Footstool%20%28%C2%A3120%29%20with%20my%20sofa." target="_blank" rel="noopener">Order on WhatsApp</a></div>
-        </div>
-      </article>
-      <article class="xcard">
-        <div class="xcard__img"><a href="fix-seat-stool.html"><picture><source width="1400" height="1050" type="image/webp" srcset="images/addons/fix-seat-stool-480.webp 480w, images/addons/fix-seat-stool-800.webp 800w, images/addons/fix-seat-stool-1200.webp 1200w" sizes="(max-width:640px) calc(100vw - 44px), 380px"><img src="images/addons/fix-seat-stool.jpg" alt="Fix Seat Stool by Barki Sofa Hub, made to match your sofa" loading="lazy" width="1400" height="1050"></picture></a></div>
-        <div class="xcard__body">
-          <h3><a href="fix-seat-stool.html" style="color:inherit;text-decoration:none">Fix Seat Stool</a></h3>
-          <p>A firm, boxy stool with a fixed top, covered to match your sofa.</p>
-          <div class="xcard__foot"><span class="xcard__price">£99</span>
-            <a class="btn btn--order" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20matching%20Fix%20Seat%20Stool%20%28%C2%A3100%29%20with%20my%20sofa." target="_blank" rel="noopener">Order on WhatsApp</a></div>
-        </div>
-      </article>
-    </div>
-    <p class="xnote">The matching footstool for the Alaska Corner is £149, and for the Ashton Corner £199, because they are made larger to suit those sofas. <a href="tables-and-stools.html">See all tables &amp; stools →</a></p>
   </div>
 </section>
 
@@ -1333,7 +1330,10 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
           <li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
           <li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
+          <li><a href="chesterfield-sofa-beds.html">Sofa Beds</a></li>
           <li><a href="beds.html">Beds</a></li>
+          <li><a href="olympia-armchair.html">Armchairs</a></li>
+          <li><a href="tables-and-stools.html">Tables &amp; Stools</a></li>
         </ul>
       </div>
       <div>

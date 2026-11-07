@@ -297,6 +297,60 @@ footer li a:hover{color:var(--gold-soft);opacity:1}
 
 /* light WebP photos sit inside a picture element; let the photo keep its normal layout */
 picture{display:contents}
+
+/* ===== Design polish — Nov 2026 ===== */
+
+/* 1. Cards: deeper lift, slower photo zoom, warmer edge on hover */
+.card{border-radius:16px;box-shadow:0 1px 2px rgba(18,58,52,.05);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(18,58,52,.55);border-color:rgba(190,154,92,.5)}
+.card img{transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.card:hover img{transform:scale(1.06)}
+.card .cp{font-family:var(--serif);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
+
+/* 2. Gold hairline beside the list headings */
+.allhead{display:flex;align-items:center;gap:16px}
+.allhead:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(190,154,92,.55),rgba(190,154,92,0))}
+
+/* 3. Buttons: a little lift, and a clear outline for keyboard users */
+.btn--solid:hover,.btn--ghost:hover{transform:translateY(-1px)}
+.btn:focus-visible,.card:focus-visible,.pthumb:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* 4. Photos fade up gently as you scroll to them.
+      Only on browsers that can do it without JavaScript, and never for
+      people who ask their phone to reduce motion. Uses `translate` rather
+      than `transform` so the hover lift above still works. */
+@keyframes bk-rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .card,.adpick,.trust li,.faq details{animation:bk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+
+/* 5. A bit more room to breathe on phones */
+@media(max-width:600px){
+  .sec{padding:44px 0}
+  .cards{gap:20px}
+  .cta{padding:34px 22px;margin:40px 0}
+}
+
+/* 6. Menu now has 13 links: keep it on one line and never let it run under
+      the WhatsApp button — it scrolls sideways instead if a screen is narrow. */
+.brand b{white-space:nowrap}
+@media(min-width:1101px){
+  .navlinks{flex:1 1 auto;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+  .navlinks::-webkit-scrollbar{display:none}
+}
+@media(min-width:1101px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .brand small{display:none}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
+@media(min-width:1101px) and (max-width:1500px){
+  .navlinks{gap:11px;font-size:.78rem}
+  .nav{gap:12px;padding:14px 14px}
+  .nav .btn--wa{padding:10px 15px;font-size:.84rem}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://barkisofahub.co.uk/made-to-order-sofas-blackburn.html#business", "name": "Barki Sofa Hub", "alternateName": "Barki Sofa Hub - Made-to-Order Sofas", "url": "https://barkisofahub.co.uk/", "logo": "https://barkisofahub.co.uk/images/barki-icon.png", "image": "https://barkisofahub.co.uk/images/hero.jpg", "description": "Made-to-order fabric sofas, corner suites, and Chesterfields. Custom sizes, free UK delivery, cash on delivery. Delivery only - no public showroom.", "telephone": "+447424333739", "email": "barkisofahub739@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "location": {"@type": "Place", "name": "Barki Sofa Hub storage and dispatch unit", "address": {"@type": "PostalAddress", "streetAddress": "Unit 4 Hutton Street", "addressLocality": "Blackburn", "addressRegion": "Lancashire", "postalCode": "BB1 3BY", "addressCountry": "GB"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.7478, "longitude": -2.482}, "publicAccess": false, "description": "Storage and dispatch unit. Not open to the public - all orders are arranged remotely and delivered."}, "areaServed": [{"@type": "City", "name": "Blackburn"}, {"@type": "City", "name": "Darwen"}, {"@type": "City", "name": "Accrington"}, {"@type": "City", "name": "Burnley"}, {"@type": "City", "name": "Preston"}, {"@type": "City", "name": "Bolton"}, {"@type": "City", "name": "Blackpool"}, {"@type": "City", "name": "Bury"}, {"@type": "City", "name": "Rochdale"}, {"@type": "City", "name": "Manchester"}, {"@type": "City", "name": "Chorley"}, {"@type": "City", "name": "Nelson"}, {"@type": "City", "name": "Colne"}, {"@type": "City", "name": "Clitheroe"}, {"@type": "City", "name": "Leyland"}, {"@type": "City", "name": "Wigan"}], "sameAs": ["https://www.facebook.com/profile.php?id=61592460665012", "https://www.instagram.com/barkisofahub739", "https://www.pinterest.com/barkisofahub739"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you have a showroom I can visit?", "acceptedAnswer": {"@type": "Answer", "text": "No — we're a delivery-only business, which is part of how we keep prices below the high street. Everything is arranged over WhatsApp: we'll send photos, fabric details and sizing advice, then deliver free to your door."}}, {"@type": "Question", "name": "Do you charge for delivery in Lancashire?", "acceptedAnswer": {"@type": "Answer", "text": "No — delivery is free across mainland UK, including all Lancashire postcodes."}}, {"@type": "Question", "name": "How quickly can you deliver locally?", "acceptedAnswer": {"@type": "Answer", "text": "Locally we can often deliver within 2 days of confirming your order and fabric choice."}}, {"@type": "Question", "name": "Can I pay cash on delivery?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cash on delivery, every time — there's no deposit and nothing to pay up front."}}]}</script>
@@ -322,14 +376,16 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
     </a>
     <nav class="navlinks">
-      <a href="all-sofas.html">All Sofas</a>
-      <a href="corner-sofas.html">Corner Sofas</a>
+      <a href="all-sofas.html">Sofas</a>
+      <a href="corner-sofas.html">Corner</a>
       <a href="u-shape-sofas.html">U-Shape</a>
       <a href="l-shape-sofas.html">L-Shape</a>
       <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
-      <a href="chesterfield-sofas.html">Chesterfield</a>
+      <a href="chesterfield-sofa-beds.html">Sofa Beds</a>
       <a href="beds.html">Beds</a>
-      <a href="tables-and-stools.html">Tables &amp; Stools</a>
+      <a href="olympia-armchair.html">Armchairs</a>
+      <a href="tables-and-stools.html">Tables</a>
+      <a href="chesterfield-sofas.html">Chesterfield</a>
       <a href="fabrics-and-colours.html">Fabrics</a>
       <a href="guides.html">Guides</a>
       <a href="contact.html">Contact</a>
@@ -400,7 +456,10 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           <li><a href="l-shape-sofas.html">L-Shape Sofas</a></li>
           <li><a href="2-3-seater-sofa-sets.html">2+3 Seater Sets</a></li>
           <li><a href="chesterfield-sofas.html">Chesterfield Sofas</a></li>
+          <li><a href="chesterfield-sofa-beds.html">Sofa Beds</a></li>
           <li><a href="beds.html">Beds</a></li>
+          <li><a href="olympia-armchair.html">Armchairs</a></li>
+          <li><a href="tables-and-stools.html">Tables &amp; Stools</a></li>
         </ul>
       </div>
       <div>
