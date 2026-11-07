@@ -184,6 +184,21 @@
   .pcard:hover .pcard__img{transform:scale(1.05)}
   .pcard__zoom{position:absolute;bottom:10px;right:10px;background:rgba(15,58,54,.85);color:var(--cream);border:1px solid rgba(190,154,92,.5);border-radius:999px;padding:.35em .8em;font-size:.7rem;font-weight:600;backdrop-filter:blur(4px);opacity:0;transform:translateY(6px);transition:.2s}
   .pcard:hover .pcard__zoom{opacity:1;transform:translateY(0)}
+  .pgal{position:absolute;inset:0;display:block}
+  .gslide{position:absolute;inset:0;opacity:0;transition:opacity .25s ease;pointer-events:none}
+  .gslide.is-on{opacity:1}
+  .gslide picture{display:block;width:100%;height:100%}
+  .pnav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(15,58,54,.7);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.45rem;line-height:1;padding-bottom:3px;cursor:pointer;z-index:4;border:1px solid rgba(255,255,255,.28);user-select:none;transition:.18s}
+  .pnav:hover{background:rgba(15,58,54,.95)}
+  .pnav--prev{left:8px}
+  .pnav--next{right:8px}
+  .pdots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:4}
+  .pdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(0,0,0,.2);transition:.18s}
+  .pdots i.on{background:var(--gold);width:17px;border-radius:3px}
+  .pdots--num{background:rgba(15,58,54,.85);color:var(--cream);border:1px solid rgba(190,154,92,.5);border-radius:999px;padding:.25em .7em;font-size:.68rem;font-weight:700;letter-spacing:.03em;font-style:normal}
+  .pdots--num b{color:var(--gold)}
+  .pcount{position:absolute;top:10px;right:10px;z-index:4;background:rgba(15,58,54,.85);color:var(--cream);border:1px solid rgba(190,154,92,.5);border-radius:999px;padding:.3em .72em;font-size:.68rem;font-weight:700;letter-spacing:.02em;backdrop-filter:blur(4px)}
+  @media (max-width:940px){ .pnav{width:42px;height:42px;font-size:1.6rem} }
   .pcard__body{padding:16px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
   .pcard__desc{font-size:.86rem;color:var(--muted);flex:1;margin:0}
   .pcard__foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(190,154,92,.22);padding-top:14px}
@@ -1498,9 +1513,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
             <h3 class="pcard__name">${p.name}</h3>
           </div>
           <button class="pcard__media" data-open="${idx}" aria-label="View ${p.name} details">
-            ${wsrc(p.images[0])?`<picture><source type="image/webp" srcset="${wsrc(p.images[0])}" sizes="(max-width:940px) 46vw, (max-width:1280px) 31vw, 290px">`:''}<img class="pcard__img" src="${p.images[0]}" alt="${p.name} - made-to-order sofa, ${p.collection}" loading="lazy"
-                 onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;">${wsrc(p.images[0])?'</picture>':''}
-            <span class="pcard__zoom">View details &rarr;</span>
+            <span class="pgal" data-i="0">${p.images.map((im,i)=>`<span class="gslide${i?'':' is-on'}"><picture>${wsrc(im)?`<source type="image/webp" ${i?'data-srcset':'srcset'}="${wsrc(im)}" sizes="(max-width:940px) 46vw, (max-width:1280px) 31vw, 290px">`:''}<img class="pcard__img" ${i?`data-src="${im}"`:`src="${im}"`} alt="${p.name} - ${p.collection}" loading="lazy" onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;"></picture></span>`).join('')}</span>
+            ${p.images.length>1?`<span class="pnav pnav--prev" data-nav="-1" aria-label="Previous photo">&lsaquo;</span><span class="pnav pnav--next" data-nav="1" aria-label="Next photo">&rsaquo;</span>${p.images.length<=8?`<span class="pdots">${p.images.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</span>`:`<span class="pdots pdots--num"><b>1</b>&thinsp;/&thinsp;${p.images.length}</span>`}<span class="pcount">${p.images.length} photos</span>`:`<span class="pcard__zoom">View details &rarr;</span>`}
             ${p.badge?`<span class="pbadge">${p.badge}</span>`:''}
           </button>
           <div class="pcard__body">
@@ -1640,6 +1654,44 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     if(lastFocus) lastFocus.focus();
   }
 
+  function galGo(media, dir){
+    const gal = media && media.querySelector('.pgal'); if(!gal) return;
+    const slides = Array.prototype.slice.call(gal.children);
+    if(slides.length < 2) return;
+    const dots = media.querySelectorAll('.pdots i');
+    const i = (((+gal.dataset.i || 0) + dir) % slides.length + slides.length) % slides.length;
+    gal.dataset.i = i;
+    slides.forEach(function(sl,k){
+      sl.classList.toggle('is-on', k===i);
+      if(k===i){
+        const im = sl.querySelector('img');
+        if(im && im.dataset.src){ im.src = im.dataset.src; delete im.dataset.src; }
+        const so = sl.querySelector('source');
+        if(so && so.dataset.srcset){ so.srcset = so.dataset.srcset; delete so.dataset.srcset; }
+      }
+    });
+    dots.forEach(function(d,k){ d.classList.toggle('on', k===i); });
+    const num = media.querySelector('.pdots--num b'); if(num) num.textContent = i+1;
+  }
+  grid.addEventListener('click', function(e){
+    const nav = e.target.closest('.pnav'); if(!nav) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    galGo(nav.closest('.pcard__media'), +nav.dataset.nav);
+  });
+  let _tx=0,_ty=0,_tm=null;
+  grid.addEventListener('touchstart', function(e){
+    const m = e.target.closest('.pcard__media'); _tm = m;
+    if(m){ _tx = e.touches[0].clientX; _ty = e.touches[0].clientY; }
+  }, {passive:true});
+  grid.addEventListener('touchend', function(e){
+    if(!_tm) return;
+    const dx = e.changedTouches[0].clientX - _tx, dy = e.changedTouches[0].clientY - _ty;
+    if(Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)*1.5){
+      e.preventDefault(); e.stopImmediatePropagation();
+      galGo(_tm, dx < 0 ? 1 : -1);
+    }
+    _tm = null;
+  }, {passive:false});
   grid.addEventListener('click', e=>{
     const b = e.target.closest('[data-open]'); if(!b) return;
     openDetail(+b.dataset.open);
