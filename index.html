@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="Made-to-order sofas, sofa beds, upholstered beds, armchairs and matching tables, in your fabric, colour and size. Free UK delivery, cash on delivery.">
 <meta name="twitter:image" content="https://barkisofahub.co.uk/images/hero.jpg">
 
-<link rel="icon" type="image/png" href="images/barki-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
      <meta name="p:domain_verify" content="3065513e044518e8bcb23f6705ecb3e9"/>
 <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" imagesizes="(max-width:940px) calc(100vw - 44px), 100vw">
 <style>
@@ -1151,7 +1151,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 <header>
   <div class="wrap nav">
     <a href="#home" class="brand" aria-label="Barki Sofa Hub home">
-      <img src="images/barki-icon.png" alt="Barki Sofa Hub">
+      <img src="images/barki-icon-96.png" alt="Barki Sofa Hub">
       <span><b>Barki Sofa Hub</b><small>Sofas for every home</small></span>
     </a>
     <nav class="navlinks" id="navlinks">
@@ -1374,7 +1374,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-brand"><img src="images/barki-icon.png" alt="Barki Sofa Hub"><b>Barki Sofa Hub</b></div>
+        <div class="foot-brand"><img src="images/barki-icon-96.png" alt="Barki Sofa Hub"><b>Barki Sofa Hub</b></div>
         <p style="max-width:320px;font-size:.88rem;opacity:.85">Made-to-order fabric sofas with custom sizes and fabrics, delivered free across the UK. Sofas for every home.</p>
       </div>
       <div>
@@ -1573,6 +1573,20 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       grid.innerHTML = list.map(card).join('');
     }
   }
+  // One photo slot. Only the first is put in the page at load; the rest are
+  // built the moment someone taps through, which keeps the page light on phones.
+  function slideHTML(p, im, first){
+    const ss = wsrc(im);
+    return `<span class="gslide${first?' is-on':''}"><picture>${ss?`<source type="image/webp" ${first?'srcset':'data-srcset'}="${ss}" sizes="(max-width:940px) 46vw, (max-width:1280px) 31vw, 290px">`:''}<img class="pcard__img" ${first?`src="${im}"`:`data-src="${im}"`} alt="${p.name} - ${p.collection}" loading="lazy" onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;"></picture></span>`;
+  }
+  function buildSlides(gal){
+    if(gal.dataset.built) return;
+    gal.dataset.built = '1';
+    const p = products[+gal.dataset.p];
+    if(!p || p.images.length < 2) return;
+    gal.insertAdjacentHTML('beforeend', p.images.slice(1).map(im => slideHTML(p, im, false)).join(''));
+  }
+
   function card({p,idx}){
     return `
         <article class="pcard" data-cat="${p.cat}">
@@ -1581,7 +1595,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
             <h3 class="pcard__name">${p.name}</h3>
           </div>
           <button class="pcard__media" data-open="${idx}" aria-label="View ${p.name} details">
-            <span class="pgal" data-i="0">${p.images.map((im,i)=>`<span class="gslide${i?'':' is-on'}"><picture>${wsrc(im)?`<source type="image/webp" ${i?'data-srcset':'srcset'}="${wsrc(im)}" sizes="(max-width:940px) 46vw, (max-width:1280px) 31vw, 290px">`:''}<img class="pcard__img" ${i?`data-src="${im}"`:`src="${im}"`} alt="${p.name} - ${p.collection}" loading="lazy" onerror="this.onerror=null;this.classList.add('is-ph');this.src=PH;"></picture></span>`).join('')}</span>
+            <span class="pgal" data-i="0" data-p="${idx}">${slideHTML(p, p.images[0], true)}</span>
             ${p.images.length>1?`<span class="pnav pnav--prev" data-nav="-1" aria-label="Previous photo">&lsaquo;</span><span class="pnav pnav--next" data-nav="1" aria-label="Next photo">&rsaquo;</span>${p.images.length<=8?`<span class="pdots">${p.images.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</span>`:`<span class="pdots pdots--num"><b>1</b>&thinsp;/&thinsp;${p.images.length}</span>`}<span class="pcount">${p.images.length} photos</span>`:`<span class="pcard__zoom">View details &rarr;</span>`}
             ${p.badge?`<span class="pbadge">${p.badge}</span>`:''}
           </button>
@@ -1740,6 +1754,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 
   function galGo(media, dir){
     const gal = media && media.querySelector('.pgal'); if(!gal) return;
+    buildSlides(gal);
     const slides = Array.prototype.slice.call(gal.children);
     if(slides.length < 2) return;
     const dots = media.querySelectorAll('.pdots i');
