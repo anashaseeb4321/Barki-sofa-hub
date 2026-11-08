@@ -463,3 +463,50 @@
     openForm(sofaForLink(a), pre);
   }, true);
 })();
+
+/* ============================================================
+   Scroll reveal — each piece rises into place as it comes into view.
+   Kept in its own block so a fault here can never affect the order
+   form or the Lead tracking above. Works in every modern browser,
+   including Safari on iPhone.
+   ============================================================ */
+(function () {
+  try {
+    if (!('IntersectionObserver' in window)) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce && reduce.matches) return;
+
+    /* The range tiles sit in a row that scrolls sideways, so tiles off to the right
+   would never come into view and would stay invisible. Reveal the row as one piece. */
+    var SEL = '.pcard, .card, .gsec, .rrow, .adpick, .trust li, .faq details';
+    document.documentElement.classList.add('rv-on');
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        io.unobserve(el);
+        el.style.transitionDelay = (el.getAttribute('data-rvd') || 0) + 'ms';
+        el.classList.add('rv-in');
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+
+    /* Items side by side come in one after another, which reads better than all at once. */
+    function watch(root) {
+      var els = (root || document).querySelectorAll(SEL), i = 0;
+      Array.prototype.forEach.call(els, function (el) {
+        if (el.classList.contains('rv')) return;
+        el.classList.add('rv');
+        el.setAttribute('data-rvd', (i % 4) * 80);
+        io.observe(el);
+        i++;
+      });
+    }
+    watch();
+
+    /* The homepage rebuilds its grid when a filter or a range tile is tapped. */
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('.tab, .rtile')) setTimeout(watch, 60);
+    });
+  } catch (e) { /* never let the reveal break the page */ }
+})();

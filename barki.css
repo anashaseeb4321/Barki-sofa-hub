@@ -291,16 +291,14 @@ picture{display:contents}
 .btn--solid:hover,.btn--ghost:hover{transform:translateY(-1px)}
 .btn:focus-visible,.card:focus-visible,.pthumb:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-/* 4. Photos fade up gently as you scroll to them.
-      Only on browsers that can do it without JavaScript, and never for
-      people who ask their phone to reduce motion. Uses `translate` rather
-      than `transform` so the hover lift above still works. */
-@keyframes bk-rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
-@supports (animation-timeline: view()){
-  @media (prefers-reduced-motion: no-preference){
-    .card,.adpick,.trust li,.faq details{animation:bk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
-  }
-}
+/* ---------- Scroll reveal: pieces rise into place as you scroll ----------
+   The .rv-on class is added by JavaScript, so if the script never runs the
+   page simply shows everything — nothing can be left invisible.
+   `translate` is used rather than `transform` so the card hover-lift still works. */
+.rv-on .rv{opacity:0;translate:0 30px}
+.rv-on .rv.rv-in{opacity:1;translate:0 0;
+  transition:opacity .72s cubic-bezier(.16,1,.3,1), translate .72s cubic-bezier(.16,1,.3,1)}
+@media (prefers-reduced-motion: reduce){ .rv-on .rv{opacity:1;translate:none} }
 
 /* 5. A bit more room to breathe on phones */
 @media(max-width:600px){
