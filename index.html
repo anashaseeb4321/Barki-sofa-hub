@@ -1150,6 +1150,19 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .pcard__name{font-size:1.18rem}
   .pcard__desc{font-size:.84rem}
 }
+
+/* ---------- matching accessories band ---------- */
+.accband{grid-column:1/-1;margin:46px 0 6px;padding:40px 24px 34px;text-align:center;background:var(--cream-2);border-top:1px solid rgba(190,154,92,.28);border-bottom:1px solid rgba(190,154,92,.28);border-radius:6px}
+.accband .eyebrow{display:inline-block;margin-bottom:12px}
+.accband h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:600;color:var(--teal);line-height:1.08;margin:0}
+.accband h2 em{font-style:italic;color:var(--gold)}
+.accband p{max-width:62ch;margin:14px auto 0;color:var(--muted);font-size:.97rem;line-height:1.6}
+.accband + .gsec{padding-top:18px}
+@media(max-width:640px){
+  .accband{margin:26px 0 2px;padding:28px 18px 24px}
+  .accband p{font-size:.9rem;margin-top:10px}
+  .accband + .gsec{padding-top:14px}
+}
 </style>
 </head>
 <body>
@@ -1598,6 +1611,12 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     ['table',   'Coffee Tables',       'Made in your sofa fabric so the whole room matches'],
     ['stool',   'Stools &amp; Footstools', 'The finishing piece, and extra seating when people come round'],
   ];
+  // Full-width lead-in that introduces the tables and stools as one idea.
+  const ACCESSORY_LEAD = `<div class="accband">
+      <span class="eyebrow">Complete the look</span>
+      <h2>Matching <em>Accessories</em></h2>
+      <p>Finish the room with pieces made in the same fabric as your sofa. Add any of them to your order and pay on delivery, exactly like the sofa itself.</p>
+    </div>`;
   const groupOf = p => (['sofabed','bed','armchair','table','stool']
     .find(g => p.cat.split(' ').includes(g))) || 'sofa';
 
@@ -1608,7 +1627,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       grid.innerHTML = GROUPS.map(([key,title,sub]) => {
         const items = list.filter(o => groupOf(o.p) === key);
         if(!items.length) return '';
-        return `<div class="gsec" id="g-${key}"><h3>${title}</h3><p>${sub}</p></div>` + items.map(card).join('');
+        const lead = key === 'table' ? ACCESSORY_LEAD : '';
+        return lead + `<div class="gsec" id="g-${key}"><h3>${title}</h3><p>${sub}</p></div>` + items.map(card).join('');
       }).join('');
     } else {
       grid.innerHTML = list.map(card).join('');
