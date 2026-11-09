@@ -1151,17 +1151,23 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .pcard__desc{font-size:.84rem}
 }
 
-/* ---------- matching accessories band ---------- */
-.accband{grid-column:1/-1;margin:46px 0 6px;padding:40px 24px 34px;text-align:center;background:var(--cream-2);border-top:1px solid rgba(190,154,92,.28);border-bottom:1px solid rgba(190,154,92,.28);border-radius:6px}
-.accband .eyebrow{display:inline-block;margin-bottom:12px}
-.accband h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:600;color:var(--teal);line-height:1.08;margin:0}
-.accband h2 em{font-style:italic;color:var(--gold)}
-.accband p{max-width:62ch;margin:14px auto 0;color:var(--muted);font-size:.97rem;line-height:1.6}
-.accband + .gsec{padding-top:18px}
+/* ---------- accessory cards: flat, photo-first, like a product sheet ---------- */
+.pcard[data-cat~="table"], .pcard[data-cat~="stool"]{
+  background:transparent;border:0;border-top:0;border-radius:0;overflow:visible;box-shadow:none
+}
+.pcard[data-cat~="table"]:hover, .pcard[data-cat~="stool"]:hover{transform:none;box-shadow:none}
+.pcard[data-cat~="table"] .pcard__media, .pcard[data-cat~="stool"] .pcard__media{
+  order:-1;width:100%;margin:0 0 16px;border:0;border-radius:4px;background:#fff
+}
+.pcard[data-cat~="table"] .pcard__head, .pcard[data-cat~="stool"] .pcard__head{padding:0 2px 0}
+.pcard[data-cat~="table"] .pcard__name, .pcard[data-cat~="stool"] .pcard__name{font-size:1.5rem;margin-top:6px}
+.pcard[data-cat~="table"] .pcard__body, .pcard[data-cat~="stool"] .pcard__body{padding:8px 2px 0}
+.pcard[data-cat~="table"] .pcard__foot, .pcard[data-cat~="stool"] .pcard__foot{
+  border-top:1px solid rgba(190,154,92,.3);padding-top:16px;margin-top:4px
+}
 @media(max-width:640px){
-  .accband{margin:26px 0 2px;padding:28px 18px 24px}
-  .accband p{font-size:.9rem;margin-top:10px}
-  .accband + .gsec{padding-top:14px}
+  .pcard[data-cat~="table"] .pcard__media, .pcard[data-cat~="stool"] .pcard__media{margin-bottom:12px}
+  .pcard[data-cat~="table"] .pcard__name, .pcard[data-cat~="stool"] .pcard__name{font-size:1.25rem}
 }
 </style>
 </head>
@@ -1574,11 +1580,11 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     {name:'Aurelia Bed', collection:'Bed Collection', cat:'bed', price:'489', from:1, badge:'New', desc:'Dense diamond button tufting across the headboard, footboard and sides. Made to order in your fabric and colour, mattress included.', images:['images/aurelia-bed/aurelia-bed-1.jpg','images/aurelia-bed/aurelia-bed-2.jpg'], features:['Mattress included','3ft Single to 6ft Superking','Dense diamond button tufting','Tufted headboard, footboard and sides','Any fabric and colour'], tiers:[['3ft Single','489'],['4ft Small Double','530'],['4ft6 Double','530'],['5ft King','580'],['6ft Superking','650']], sets:[], note:'Mattress included · free UK delivery'},
     {name:'Ambassador Bed', collection:'Bed Collection', cat:'bed', price:'579', from:1, badge:'New', desc:'A tall buttoned headboard and a thick, deeply tufted frame. Made to order in your fabric and colour, mattress included.', images:['images/ambassador-bed/ambassador-bed-1.jpg'], features:['Mattress included','3ft Single to 6ft Superking','Tall buttoned headboard','Thick, deeply tufted frame','Any fabric and colour'], tiers:[['3ft Single','579'],['4ft Small Double','650'],['4ft6 Double','670'],['5ft King','730'],['6ft Superking','780']], sets:[], note:'Mattress included · free UK delivery'},
     {name:'Olympia Armchair', collection:'Olympia Collection', cat:'armchair', price:'319', badge:'New', desc:'Rolled, button-tufted arms, a deep-buttoned front, a shaped back cushion and a piped seat cushion, on dark wooden feet. Made to match our Olympia sofas, in your choice of fabric and colour.', images:['images/olympia-arm/olympia-arm-1.jpg'], features:['Matches our Olympia sofas','Rolled, button-tufted arms','Piped seat cushion, dark wooden feet','Available in other fabrics and colours']},
-    {name:'Square Glass-Top Coffee Table', collection:'Tables & Stools', cat:'table extras', price:'169', desc:'A padded frame with a clear glass top, made in your sofa\'s fabric and colour so it matches the set.', images:['images/addons/coffee-table-cream-glass-top.jpg','images/addons/coffee-table-navy-glass-top.jpg','images/addons/footstool-cream-glass-top.jpg','images/addons/footstool-grey-glass-top.jpg'], features:['Made in your sofa fabric and colour','Clear glass top on a padded frame','£10 less when bought with a sofa','Free UK delivery, cash on delivery'], tiers:[['On its own','169'],['With any sofa','159']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
-    {name:'Chesterfield Glass-Top Coffee Table', collection:'Tables & Stools', cat:'table extras', price:'199', desc:'A deep button-tufted frame with a clear glass top and a gold base, made to match your Chesterfield.', images:['images/addons/coffee-table-black-tufted-glass-top.jpg','images/addons/coffee-table-black-tufted-glass-top-2.jpg'], features:['Made in your sofa fabric and colour','Deep button tufting with a gold base','Clear glass top','£10 less when bought with a sofa'], tiers:[['On its own','199'],['With any sofa','189']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
-    {name:'Round Ottoman Coffee Table', collection:'Tables & Stools', cat:'table extras', price:'299', desc:'Button-tufted all the way round with a marble-effect top and a gold rim, made in your fabric and colour.', images:['images/addons/round-coffee-table-marble-top.jpg','images/addons/round-coffee-table.jpg'], features:['Made in your sofa fabric and colour','Marble-effect top with a gold rim','Button-tufted all round','£10 less when bought with a sofa'], tiers:[['On its own','299'],['With any sofa','289']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
-    {name:'Fix Seat Stool', collection:'Tables & Stools', cat:'stool extras', price:'99', desc:'A firm, compact cube stool made in your sofa fabric — easy to tuck away and pull out when someone extra turns up.', images:['images/addons/fix-seat-stool.jpg'], features:['Made in your sofa fabric and colour','Firm, compact cube shape','Tucks away easily','£10 less when bought with a sofa'], tiers:[['On its own','99'],['With any sofa','89']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
-    {name:'Footstool', collection:'Tables & Stools', cat:'stool extras', price:'119', desc:'A generous padded footstool — a footrest, an extra seat when people come round, or somewhere to put a tray. Made in your sofa fabric.', images:['images/addons/footstool-black-gold-legs.jpg','images/addons/footstool-taupe.jpg','images/addons/lilly-stool.jpg'], features:['Made in your sofa fabric and colour','Footrest, extra seat or tray table','Larger sizes for the Lilly Corner (£149) and Ashton Corner (£199)','£10 less when bought with a sofa'], tiers:[['On its own','119'],['With any sofa','109']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
+    {name:'Square Glass-Top Coffee Table', collection:'Accessory', cat:'table extras', price:'169', desc:'A padded frame with a clear glass top, made in your sofa\'s fabric and colour so it matches the set.', images:['images/addons/coffee-table-cream-glass-top.jpg','images/addons/coffee-table-navy-glass-top.jpg','images/addons/footstool-cream-glass-top.jpg','images/addons/footstool-grey-glass-top.jpg'], features:['Made in your sofa fabric and colour','Clear glass top on a padded frame','£10 less when bought with a sofa','Free UK delivery, cash on delivery'], tiers:[['On its own','169'],['With any sofa','159']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
+    {name:'Chesterfield Glass-Top Coffee Table', collection:'Accessory', cat:'table extras', price:'199', desc:'A deep button-tufted frame with a clear glass top and a gold base, made to match your Chesterfield.', images:['images/addons/coffee-table-black-tufted-glass-top.jpg','images/addons/coffee-table-black-tufted-glass-top-2.jpg'], features:['Made in your sofa fabric and colour','Deep button tufting with a gold base','Clear glass top','£10 less when bought with a sofa'], tiers:[['On its own','199'],['With any sofa','189']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
+    {name:'Round Ottoman Coffee Table', collection:'Accessory', cat:'table extras', price:'299', desc:'Button-tufted all the way round with a marble-effect top and a gold rim, made in your fabric and colour.', images:['images/addons/round-coffee-table-marble-top.jpg','images/addons/round-coffee-table.jpg'], features:['Made in your sofa fabric and colour','Marble-effect top with a gold rim','Button-tufted all round','£10 less when bought with a sofa'], tiers:[['On its own','299'],['With any sofa','289']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
+    {name:'Fix Seat Stool', collection:'Accessory', cat:'stool extras', price:'99', desc:'A firm, compact cube stool made in your sofa fabric — easy to tuck away and pull out when someone extra turns up.', images:['images/addons/fix-seat-stool.jpg'], features:['Made in your sofa fabric and colour','Firm, compact cube shape','Tucks away easily','£10 less when bought with a sofa'], tiers:[['On its own','99'],['With any sofa','89']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
+    {name:'Footstool', collection:'Accessory', cat:'stool extras', price:'119', desc:'A generous padded footstool — a footrest, an extra seat when people come round, or somewhere to put a tray. Made in your sofa fabric.', images:['images/addons/footstool-black-gold-legs.jpg','images/addons/footstool-taupe.jpg','images/addons/lilly-stool.jpg'], features:['Made in your sofa fabric and colour','Footrest, extra seat or tray table','Larger sizes for the Lilly Corner (£149) and Ashton Corner (£199)','£10 less when bought with a sofa'], tiers:[['On its own','119'],['With any sofa','109']], sets:[], note:'Made in your sofa fabric · free UK delivery'},
   ];
 
   const grid = document.getElementById('grid');
@@ -1611,12 +1617,6 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     ['table',   'Coffee Tables',       'Made in your sofa fabric so the whole room matches'],
     ['stool',   'Stools &amp; Footstools', 'The finishing piece, and extra seating when people come round'],
   ];
-  // Full-width lead-in that introduces the tables and stools as one idea.
-  const ACCESSORY_LEAD = `<div class="accband">
-      <span class="eyebrow">Complete the look</span>
-      <h2>Matching <em>Accessories</em></h2>
-      <p>Finish the room with pieces made in the same fabric as your sofa. Add any of them to your order and pay on delivery, exactly like the sofa itself.</p>
-    </div>`;
   const groupOf = p => (['sofabed','bed','armchair','table','stool']
     .find(g => p.cat.split(' ').includes(g))) || 'sofa';
 
@@ -1627,8 +1627,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       grid.innerHTML = GROUPS.map(([key,title,sub]) => {
         const items = list.filter(o => groupOf(o.p) === key);
         if(!items.length) return '';
-        const lead = key === 'table' ? ACCESSORY_LEAD : '';
-        return lead + `<div class="gsec" id="g-${key}"><h3>${title}</h3><p>${sub}</p></div>` + items.map(card).join('');
+        return `<div class="gsec" id="g-${key}"><h3>${title}</h3><p>${sub}</p></div>` + items.map(card).join('');
       }).join('');
     } else {
       grid.innerHTML = list.map(card).join('');
@@ -1664,15 +1663,23 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
             <p class="pcard__desc">${p.desc}</p>
             <div class="pcard__foot">
               <span class="pcard__price">${p.from?'<small>from</small>':''}£${p.price}</span>
-              <a class="btn btn--order" href="${waLink(p)}" target="_blank" rel="noopener">
+              <a class="btn btn--order" href="${waLink(p)}" target="_blank" rel="noopener" data-label="${/\b(table|stool)\b/.test(p.cat) ? 'Order on WhatsApp' : 'Order'}">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-                Order
+                <span class="btn__t"></span>
               </a>
             </div>
           </div>
         </article>`;
   }
   render();
+  // the order button reads "Order on WhatsApp" on accessories, "Order" elsewhere
+  function labelButtons(){
+    document.querySelectorAll('.btn--order .btn__t').forEach(t => {
+      t.textContent = t.closest('.btn--order').dataset.label || 'Order';
+    });
+  }
+  labelButtons();
+  new MutationObserver(labelButtons).observe(grid, {childList:true});
 
 
   // Range strip: jump to a section, clearing any filter that is on
