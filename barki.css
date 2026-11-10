@@ -327,3 +327,22 @@ picture{display:contents}
   .nav{gap:12px;padding:14px 14px}
   .nav .btn--wa{padding:10px 15px;font-size:.84rem}
 }
+
+/* ===== Nov 2026: short menu. Desktop: six links, Sofas opens the sofa shapes.
+   Phones: the same links stay as one swipeable row, as before. ===== */
+@media(min-width:1101px){
+  .navlinks{overflow:visible;gap:26px;font-size:.9rem;justify-content:center;align-items:center}
+  .nv-contact{display:none}
+  .nvgroup{position:relative;display:flex;align-items:center}
+  .nvtop{display:inline-flex;align-items:center;gap:7px}
+  .nvtop::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+  .nvsub{position:absolute;top:100%;left:-18px;min-width:230px;padding:10px;margin-top:14px;background:var(--white);
+    border:1px solid rgba(190,154,92,.3);border-radius:12px;box-shadow:0 22px 40px -22px rgba(18,58,52,.5);
+    display:flex;flex-direction:column;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .16s ease,translate .16s ease,visibility .16s;z-index:5}
+  .nvsub::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+  .nvgroup:hover .nvsub,.nvgroup:focus-within .nvsub{opacity:1;visibility:visible;translate:0 0}
+  .nvsub a{padding:9px 12px;border-radius:8px;font-size:.9rem;font-weight:600;color:var(--ink)}
+  .nvsub a:hover,.nvsub a:focus-visible{background:var(--cream-2);color:var(--ink)}
+}
+@media(max-width:1100px){.nvgroup,.nvsub{display:contents}}
+@media(prefers-reduced-motion:reduce){.nvsub{transition:none}}

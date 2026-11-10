@@ -30,7 +30,7 @@
 
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
      <meta name="p:domain_verify" content="3065513e044518e8bcb23f6705ecb3e9"/>
-<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" imagesizes="(max-width:940px) calc(100vw - 44px), 100vw">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="images/lshape/lshape-6-480.webp 480w, images/lshape/lshape-6-800.webp 800w, images/lshape/lshape-6-1200.webp 1200w" imagesizes="(max-width:940px) 100vw, 640px">
 <style>
   @font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2")}
   @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/manrope-latin.woff2) format("woff2")}
@@ -1183,6 +1183,129 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .accband + .gsec{padding-top:14px}
 }
 </style>
+
+<style>
+/* ===== Homepage redesign — Nov 2026 ===== */
+/* -- menu: six links, Sofas opens the sofa shapes -- */
+.nvgroup{position:relative;display:flex;align-items:center}
+.nvsub a::after,.nvtop::after{display:none}
+@media(min-width:1101px){
+  .navlinks{overflow:visible;gap:28px;justify-content:center}
+  .navlinks a{font-size:.92rem}
+  .nv-contact{display:none}
+  .nvtop{display:inline-flex;align-items:center;gap:7px}
+  .nvtop::before{content:"";order:2;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+  .nvsub{position:absolute;top:100%;left:-18px;min-width:230px;padding:10px;margin-top:14px;background:var(--white);
+    border:1px solid rgba(190,154,92,.3);border-radius:12px;box-shadow:0 22px 40px -22px rgba(18,58,52,.5);
+    display:flex;flex-direction:column;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .16s ease,translate .16s ease,visibility .16s}
+  .nvsub::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+  .nvgroup:hover .nvsub,.nvgroup:focus-within .nvsub{opacity:1;visibility:visible;translate:0 0}
+  .nvsub a{padding:9px 12px;border-radius:8px;font-size:.9rem;font-weight:600}
+  .nvsub a:hover,.nvsub a:focus-visible{background:var(--cream-2)}
+}
+@media(max-width:1100px){
+  .navlinks{gap:0;padding:8px 22px 20px;max-height:calc(100vh - 62px);overflow-y:auto}
+  .navlinks > a,.nvtop{display:block;width:100%;padding:13px 0;font-size:1.02rem;border-bottom:1px solid rgba(190,154,92,.22)}
+  .navlinks > a:last-child{border-bottom:none}
+  .nvgroup{display:block;width:100%}
+  .nvsub{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 0 14px;border-bottom:1px solid rgba(190,154,92,.22)}
+  .nvsub a{font-size:.86rem;font-weight:600;padding:9px 12px;border-radius:8px;background:var(--cream-2);color:var(--teal)}
+  .nvtop{border-bottom:none}
+}
+
+/* -- hero: the sofa is shown clearly, copy sits beside it -- */
+.hero2{background:var(--teal-deep);color:var(--cream)}
+.hero2__in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:56px;padding-top:56px;padding-bottom:56px}
+.hero2__copy{order:1}
+.hero2__pic{order:2;display:block;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--teal)}
+.hero2__pic img{width:100%;height:100%;object-fit:cover}
+.hero2 h1{color:var(--cream);font-size:clamp(2.1rem,3.6vw,3.3rem);line-height:1.08;text-wrap:balance}
+.hero2__copy > p{margin:18px 0 26px;font-size:1.1rem;color:rgba(248,245,239,.88);max-width:30em}
+.hero2__actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero2__actions .btn{padding:.95em 1.7em}
+.hero2__facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(217,190,142,.28);font-size:.9rem;color:rgba(248,245,239,.78)}
+.hero2__facts b{color:var(--gold-soft);font-weight:700}
+@media(max-width:940px){
+  .hero2__in{grid-template-columns:1fr;gap:0;padding:0}
+  .hero2__pic{order:1;border-radius:0;aspect-ratio:3/2}
+  .hero2__copy{order:2;padding:24px 20px 30px}
+  .hero2 h1{font-size:clamp(1.75rem,7.4vw,2.3rem)}
+  .hero2__copy > p{font-size:1rem;margin:12px 0 20px}
+  .hero2__actions .btn{flex:1 1 100%}
+  .hero2__facts{margin-top:22px;padding-top:16px;gap:6px 20px;font-size:.84rem}
+}
+
+/* -- hero slideshow -- */
+.hs{position:relative}
+.hs__slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+.hs__slide.is-on{opacity:1;visibility:visible}
+.hs__slide picture{display:block;width:100%;height:100%}
+.hs__card{position:absolute;left:16px;top:16px;display:grid;gap:1px;background:var(--white);color:var(--ink);border-radius:12px;padding:12px 16px 12px;box-shadow:0 10px 26px -14px rgba(15,58,54,.55);max-width:calc(100% - 32px)}
+.hs__kind{font-size:.74rem;font-weight:700;color:var(--muted)}
+.hs__best,.fcard__kind.is-best{justify-self:start;align-self:flex-start;font-size:.7rem;font-weight:800;color:var(--teal-deep);background:var(--gold-soft);border-radius:999px;padding:2px 9px;margin-bottom:3px}
+.hs__card b{font-family:var(--serif);font-size:1.08rem;font-weight:600;line-height:1.2}
+.hs__price{font-weight:800;color:var(--teal);font-size:.98rem;font-variant-numeric:tabular-nums}
+.hs__go{font-size:.8rem;font-weight:700;color:var(--teal);margin-top:4px;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.hs__card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hs__dots{position:absolute;left:50%;bottom:12px;translate:-50% 0;display:flex;gap:2px;background:rgba(255,255,255,.92);border-radius:999px;padding:2px 6px}
+.hs__dot{width:22px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.hs__dot::before{content:"";width:8px;height:8px;border-radius:999px;background:rgba(28,48,46,.3);transition:width .25s ease,background .25s ease}
+.hs__dot.is-on::before{width:18px;background:var(--teal)}
+.hs__dot:focus-visible{outline:2px solid var(--teal);outline-offset:-2px;border-radius:6px}
+@media(max-width:940px){.hs.hero2__pic{aspect-ratio:4/3}.hs__card{left:10px;top:10px;padding:7px 12px 8px;border-radius:10px}.hs__card b{font-size:.92rem}.hs__price{font-size:.9rem}.hs__kind,.hs__go{display:none}.hs__best{font-size:.64rem;padding:1px 8px}.hs__dots{bottom:8px}}
+@media(prefers-reduced-motion:reduce){.hs__slide{transition:none}}
+
+/* -- featured row -- */
+.feat{padding:64px 0 8px}
+.feat__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+.feat__head h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.feat__all{font-weight:700;font-size:.92rem;color:var(--teal);border-bottom:2px solid var(--gold);padding-bottom:2px;white-space:nowrap}
+.feat__row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px}
+.fcard{display:flex;flex-direction:column;min-width:0}
+.fcard__img{display:block;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--white);margin-bottom:12px}
+.fcard__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.fcard:hover .fcard__img img{transform:scale(1.04)}
+.fcard__kind{font-size:.78rem;color:var(--muted);font-weight:600}
+.fcard__name{font-family:var(--serif);font-size:1.16rem;font-weight:600;line-height:1.2;margin:2px 0 4px}
+.fcard__price{font-weight:800;color:var(--teal);font-size:1.02rem;font-variant-numeric:tabular-nums}
+.fcard:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:12px}
+@media(max-width:1100px){.feat__row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){
+  .feat{padding:38px 0 0}
+  .feat__row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:0 18px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .feat__row::-webkit-scrollbar{display:none}
+  .fcard{flex:0 0 64vw;scroll-snap-align:start;scroll-margin-left:18px}
+  .fcard__name{font-size:1.05rem}
+}
+
+/* -- full range: two compact cards per row on a phone, so the page is half as long -- */
+#collection.section{padding-top:56px}
+@media(max-width:640px){
+  .section{padding:52px 0}
+  #collection.section{padding-top:34px}
+  .sec-head{margin-bottom:26px}
+  .rrow,.tabs{margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .pcard{border-radius:10px;border-top-width:2px}
+  .pcard__head{padding:11px 11px 8px}
+  .pcard__cat{display:none}
+  .pcard__name{font-size:.98rem;line-height:1.2}
+  .pcard__media{width:calc(100% - 22px);margin:0 11px;border-radius:8px}
+  .pcard__body{padding:9px 11px 12px;gap:8px}
+  .pcard__desc,.pcard__tiers,.pcard__note,.pcount{display:none}
+  .pcard__foot{flex-direction:column;align-items:stretch;gap:8px;padding-top:9px}
+  .pcard__price{font-size:1.12rem}
+  .pcard__foot .btn--order{justify-content:center;width:100%;padding:.7em 1em;font-size:.84rem}
+  .pnav{width:34px;height:34px;font-size:1.3rem}
+}
+
+/* -- Google reviews block -- */
+.grev{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border:1px solid rgba(190,154,92,.35);border-radius:var(--radius);padding:34px 36px;background:var(--card)}
+.grev h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:8px}
+.grev p{color:var(--muted);max-width:34em}
+@media(max-width:640px){.grev{padding:24px 20px}.grev .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.fcard__img img,.nvsub{transition:none}}
+</style>
 </head>
 <body>
 
@@ -1225,19 +1348,23 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
       <span><b>Barki Sofa Hub</b><small>Furniture made to order</small></span>
     </a>
     <nav class="navlinks" id="navlinks">
-      <a href="all-sofas.html">Sofas</a>
-      <a href="corner-sofas.html">Corner</a>
-      <a href="u-shape-sofas.html">U-Shape</a>
-      <a href="l-shape-sofas.html">L-Shape</a>
-      <a href="2-3-seater-sofa-sets.html">2+3 Sets</a>
+      <div class="nvgroup">
+        <a class="nvtop" href="all-sofas.html">Sofas</a>
+        <div class="nvsub">
+          <a href="corner-sofas.html">Corner sofas</a>
+          <a href="u-shape-sofas.html">U-shape sofas</a>
+          <a href="l-shape-sofas.html">L-shape sofas</a>
+          <a href="2-3-seater-sofa-sets.html">2+3 seater sets</a>
+          <a href="chesterfield-sofas.html">Chesterfield sofas</a>
+          <a href="olympia-armchair.html">Armchairs</a>
+        </div>
+      </div>
       <a href="chesterfield-sofa-beds.html">Sofa Beds</a>
       <a href="beds.html">Beds</a>
-      <a href="olympia-armchair.html">Armchairs</a>
-      <a href="tables-and-stools.html">Tables</a>
-      <a href="chesterfield-sofas.html">Chesterfield</a>
+      <a href="tables-and-stools.html">Tables &amp; Stools</a>
       <a href="fabrics-and-colours.html">Fabrics</a>
       <a href="guides.html">Guides</a>
-      <a href="contact.html">Contact</a>
+      <a class="nv-contact" href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20to%20see%20your%20sofa%20range." target="_blank" rel="noopener">
@@ -1250,27 +1377,50 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 </header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <picture><source width="1200" height="896" type="image/webp" srcset="images/hero-480.webp 480w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(max-width:940px) calc(100vw - 44px), 100vw"><img class="hero-bg" id="heroImg" src="images/hero.jpg" fetchpriority="high" width="1200" height="896" alt="Barki made-to-order corner sofa" onerror="heroFallback(this)"></picture>
-  <div class="hero-overlay"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow">Made to order for your home</span>
-      <h1>Sofas and beds made to<br><em>fit your home</em>, not the other way round.</h1>
-      <p>Sofas, sofa beds, beds, armchairs and matching tables — made to order in your choice of fabric, colour and size. Delivered free across the UK.</p>
-      <div class="hero-actions">
-        <a class="btn btn--wa" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20quote%20and%20fabric%20options." target="_blank" rel="noopener">
+<section class="hero2" id="home">
+  <div class="wrap hero2__in">
+    <div class="hero2__pic hs" id="hs">
+      <div class="hs__slide is-on">
+        <picture><source width="1200" height="896" type="image/webp" srcset="images/lshape/lshape-6-480.webp 480w, images/lshape/lshape-6-800.webp 800w, images/lshape/lshape-6-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img id="heroImg" src="images/lshape/lshape-6.jpg" fetchpriority="high" width="1200" height="896" alt="Verona Corner Sofa" onerror="heroFallback(this)"></picture>
+        <a class="hs__card" href="verona-corner-sofa.html"><span class="hs__best">Best seller</span><b>Verona Corner Sofa</b><span class="hs__price">£599</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__slide" aria-hidden="true">
+        <picture><source type="image/webp" data-srcset="images/shannon-corner/shannon-corner-2-480.webp 480w, images/shannon-corner/shannon-corner-2-800.webp 800w, images/shannon-corner/shannon-corner-2-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img data-src="images/shannon-corner/shannon-corner-2.jpg" width="1200" height="896" alt="Harrison Corner Sofa"></picture>
+        <a class="hs__card" href="harrison-corner-sofa.html" tabindex="-1"><span class="hs__best">Best seller</span><b>Harrison Corner Sofa</b><span class="hs__price">£649</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__slide" aria-hidden="true">
+        <picture><source type="image/webp" data-srcset="images/lilly-corner/lilly-corner-3-480.webp 480w, images/lilly-corner/lilly-corner-3-800.webp 800w, images/lilly-corner/lilly-corner-3-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img data-src="images/lilly-corner/lilly-corner-3.jpg" width="1200" height="896" alt="Lilly Corner Sofa"></picture>
+        <a class="hs__card" href="alaska-corner-sofa.html" tabindex="-1"><span class="hs__best">Best seller</span><b>Lilly Corner Sofa</b><span class="hs__price">£679</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__slide" aria-hidden="true">
+        <picture><source type="image/webp" data-srcset="images/lilly-fixed/lilly-fixed-1-480.webp 480w, images/lilly-fixed/lilly-fixed-1-800.webp 800w, images/lilly-fixed/lilly-fixed-1-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img data-src="images/lilly-fixed/lilly-fixed-1.jpg" width="1200" height="896" alt="Lilly Fixed Seat Sofa"></picture>
+        <a class="hs__card" href="lilly-fixed-seat-sofa.html" tabindex="-1"><span class="hs__best">Best seller</span><b>Lilly Fixed Seat Sofa</b><span class="hs__price">£849</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__slide" aria-hidden="true">
+        <picture><source type="image/webp" data-srcset="images/lilly-corner/lilly-corner-2-480.webp 480w, images/lilly-corner/lilly-corner-2-800.webp 800w, images/lilly-corner/lilly-corner-2-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img data-src="images/lilly-corner/lilly-corner-2.jpg" width="1200" height="896" alt="Lilly Alaska Sofa"></picture>
+        <a class="hs__card" href="lilly-alaska-sofa.html" tabindex="-1"><span class="hs__best">Most loved</span><b>Lilly Alaska Sofa</b><span class="hs__price">from £669</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__slide" aria-hidden="true">
+        <picture><source type="image/webp" data-srcset="images/lilly-ushape/lilly-ushape-3-480.webp 480w, images/lilly-ushape/lilly-ushape-3-800.webp 800w, images/lilly-ushape/lilly-ushape-3-1200.webp 1200w" sizes="(max-width:940px) 100vw, 640px"><img data-src="images/lilly-ushape/lilly-ushape-3.jpg" width="1200" height="896" alt="Lilly U-Shape Sofa"></picture>
+        <a class="hs__card" href="lilly-u-shape-sofa.html" tabindex="-1"><span class="hs__best">Best for big families</span><b>Lilly U-Shape Sofa</b><span class="hs__price">£699</span><span class="hs__go">View</span></a>
+      </div>
+      <div class="hs__dots"><button type="button" class="hs__dot is-on" aria-label="Photo 1 of 6"></button><button type="button" class="hs__dot" aria-label="Photo 2 of 6"></button><button type="button" class="hs__dot" aria-label="Photo 3 of 6"></button><button type="button" class="hs__dot" aria-label="Photo 4 of 6"></button><button type="button" class="hs__dot" aria-label="Photo 5 of 6"></button><button type="button" class="hs__dot" aria-label="Photo 6 of 6"></button></div>
+    </div>
+    <div class="hero2__copy">
+      <h1>Sofas and beds made to your size, fabric and colour.</h1>
+      <p>No deposit. Free UK delivery in 2–3 days. You pay when it arrives.</p>
+      <div class="hero2__actions">
+        <a class="btn btn--wa" href="#featured">Shop sofas</a>
+        <a class="btn btn--ghost" href="https://wa.me/447424333739?text=Hi%20Barki%20Sofa%20Hub%2C%20I%27d%20like%20a%20quote%20and%20fabric%20options." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.87-4.64-4.05-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.6.82 2.04.89 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.51.31.07.11.07.64-.17 1.32z"/></svg>
           Order on WhatsApp
         </a>
-        <a class="btn btn--ghost" href="#collection">View collection</a>
       </div>
-      <div class="hero-meta">
-        <div><b>2–3 days</b><span>Made to order</span></div>
-        <div><b>Free</b><span>UK delivery</span></div>
-        <div><b>COD</b><span>Pay on delivery</span></div>
-        <div><b>93 colours</b><span>8 fabrics</span></div>
-      </div>
+      <ul class="hero2__facts">
+        <li><b>From £369</b> sofas</li>
+        <li><b>93 colours</b> in 8 fabrics</li>
+        <li><b>Custom sizes</b> available</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1321,12 +1471,71 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   </div>
 </section>
 
+<!-- FEATURED -->
+<section class="feat" id="featured" aria-labelledby="featH">
+  <div class="wrap wrap--wide">
+    <div class="feat__head">
+      <h2 id="featH">Best sellers and favourites</h2>
+      <a class="feat__all" href="all-sofas.html">View all sofas</a>
+    </div>
+    <div class="feat__row">
+      <a class="fcard" href="verona-corner-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/lshape/lshape-6-480.webp 480w, images/lshape/lshape-6-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/lshape/lshape-6.jpg" alt="Verona Corner Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best seller</span>
+        <span class="fcard__name">Verona Corner Sofa</span>
+        <span class="fcard__price">£599</span>
+      </a>
+      <a class="fcard" href="harrison-corner-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/shannon-corner/shannon-corner-2-480.webp 480w, images/shannon-corner/shannon-corner-2-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/shannon-corner/shannon-corner-2.jpg" alt="Harrison Corner Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best seller</span>
+        <span class="fcard__name">Harrison Corner Sofa</span>
+        <span class="fcard__price">£649</span>
+      </a>
+      <a class="fcard" href="alaska-corner-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/lilly-corner/lilly-corner-3-480.webp 480w, images/lilly-corner/lilly-corner-3-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/lilly-corner/lilly-corner-3.jpg" alt="Lilly Corner Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best seller</span>
+        <span class="fcard__name">Lilly Corner Sofa</span>
+        <span class="fcard__price">£679</span>
+      </a>
+      <a class="fcard" href="lilly-fixed-seat-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/lilly-fixed/lilly-fixed-1-480.webp 480w, images/lilly-fixed/lilly-fixed-1-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/lilly-fixed/lilly-fixed-1.jpg" alt="Lilly Fixed Seat Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best seller</span>
+        <span class="fcard__name">Lilly Fixed Seat Sofa</span>
+        <span class="fcard__price">£849</span>
+      </a>
+      <a class="fcard" href="lilly-alaska-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/lilly-corner/lilly-corner-2-480.webp 480w, images/lilly-corner/lilly-corner-2-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/lilly-corner/lilly-corner-2.jpg" alt="Lilly Alaska Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Most loved</span>
+        <span class="fcard__name">Lilly Alaska Sofa</span>
+        <span class="fcard__price">from £669</span>
+      </a>
+      <a class="fcard" href="ashton-l-shape-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/ashton-corner/ashton-corner-3-480.webp 480w, images/ashton-corner/ashton-corner-3-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/ashton-corner/ashton-corner-3.jpg" alt="Ashton Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Most loved</span>
+        <span class="fcard__name">Ashton Sofa</span>
+        <span class="fcard__price">from £749</span>
+      </a>
+      <a class="fcard" href="u-shape-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/ushape/ushape-7-480.webp 480w, images/ushape/ushape-7-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/ushape/ushape-7.jpg" alt="U-Shape Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best for big families</span>
+        <span class="fcard__name">U-Shape Sofa</span>
+        <span class="fcard__price">£649</span>
+      </a>
+      <a class="fcard" href="lilly-u-shape-sofa.html">
+        <span class="fcard__img"><picture><source type="image/webp" srcset="images/lilly-ushape/lilly-ushape-3-480.webp 480w, images/lilly-ushape/lilly-ushape-3-800.webp 800w" sizes="(max-width:640px) 64vw, (max-width:1100px) 31vw, 300px"><img src="images/lilly-ushape/lilly-ushape-3.jpg" alt="Lilly U-Shape Sofa" loading="lazy" width="400" height="300"></picture></span>
+        <span class="fcard__kind is-best">Best for big families</span>
+        <span class="fcard__name">Lilly U-Shape Sofa</span>
+        <span class="fcard__price">£699</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- COLLECTION -->
 <section class="section" id="collection">
   <div class="wrap wrap--wide">
     <div class="sec-head">
-      <span class="eyebrow solo">Our range</span>
-      <h2>Choose your comfort</h2>
+      <h2>The full range</h2>
       <p>Every piece is made to order — pick the shape, then we'll tailor the fabric, colour and dimensions to your room.</p>
     </div>
 
@@ -1398,14 +1607,12 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 <!-- REVIEWS -->
 <section class="section section--tint" id="reviews">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow solo">Happy homes</span>
-      <h2>What customers say</h2>
-    </div>
-    <div class="reviews">
-      <div class="review"><div class="stars">★★★★★</div><p>"The corner sofa fit our lounge perfectly — they made it 20cm shorter than standard and it looks stunning."</p><b>Sarah M.</b><span>Manchester</span></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Ordered on WhatsApp, paid on delivery. Simple, quick and the fabric quality is lovely."</p><b>David R.</b><span>Birmingham</span></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Great communication throughout and the recliner is so comfortable. Would order again."</p><b>Aisha K.</b><span>London</span></div>
+    <div class="grev">
+      <div>
+        <h2>Read what customers say on Google</h2>
+        <p>Our reviews are on our Google Business Profile, written by the people who ordered. Have a look before you decide.</p>
+      </div>
+      <a class="btn btn--dark" href="https://maps.app.goo.gl/Fiq3ZexiZFX8ZsPo7" target="_blank" rel="noopener">See our Google reviews</a>
     </div>
   </div>
 </section>
@@ -1938,6 +2145,30 @@ if(v==='granted'&&window.gtag){gtag('consent','update',{'analytics_storage':'gra
 b.hidden=true;}
 document.getElementById('ckYes').addEventListener('click',function(){set('granted');});
 document.getElementById('ckNo').addEventListener('click',function(){set('denied');});
+})();
+</script>
+<script>
+/* Hero slideshow. The extra photos are fetched only after the page has loaded,
+   so the first screen is as fast as with a single photo. */
+(function(){
+  var hs=document.getElementById('hs'); if(!hs) return;
+  var slides=[].slice.call(hs.querySelectorAll('.hs__slide')), dots=[].slice.call(hs.querySelectorAll('.hs__dot'));
+  var i=0, timer=null, still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function load(s){ s.querySelectorAll('[data-srcset]').forEach(function(e){e.srcset=e.getAttribute('data-srcset');e.removeAttribute('data-srcset');});
+    s.querySelectorAll('[data-src]').forEach(function(e){e.src=e.getAttribute('data-src');e.removeAttribute('data-src');}); }
+  function show(n){ n=(n+slides.length)%slides.length; load(slides[n]); load(slides[(n+1)%slides.length]);
+    slides.forEach(function(s,k){var on=k===n; s.classList.toggle('is-on',on); if(on)s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden','true');
+      var a=s.querySelector('a'); if(a){ if(on)a.removeAttribute('tabindex'); else a.setAttribute('tabindex','-1'); }});
+    dots.forEach(function(d,k){d.classList.toggle('is-on',k===n);}); i=n; }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function start(){ if(still||timer) return; timer=setInterval(function(){ if(!document.hidden) show(i+1); },5000); }
+  dots.forEach(function(d,k){ d.addEventListener('click',function(){ stop(); show(k); }); });
+  var x0=null;
+  hs.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  hs.addEventListener('touchend',function(e){ if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>40){ stop(); show(i+(dx<0?1:-1)); } },{passive:true});
+  hs.addEventListener('mouseenter',stop); hs.addEventListener('mouseleave',start);
+  window.addEventListener('load',function(){ setTimeout(function(){ load(slides[1]); start(); },1200); });
 })();
 </script>
 </body>
