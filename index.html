@@ -1307,6 +1307,21 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 @media(prefers-reduced-motion:reduce){.fcard__img img,.nvsub{transition:none}}
 </style>
 <style>.sw__chip{overflow:hidden}.sw__chip img{width:100%;height:100%;object-fit:cover;display:block}</style>
+<style>
+/* trust strip: 8 points, 4 per row on a computer, 2 per row on phones and tablets */
+.usp .usp-grid .usp-item span{display:block;line-height:1.35;margin-top:2px}
+.usp .usp-grid .usp-item{border-right:1px solid rgba(190,154,92,.22);border-bottom:1px solid rgba(190,154,92,.22)}
+@media(min-width:941px){
+  .usp .usp-grid{grid-template-columns:repeat(4,1fr)}
+  .usp .usp-grid .usp-item:nth-child(4n){border-right:0}
+  .usp .usp-grid .usp-item:nth-child(n+5){border-bottom:0}
+}
+@media(max-width:940px){
+  .usp .usp-grid{grid-template-columns:repeat(2,1fr)}
+  .usp .usp-grid .usp-item:nth-child(2n){border-right:0}
+  .usp .usp-grid .usp-item:nth-child(n+7){border-bottom:0}
+}
+</style>
 </head>
 <body>
 
@@ -1480,6 +1495,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     <div class="usp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12l2-9h14l2 9M3 12v7h18v-7M3 12h18M7 12v3M17 12v3"/></svg><div><b>Made to order</b><span>Your size, fabric and colour</span></div></div>
     <div class="usp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>2–3 day delivery</b><span>Once your colour is confirmed</span></div></div>
     <div class="usp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4zM4 9h16M9 5v14"/></svg><div><b>8 fabrics, 93 colours</b><span>Or send us your own</span></div></div>
+    <div class="usp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Order on WhatsApp</b><span>Chat with a real person</span></div></div>
+    <div class="usp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.4"/></svg><div><b>Fair prices</b><span>No showroom costs</span></div></div>
   
   </div>
 </section>
