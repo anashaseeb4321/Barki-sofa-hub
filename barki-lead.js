@@ -550,3 +550,12 @@
     });
   } catch (e) { /* never let the reveal break the page */ }
 })();
+
+/* Site search (the magnifying glass in the header) lives in barki-search.js. Loading it here puts it on every page. */
+(function () {
+  try {
+    var s = document.createElement('script');
+    s.src = 'barki-search.js'; s.async = true;
+    document.head.appendChild(s);
+  } catch (e) { /* search is optional - never break the page */ }
+})();
