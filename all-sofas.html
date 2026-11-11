@@ -384,6 +384,23 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 @media(prefers-reduced-motion:reduce){.nvsub{transition:none}}
 </style>
 <style>@media(max-width:1100px){.nvgroup.nv-x .nvsub{display:none}}.nvsub{max-height:calc(100vh - 120px);overflow-y:auto}</style>
+<style>/* -- All Sofas filters and sorting -- */
+.fbar{margin-top:16px;padding:16px 18px;background:var(--card);border:1px solid var(--cream-2);border-radius:var(--radius-sm)}
+.fbar[hidden],.card[hidden],.fbar__clear[hidden],.fbar__none[hidden]{display:none!important}
+.fbar__row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.fbar__lab{flex:0 0 52px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fchipb{min-height:44px;padding:0 16px;border:1.5px solid rgba(20,78,74,.28);border-radius:999px;background:var(--white);color:var(--teal);font:600 .9rem var(--sans);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fchipb:hover{border-color:var(--teal)}
+.fchipb[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.fchipb:focus-visible,.fbar__clear:focus-visible,.fbar__sort select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.fbar__foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-top:12px;border-top:1px solid var(--cream-2)}
+.fbar__count{margin:0;font-size:.92rem;color:var(--ink);font-weight:600}
+.fbar__clear{min-height:44px;padding:0 6px;border:0;background:none;color:var(--teal);font:600 .9rem var(--sans);text-decoration:underline;cursor:pointer}
+.fbar__sort{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted)}
+.fbar__sort select{min-height:44px;padding:0 12px;border:1.5px solid rgba(20,78,74,.28);border-radius:10px;background:var(--white);color:var(--ink);font:600 .9rem var(--sans)}
+.fbar__none{margin:22px 0 0;padding:22px;text-align:center;background:var(--card);border:1px dashed var(--gold-soft);border-radius:var(--radius-sm)}
+@media(max-width:600px){.fbar{padding:14px 12px}.fbar__lab{flex-basis:100%}.fchipb{padding:0 13px;font-size:.86rem}.fbar__sort{margin-left:0;width:100%;justify-content:space-between}.fbar__sort select{flex:1;max-width:240px}}
+</style>
 </head>
 <body>
 <div class="topbar">Free UK delivery on every order &nbsp;•&nbsp; <strong>Made to order in 2–3 days</strong> &nbsp;•&nbsp; Cash on delivery available</div>
@@ -463,82 +480,106 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     </div>
   </div>
 </section></div>
-<div class="wrap"><h2 class="allhead">All <span data-count>26</span> designs</h2><div class="cards" style="margin-top:14px;margin-bottom:56px"><a class="card card--new" href="verona-corner-sofa.html"><span class="cbadge">New</span>
+<div class="wrap"><h2 class="allhead">All <span data-count>26</span> designs</h2><div class="fbar" id="fbar" hidden>
+  <div class="fbar__row" role="group" aria-label="Filter by shape"><span class="fbar__lab">Shape</span>
+    <button type="button" class="fchipb" data-f="shape" data-v="" aria-pressed="true">All</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="corner" aria-pressed="false">Corner</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="ushape" aria-pressed="false">U-shape</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="lshape" aria-pressed="false">L-shape</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="seater" aria-pressed="false">2 &amp; 3 seaters</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="chesterfield" aria-pressed="false">Chesterfield</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="sofabed" aria-pressed="false">Sofa beds</button>
+    <button type="button" class="fchipb" data-f="shape" data-v="armchair" aria-pressed="false">Armchairs</button>
+  </div>
+  <div class="fbar__row" role="group" aria-label="Filter by price"><span class="fbar__lab">Price</span>
+    <button type="button" class="fchipb" data-f="price" data-v="" aria-pressed="true">Any</button>
+    <button type="button" class="fchipb" data-f="price" data-v="0-499" aria-pressed="false">Under £500</button>
+    <button type="button" class="fchipb" data-f="price" data-v="500-749" aria-pressed="false">£500–£749</button>
+    <button type="button" class="fchipb" data-f="price" data-v="750-99999" aria-pressed="false">£750 and over</button>
+  </div>
+  <div class="fbar__foot">
+    <p class="fbar__count" id="fcount" aria-live="polite"></p>
+    <button type="button" class="fbar__clear" id="fclear" hidden>Clear filters</button>
+    <label class="fbar__sort">Sort by <select id="fsort"><option value="rec">Recommended</option><option value="asc">Price: low to high</option><option value="desc">Price: high to low</option></select></label>
+  </div>
+</div>
+<p class="fbar__none" id="fnone" hidden>No designs match those filters. <button type="button" class="fbar__clear" id="fclear2">Clear filters</button></p>
+<div class="cards" id="allcards" style="margin-top:14px;margin-bottom:56px"><a class="card card--new" href="verona-corner-sofa.html" data-shape="corner" data-price="599"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/lshape/lshape-6-480.webp 480w, images/lshape/lshape-6-800.webp 800w, images/lshape/lshape-6-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lshape/lshape-6.jpg" alt="Verona Corner Sofa by Barki Sofa Hub — large corner, scatter back in charcoal with check cushions" loading="lazy"></picture>
     <div class="cb"><h3>Verona Corner Sofa</h3><div class="cp">£599</div></div>
-  </a><a class="card" href="olympia-corner-sofa.html">
+  </a><a class="card" href="olympia-corner-sofa.html" data-shape="corner" data-price="599">
     <picture><source type="image/webp" srcset="images/olympia-corner/olympia-corner-2-480.webp 480w, images/olympia-corner/olympia-corner-2-800.webp 800w, images/olympia-corner/olympia-corner-2-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/olympia-corner/olympia-corner-2.jpg" alt="Olympia Corner Sofa by Barki Sofa Hub — cream" loading="lazy"></picture>
     <div class="cb"><h3>Olympia Corner Sofa</h3><div class="cp">£599</div></div>
-  </a><a class="card" href="harrison-corner-sofa.html">
+  </a><a class="card" href="harrison-corner-sofa.html" data-shape="corner" data-price="649">
     <picture><source type="image/webp" srcset="images/shannon-corner/shannon-corner-2-480.webp 480w, images/shannon-corner/shannon-corner-2-800.webp 800w, images/shannon-corner/shannon-corner-2-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/shannon-corner/shannon-corner-2.jpg" alt="Harrison Corner Sofa by Barki Sofa Hub — mink" loading="lazy"></picture>
     <div class="cb"><h3>Harrison Corner Sofa</h3><div class="cp">£649</div></div>
-  </a><a class="card" href="borius-sofa.html">
+  </a><a class="card" href="borius-sofa.html" data-shape="corner" data-price="649">
     <picture><source type="image/webp" srcset="images/borius/borius-1-480.webp 480w, images/borius/borius-1-800.webp 800w, images/borius/borius-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/borius/borius-1.jpg" alt="Borius Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Borius Sofa</h3><div class="cp">£649</div></div>
-  </a><a class="card card--new" href="lilly-alaska-sofa.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="lilly-alaska-sofa.html" data-shape="seater" data-price="669"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/lilly-corner/lilly-corner-2-480.webp 480w, images/lilly-corner/lilly-corner-2-800.webp 800w, images/lilly-corner/lilly-corner-2-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-corner/lilly-corner-2.jpg" alt="Lilly Alaska Sofa by Barki Sofa Hub — cream corner, shown with footstool" loading="lazy"></picture>
     <div class="cb"><h3>Lilly Alaska Sofa</h3><div class="cp">£669</div></div>
-  </a><a class="card" href="alaska-corner-sofa.html">
+  </a><a class="card" href="alaska-corner-sofa.html" data-shape="corner" data-price="679">
     <picture><source type="image/webp" srcset="images/lilly-corner/lilly-corner-3-480.webp 480w, images/lilly-corner/lilly-corner-3-800.webp 800w, images/lilly-corner/lilly-corner-3-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-corner/lilly-corner-3.jpg" alt="Lilly Corner Sofa by Barki Sofa Hub — grey, shown with coffee table" loading="lazy"></picture>
     <div class="cb"><h3>Lilly Corner Sofa</h3><div class="cp">£679</div></div>
-  </a><a class="card" href="ashton-l-shape-sofa.html">
+  </a><a class="card" href="ashton-l-shape-sofa.html" data-shape="lshape corner" data-price="749">
     <picture><source type="image/webp" srcset="images/ashton-lshape/ashton-lshape-1-480.webp 480w, images/ashton-lshape/ashton-lshape-1-800.webp 800w, images/ashton-lshape/ashton-lshape-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/ashton-lshape/ashton-lshape-1.jpg" alt="Ashton Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Ashton Sofa</h3><div class="cp">£749</div></div>
-  </a><a class="card" href="ashton-corner-sofa.html">
+  </a><a class="card" href="ashton-corner-sofa.html" data-shape="corner" data-price="749">
     <picture><source type="image/webp" srcset="images/ashton-corner/ashton-corner-1-480.webp 480w, images/ashton-corner/ashton-corner-1-800.webp 800w, images/ashton-corner/ashton-corner-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/ashton-corner/ashton-corner-1.jpg" alt="Ashton Corner Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Ashton Corner Sofa</h3><div class="cp">£749</div></div>
-  </a><a class="card" href="u-shape-sofa.html">
+  </a><a class="card" href="u-shape-sofa.html" data-shape="ushape" data-price="649">
     <picture><source type="image/webp" srcset="images/ushape/ushape-7-480.webp 480w, images/ushape/ushape-7-800.webp 800w, images/ushape/ushape-7-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/ushape/ushape-7.jpg" alt="U-Shape Sofa by Barki Sofa Hub — grey" loading="lazy"></picture>
     <div class="cb"><h3>U-Shape Sofa</h3><div class="cp">£649</div></div>
-  </a><a class="card" href="lilly-u-shape-sofa.html">
+  </a><a class="card" href="lilly-u-shape-sofa.html" data-shape="ushape" data-price="699">
     <picture><source type="image/webp" srcset="images/lilly-ushape/lilly-ushape-3-480.webp 480w, images/lilly-ushape/lilly-ushape-3-800.webp 800w, images/lilly-ushape/lilly-ushape-3-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-ushape/lilly-ushape-3.jpg" alt="Lilly U-Shape Sofa by Barki Sofa Hub — cream" loading="lazy"></picture>
     <div class="cb"><h3>Lilly U-Shape Sofa</h3><div class="cp">£699</div></div>
-  </a><a class="card" href="l-shape-sofa.html">
+  </a><a class="card" href="l-shape-sofa.html" data-shape="lshape" data-price="699">
     <picture><source type="image/webp" srcset="images/lshape/lshape-cream-fluted-480.webp 480w, images/lshape/lshape-cream-fluted-800.webp 800w, images/lshape/lshape-cream-fluted-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lshape/lshape-cream-fluted.jpg" alt="Lilly Chaise — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Lilly Chaise</h3><div class="cp">£699</div></div>
-  </a><a class="card" href="lilly-l-shape-sofa.html">
+  </a><a class="card" href="lilly-l-shape-sofa.html" data-shape="lshape" data-price="749">
     <picture><source type="image/webp" srcset="images/lilly-lshape/lilly-lshape-4-480.webp 480w, images/lilly-lshape/lilly-lshape-4-800.webp 800w, images/lilly-lshape/lilly-lshape-4-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-lshape/lilly-lshape-4.jpg" alt="Lilly L-Shape Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Lilly L-Shape Sofa</h3><div class="cp">£749</div></div>
-  </a><a class="card" href="olympia-2-3-seater-sofa.html">
+  </a><a class="card" href="olympia-2-3-seater-sofa.html" data-shape="seater" data-price="599">
     <picture><source type="image/webp" srcset="images/verona-set/verona-set-1-480.webp 480w, images/verona-set/verona-set-1-800.webp 800w, images/verona-set/verona-set-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/verona-set/verona-set-1.jpg" alt="Olympia 2+3 Seater Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Olympia 2+3 Seater Sofa</h3><div class="cp">£599</div></div>
-  </a><a class="card" href="harrison-2-3-seater-sofa.html">
+  </a><a class="card" href="harrison-2-3-seater-sofa.html" data-shape="seater" data-price="649">
     <picture><source type="image/webp" srcset="images/shannon-set/shannon-set-1-480.webp 480w, images/shannon-set/shannon-set-1-800.webp 800w, images/shannon-set/shannon-set-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/shannon-set/shannon-set-1.jpg" alt="Harrison 2+3 Seater Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Harrison 2+3 Seater Sofa</h3><div class="cp">£649</div></div>
-  </a><a class="card" href="alaska-2-3-seater-sofa.html">
+  </a><a class="card" href="alaska-2-3-seater-sofa.html" data-shape="seater" data-price="679">
     <picture><source type="image/webp" srcset="images/lilly-set/lilly-set-1-480.webp 480w, images/lilly-set/lilly-set-1-800.webp 800w, images/lilly-set/lilly-set-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-set/lilly-set-1.jpg" alt="Lilly 2+3 Seater Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Lilly 2+3 Seater Sofa</h3><div class="cp">£679</div></div>
-  </a><a class="card" href="ashton-2-3-seater-sofa.html">
+  </a><a class="card" href="ashton-2-3-seater-sofa.html" data-shape="seater chesterfield" data-price="829">
     <picture><source type="image/webp" srcset="images/ashton-set/ashton-set-1-480.webp 480w, images/ashton-set/ashton-set-1-800.webp 800w, images/ashton-set/ashton-set-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/ashton-set/ashton-set-1.jpg" alt="Ashton Chesterfield 2+3 Seater Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Ashton Chesterfield 2+3 Seater Sofa</h3><div class="cp">£829</div></div>
-  </a><a class="card" href="ashton-chesterfield-sofa.html">
+  </a><a class="card" href="ashton-chesterfield-sofa.html" data-shape="seater chesterfield" data-price="749">
     <picture><source type="image/webp" srcset="images/elaska/elaska-1-480.webp 480w, images/elaska/elaska-1-800.webp 800w, images/elaska/elaska-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/elaska/elaska-1.jpg" alt="Ashton Scatter Back Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Ashton Scatter Back Sofa</h3><div class="cp">£749</div></div>
-  </a><a class="card card--new" href="lilly-fixed-seat-sofa.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="lilly-fixed-seat-sofa.html" data-shape="seater corner" data-price="849"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/lilly-fixed/lilly-fixed-1-480.webp 480w, images/lilly-fixed/lilly-fixed-1-800.webp 800w, images/lilly-fixed/lilly-fixed-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-fixed/lilly-fixed-1.jpg" alt="Lilly Fixed Seat Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Lilly Fixed Seat Sofa</h3><div class="cp">£849</div></div>
-  </a><a class="card card--new" href="borius-box-arm-2-seater-sofa.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="borius-box-arm-2-seater-sofa.html" data-shape="seater" data-price="369"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/borius-2s/borius-2s-1-480.webp 480w, images/borius-2s/borius-2s-1-800.webp 800w, images/borius-2s/borius-2s-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/borius-2s/borius-2s-1.jpg" alt="Borius 2 Seater Sofa with Footstool — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Borius 2 Seater Sofa with Footstool</h3><div class="cp">£369</div></div>
-  </a><a class="card card--new" href="lilly-channel-tufted-sofa.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="lilly-channel-tufted-sofa.html" data-shape="seater" data-price="399"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/lilly-ct/lilly-ct-2-480.webp 480w, images/lilly-ct/lilly-ct-2-800.webp 800w, images/lilly-ct/lilly-ct-2-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/lilly-ct/lilly-ct-2.jpg" alt="Lilly 3 Seater Sofa by Barki Sofa Hub — white, with scatter cushions and bolsters" loading="lazy"></picture>
     <div class="cb"><h3>Lilly 3 Seater Sofa</h3><div class="cp">From £399</div></div>
-  </a><a class="card card--new" href="aurelia-chesterfield-sofa.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="aurelia-chesterfield-sofa.html" data-shape="seater chesterfield" data-price="849"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/aurelia/aurelia-1-480.webp 480w, images/aurelia/aurelia-1-800.webp 800w, images/aurelia/aurelia-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/aurelia/aurelia-1.jpg" alt="Aurelia Chesterfield Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Aurelia Chesterfield Sofa</h3><div class="cp">£849</div></div>
-  </a><a class="card" href="ambassador-sofa.html">
+  </a><a class="card" href="ambassador-sofa.html" data-shape="corner chesterfield" data-price="849">
     <picture><source type="image/webp" srcset="images/ambassador/ambassador-1-480.webp 480w, images/ambassador/ambassador-1-800.webp 800w, images/ambassador/ambassador-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/ambassador/ambassador-1.jpg" alt="Ambassador Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Ambassador Sofa</h3><div class="cp">£849</div></div>
-  </a><a class="card" href="chesterfield-sofa.html">
+  </a><a class="card" href="chesterfield-sofa.html" data-shape="corner seater chesterfield" data-price="800">
     <picture><source type="image/webp" srcset="images/chesterfield/chesterfield-1-480.webp 480w, images/chesterfield/chesterfield-1-800.webp 800w, images/chesterfield/chesterfield-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/chesterfield/chesterfield-1.jpg" alt="Chesterfield Sofa — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Chesterfield Sofa</h3><div class="cp">From £800</div></div>
-  </a><a class="card card--new" href="chesterfield-sofa-beds.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="chesterfield-sofa-beds.html" data-shape="sofabed corner chesterfield" data-price="949"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/chesterfield-sofa-bed/chesterfield-sofa-bed-6-480.webp 480w, images/chesterfield-sofa-bed/chesterfield-sofa-bed-6-800.webp 800w, images/chesterfield-sofa-bed/chesterfield-sofa-bed-6-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/chesterfield-sofa-bed/chesterfield-sofa-bed-6.jpg" alt="Grey velvet Chesterfield corner sofa bed with gold trim and the bed pulled out" loading="lazy"></picture>
     <div class="cb"><h3>Chesterfield Sofa Bed</h3><div class="cp">£949</div></div>
-  </a><a class="card card--new" href="chrome-chesterfield-sofa-bed.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="chrome-chesterfield-sofa-bed.html" data-shape="sofabed corner chesterfield" data-price="999"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/chesterfield-sofa-bed/chesterfield-sofa-bed-8-480.webp 480w, images/chesterfield-sofa-bed/chesterfield-sofa-bed-8-800.webp 800w, images/chesterfield-sofa-bed/chesterfield-sofa-bed-8-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/chesterfield-sofa-bed/chesterfield-sofa-bed-8.jpg" alt="Black velvet Chesterfield corner sofa bed with gold trim, crystal buttons and the bed pulled out" loading="lazy"></picture>
     <div class="cb"><h3>Chrome Chesterfield Sofa Bed</h3><div class="cp">£999</div></div>
-  </a><a class="card card--new" href="olympia-armchair.html"><span class="cbadge">New</span>
+  </a><a class="card card--new" href="olympia-armchair.html" data-shape="armchair" data-price="319"><span class="cbadge">New</span>
     <picture><source type="image/webp" srcset="images/olympia-arm/olympia-arm-1-480.webp 480w, images/olympia-arm/olympia-arm-1-800.webp 800w, images/olympia-arm/olympia-arm-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/olympia-arm/olympia-arm-1.jpg" alt="Olympia Armchair — made-to-order sofa" loading="lazy"></picture>
     <div class="cb"><h3>Olympia Armchair</h3><div class="cp">£319</div></div>
   </a></div></div>
@@ -634,5 +675,18 @@ document.getElementById('ckNo').addEventListener('click',function(){set('denied'
 })();
 </script>
 <script>/* Product counts are worked out from the cards on this page, so the numbers always match */(function(){var n=document.querySelectorAll(".cards .card").length;if(!n)return;var e=document.querySelectorAll("[data-count]");for(var i=0;i<e.length;i++)e[i].textContent=n;})();</script>
+<script>/* All Sofas: filter by shape and price, sort by price. Cards carry data-shape and data-price. */(function(){
+var grid=document.getElementById("allcards"),bar=document.getElementById("fbar");if(!grid||!bar)return;
+var cards=[].slice.call(grid.querySelectorAll(".card"));cards.forEach(function(c,i){c._i=i;});
+var st={shape:"",price:""},sort=document.getElementById("fsort"),count=document.getElementById("fcount"),none=document.getElementById("fnone"),clear=document.getElementById("fclear");
+function apply(){var r=st.price?st.price.split("-"):null,shown=0;
+ cards.forEach(function(c){var p=+c.getAttribute("data-price"),ok=(!st.shape||(" "+c.getAttribute("data-shape")+" ").indexOf(" "+st.shape+" ")>-1)&&(!r||(p>=+r[0]&&p<=+r[1]));c.hidden=!ok;if(ok)shown++;});
+ var o=cards.slice(),m=sort.value;o.sort(function(a,b){var d=(+a.getAttribute("data-price"))-(+b.getAttribute("data-price"));return m==="asc"?(d||a._i-b._i):m==="desc"?(-d||a._i-b._i):a._i-b._i;});o.forEach(function(c){grid.appendChild(c);});
+ count.textContent="Showing "+shown+" of "+cards.length+" designs";none.hidden=shown>0;clear.hidden=!(st.shape||st.price);}
+function press(){[].forEach.call(bar.querySelectorAll(".fchipb"),function(b){b.setAttribute("aria-pressed",String(st[b.getAttribute("data-f")]===b.getAttribute("data-v")));});}
+function reset(){st.shape="";st.price="";press();apply();}
+bar.addEventListener("click",function(e){var b=e.target.closest?e.target.closest(".fchipb"):null;if(!b)return;st[b.getAttribute("data-f")]=b.getAttribute("data-v");press();apply();});
+sort.addEventListener("change",apply);clear.addEventListener("click",reset);document.getElementById("fclear2").addEventListener("click",reset);
+bar.hidden=false;apply();})();</script>
 </body>
 </html>
