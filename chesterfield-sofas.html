@@ -385,6 +385,15 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 @media(prefers-reduced-motion:reduce){.nvsub{transition:none}}
 </style>
 <style>@media(max-width:1100px){.nvgroup.nv-x .nvsub{display:none}}.nvsub{max-height:calc(100vh - 120px);overflow-y:auto}</style>
+<style>/* -- Sort by price on category pages -- */
+.csort{display:flex;justify-content:flex-end;margin-top:22px}
+.csort[hidden]{display:none!important}
+.csort label{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted)}
+.csort select{min-height:44px;padding:0 12px;border:1.5px solid rgba(20,78,74,.28);border-radius:10px;background:var(--white);color:var(--ink);font:600 .9rem var(--sans)}
+.csort select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.csort+.cards{margin-top:14px}
+@media(max-width:600px){.csort{justify-content:stretch}.csort label{width:100%;justify-content:space-between}.csort select{flex:1;max-width:240px}}
+</style>
 </head>
 <body>
 <div class="topbar">Free UK delivery on every order &nbsp;•&nbsp; <strong>Made to order in 2–3 days</strong> &nbsp;•&nbsp; Cash on delivery available</div>
@@ -453,7 +462,8 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     <a class="btn btn--ghost" href="how-to-measure-for-a-corner-sofa.html">Measuring guide</a>
   </div>
 </div>
-<div class="wrap"><div class="cards" style="margin-bottom:56px">
+<div class="wrap"><div class="csort" id="csort" hidden><label>Sort by <select id="csortsel"><option value="rec">Recommended</option><option value="asc">Price: low to high</option><option value="desc">Price: high to low</option></select></label></div>
+<div class="cards" style="margin-bottom:56px">
       <a class="card" href="ashton-chesterfield-sofa.html">
         <picture><source type="image/webp" srcset="images/elaska/elaska-1-480.webp 480w, images/elaska/elaska-1-800.webp 800w, images/elaska/elaska-1-1200.webp 1200w" sizes="(max-width:600px) calc(100vw - 44px), (max-width:1180px) 46vw, 370px"><img src="images/elaska/elaska-1.jpg" alt="Ashton Scatter Back Sofa — made-to-order chesterfield sofa" loading="lazy"></picture>
         <div class="cb"><h3>Ashton Scatter Back Sofa</h3><div class="cp">£749</div><div class="cd">Square Chesterfield arms and base, deep-buttoned all over, with plump scatter back cushions and…</div></div>
@@ -577,5 +587,11 @@ document.getElementById('ckYes').addEventListener('click',function(){set('grante
 document.getElementById('ckNo').addEventListener('click',function(){set('denied');});
 })();
 </script>
+<script>/* Category page: sort the product cards by the price shown on each card */(function(){
+var bar=document.getElementById("csort"),sel=document.getElementById("csortsel");if(!bar||!sel)return;var grid=bar.nextElementSibling;if(!grid||!/\bcards\b/.test(grid.className))return;
+var cards=[].slice.call(grid.querySelectorAll(".card"));if(cards.length<2)return;
+cards.forEach(function(c,i){c._i=i;var p=c.querySelector(".cp"),m=p?p.textContent.replace(/,/g,"").match(/£\s*(\d+)/):null;c._p=m?+m[1]:0;});
+sel.addEventListener("change",function(){var m=sel.value,o=cards.slice();o.sort(function(a,b){var d=a._p-b._p;return m==="asc"?(d||a._i-b._i):m==="desc"?(-d||a._i-b._i):a._i-b._i;});o.forEach(function(c){grid.appendChild(c);});});
+bar.hidden=false;})();</script>
 </body>
 </html>
