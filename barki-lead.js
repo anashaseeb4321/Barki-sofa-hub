@@ -85,7 +85,7 @@
     { k: 'coffee', n: 'Square Glass-Top Coffee Table', p: 169, img: 'images/addons/coffee-table-cream-glass-top.jpg' },
     { k: 'round-table', n: 'Round Ottoman Coffee Table', p: 299, img: 'images/addons/round-coffee-table-marble-top.jpg' },
     { k: 'lilly-stool', n: 'Footstool', p: 119, img: 'images/addons/footstool-black-gold-legs.jpg' },
-    { k: 'fix-stool', n: 'Fix Seat Stool', p: 99, img: 'images/addons/fix-seat-stool.jpg' },
+    { k: 'fix-stool', n: 'Fixed Seat Stool', p: 99, img: 'images/addons/fix-seat-stool.jpg' },
     { k: 'ches-coffee', n: 'Chesterfield Glass-Top Coffee Table', p: 199, img: 'images/addons/coffee-table-black-tufted-glass-top.jpg' }
   ];
   function gbp(n) { return '£' + Number(n).toLocaleString('en-GB'); }
