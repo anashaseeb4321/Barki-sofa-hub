@@ -1151,6 +1151,17 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
   .hero2__facts{margin-top:22px;padding-top:16px;gap:6px 20px;font-size:.84rem}
 }
 
+/* -- hero: quick links by sofa type (Nov 2026) -- */
+.hero2__cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero2__cats a{padding:.5em 1.05em;border-radius:999px;border:1px solid rgba(217,190,142,.5);background:rgba(248,245,239,.07);color:var(--cream);font-size:.86rem;font-weight:600;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.hero2__cats a:hover,.hero2__cats a:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+@media(max-width:940px){
+  .hero2__copy{min-width:0}
+  .hero2__cats{flex-wrap:nowrap;overflow-x:auto;max-width:calc(100% + 40px);margin:16px -20px 0;padding:2px 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hero2__cats::-webkit-scrollbar{display:none}
+  .hero2__cats a{flex:none;font-size:.84rem}
+}
+
 /* -- hero slideshow -- */
 .hs{position:relative}
 .hs__slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
@@ -1400,6 +1411,14 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
           Order on WhatsApp
         </a>
       </div>
+      <nav class="hero2__cats" aria-label="Shop by type">
+        <a href="corner-sofas.html">Corner sofas</a>
+        <a href="u-shape-sofas.html">U-shape sofas</a>
+        <a href="2-3-seater-sofa-sets.html">2+3 seater sets</a>
+        <a href="#collection" data-cat="sofabed">Sofa beds</a>
+        <a href="beds.html">Beds</a>
+        <a href="tables-and-stools.html">Coffee tables</a>
+      </nav>
       <ul class="hero2__facts">
         <li><b>From £369</b> sofas</li>
         <li><b>93 colours</b> in 8 fabrics</li>
@@ -2096,6 +2115,15 @@ document.getElementById('ckNo').addEventListener('click',function(){set('denied'
   hs.addEventListener('mouseenter',stop); hs.addEventListener('mouseleave',start);
   window.addEventListener('load',function(){ setTimeout(function(){ load(slides[1]); start(); },1200); });
 })();
+</script>
+<script>
+/* Hero "Sofa beds" link: jump to the range and show only sofa beds */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.hero2__cats a[data-cat]'); if(!a) return;
+  var tab=document.querySelector('.tab[data-cat="'+a.getAttribute('data-cat')+'"]'); if(!tab) return;
+  e.preventDefault(); tab.click();
+  var c=document.getElementById('collection'); if(c) c.scrollIntoView({behavior:'smooth'});
+});
 </script>
 </body>
 </html>
