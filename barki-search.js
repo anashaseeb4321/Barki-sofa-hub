@@ -23,7 +23,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Olympia 2+3 Seater Sofa", "u": "olympia-2-3-seater-sofa.html", "p": "£599", "i": "images/verona-set/verona-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight"},
   {"n": "Harrison 2+3 Seater Sofa", "u": "harrison-2-3-seater-sofa.html", "p": "£649", "i": "images/shannon-set/shannon-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight"},
   {"n": "Lilly 2+3 Seater Sofa", "u": "alaska-2-3-seater-sofa.html", "p": "£679", "i": "images/lilly-set/lilly-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight 3 seater white channel tufted scatter cushions bolsters"},
-  {"n": "Ashton Chesterfield 2+3 Seater Sofa", "u": "ashton-2-3-seater-sofa.html", "p": "£829", "i": "images/ashton-set/ashton-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight buttoned"},
+  {"n": "Italian Chesterfield", "u": "ashton-2-3-seater-sofa.html", "p": "£829", "i": "images/ashton-set/ashton-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight buttoned italian chesterfield cream grey"},
   {"n": "Ashton Scatter Back Sofa", "u": "ashton-chesterfield-sofa.html", "p": "£749", "i": "images/elaska/elaska-1-480.webp", "t": "Sofa", "k": "couch settee 2 seater 3 2+3 3+2 set straight chesterfield buttoned"},
   {"n": "Lilly Fixed Seat Sofa", "u": "lilly-fixed-seat-sofa.html", "p": "£849", "i": "images/lilly-fixed/lilly-fixed-1-480.webp", "t": "Sofa", "k": "couch settee 2 seater 3 2+3 3+2 set straight corner"},
   {"n": "Borius 2 Seater Sofa with Footstool", "u": "borius-box-arm-2-seater-sofa.html", "p": "£369", "i": "images/borius-2s/borius-2s-1-480.webp", "t": "Sofa", "k": "couch settee 3 2+3 3+2 set straight"},
