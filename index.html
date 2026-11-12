@@ -1232,6 +1232,9 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
 .grev p{color:var(--muted);max-width:34em}
 @media(max-width:640px){.grev{padding:24px 20px}.grev .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.fcard__img img,.nvsub{transition:none}}
+.is-more{display:none!important}
+.showall{text-align:center;padding:22px 16px 0}
+.showall .btn{width:100%;max-width:360px;justify-content:center}
 </style>
 <style>.sw__chip{overflow:hidden}.sw__chip img{width:100%;height:100%;object-fit:cover;display:block}</style>
 <style>
@@ -1791,6 +1794,34 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     } else {
       grid.innerHTML = list.map(card).join('');
     }
+    applyShortlist(cat);
+  }
+  // Phones: show a shortlist of 10 under "All", with a button to show the rest.
+  // Filters and the range tiles always show every matching product.
+  const SHORTLIST = ['Verona Corner Sofa','Harrison Corner Sofa','Lilly Alaska Sofa','Lilly Corner Sofa','Ashton Sofa',
+    'Lilly U-Shape Sofa','Olympia 2+3 Seater Sofa','Lilly Fixed Seat Sofa','Italian Chesterfield Sofa Bed','Lilly Fluted Bed'];
+  let showAll = false;
+  const phoneMQ = window.matchMedia('(max-width:640px)');
+  const shortOn = () => phoneMQ.matches && !showAll;
+  function applyShortlist(cat){
+    const old = document.getElementById('showAllWrap'); if(old) old.remove();
+    if(cat !== 'all' || !shortOn()) return;
+    const keep = new Set(SHORTLIST);
+    grid.querySelectorAll('.pcard').forEach(c => {
+      const n = c.querySelector('.pcard__name');
+      if(!n || !keep.has(n.textContent.trim())) c.classList.add('is-more');
+    });
+    grid.querySelectorAll('.gsec').forEach(h => {
+      let el = h.nextElementSibling, any = false;
+      while(el && el.classList.contains('pcard')){ if(!el.classList.contains('is-more')) any = true; el = el.nextElementSibling; }
+      if(!any) h.classList.add('is-more');
+    });
+    grid.querySelectorAll('.accband').forEach(x => x.classList.add('is-more'));
+    grid.insertAdjacentHTML('afterend', `<div class="showall" id="showAllWrap"><button type="button" class="btn btn--dark" id="showAllBtn">Show all ${products.length} products</button></div>`);
+    document.getElementById('showAllBtn').addEventListener('click', () => {
+      showAll = true; render('all');
+      document.getElementById('collection').scrollIntoView({behavior:'smooth', block:'start'});
+    });
   }
   // One photo slot. Only the first is put in the page at load; the rest are
   // built the moment someone taps through, which keeps the page light on phones.
@@ -1846,6 +1877,7 @@ gtag('config','G-9FS7L9SGWF',{'anonymize_ip':true});
     a.addEventListener('click', e=>{
       const id = a.getAttribute('href');
       const all = document.querySelector('.tab[data-cat="all"]');
+      if(shortOn()){ showAll = true; render('all'); }
       if(all && !all.classList.contains('active')){
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
         all.classList.add('active');
