@@ -73,6 +73,7 @@ var BARKI_SEARCH_PAGES = [
   {"n": "How to Measure Your Room for a Corner Sofa", "u": "how-to-measure-for-a-corner-sofa.html", "t": "Guide", "k": "guide help advice"},
   {"n": "Sofa Fabric Guide: Which Upholstery Actually Lasts?", "u": "sofa-fabric-guide.html", "t": "Guide", "k": "guide help advice"},
   {"n": "Chesterfield Sofa Buying Guide: What Actually Matters", "u": "chesterfield-sofa-buying-guide.html", "t": "Guide", "k": "guide help advice"},
+  {"n": "Cuddle Chairs: What They Are, Sizes and How to Choose", "u": "cuddle-chair-guide.html", "t": "Guide", "k": "guide help advice cuddle chair loveseat snuggle chair round swivel armchair"},
   {"n": "Can You Put a Corner Sofa in the Middle of a Room?", "u": "corner-sofa-in-middle-of-room.html", "t": "Guide", "k": "guide help advice"},
   {"n": "Corner vs L-Shape vs U-Shape: Which Sofa Shape Fits Your Room?", "u": "corner-vs-l-shape-vs-u-shape-sofa.html", "t": "Guide", "k": "guide help advice"},
   {"n": "Made to Measure Sofas UK: How Custom Sizes Work", "u": "made-to-measure-sofas-uk.html", "t": "Guide", "k": "guide help advice"},
