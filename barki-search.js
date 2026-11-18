@@ -28,10 +28,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Lilly Fixed Seat Sofa", "u": "lilly-fixed-seat-sofa.html", "p": "£999", "i": "images/lilly-fixed/lilly-fixed-1-480.webp", "t": "Sofa", "k": "couch settee 2 seater 3 2+3 3+2 set straight corner"},
   {"n": "Aurelia Chesterfield Sofa", "u": "aurelia-chesterfield-sofa.html", "p": "£899", "i": "images/aurelia/aurelia-1-480.webp", "t": "Sofa", "k": "couch settee 2 seater 3 2+3 3+2 set straight buttoned"},
   {"n": "Madrid Sofa", "u": "ambassador-sofa.html", "p": "From £999", "i": "images/ambassador/ambassador-1-480.webp", "t": "Sofa", "k": "couch settee corner ambassador madrid buttoned 2 seater 3 2+3 3+2 set straight rounded grey blue gold coffee table 5 6 7 seater"},
-  {"n": "Gold Trim Chesterfield Sofa Bed", "u": "chesterfield-sofa-beds.html", "p": "£1,049", "i": "images/chesterfield-sofa-bed/chesterfield-sofa-bed-6-480.webp", "t": "Sofa bed", "k": "couch settee sofabed pull out guest corner buttoned grey velvet with gold trim and the pulled"},
-  {"n": "Chrome Chesterfield Sofa Bed", "u": "chrome-chesterfield-sofa-bed.html", "p": "£1,049", "i": "images/chesterfield-sofa-bed/chesterfield-sofa-bed-8-480.webp", "t": "Sofa bed", "k": "couch settee sofabed pull out guest corner buttoned black velvet with gold trim crystal buttons and the pulled"},
-  {"n": "Chesterfield Sofa Bed", "u": "italian-chesterfield-sofa-bed.html", "p": "£1,049", "i": "images/italian-sofa-bed/italian-sofa-bed-1-480.webp", "t": "Sofa bed", "k": "sofa bed sofabed pull out guest bed corner chaise italian chesterfield buttoned cream"},
-  {"n": "Madrid 3+2 Sofa Bed", "u": "madrid-sofa-bed.html", "p": "£1,049", "i": "images/italian-sofa-bed/italian-sofa-bed-2-480.webp", "t": "Sofa bed", "k": "sofa bed sofabed pull out guest bed 3+2 set madrid rounded buttoned gold"},
+  {"n": "Madrid Sofa Bed", "u": "madrid-sofa-bed.html", "p": "£1,049", "i": "images/chesterfield-sofa-bed/chesterfield-sofa-bed-6-480.webp", "t": "Sofa bed", "k": "couch settee sofabed pull out guest bed corner chaise 3+2 set madrid chesterfield italian buttoned gold chrome trim"},
   {"n": "Olympia Armchair", "u": "olympia-armchair.html", "p": "£319", "i": "images/olympia-arm/olympia-arm-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair"},
   {"n": "Lilly Fluted Bed", "u": "lilly-fluted-bed.html", "p": "From £349", "i": "images/lilly-bed/lilly-bed-1-480.webp", "t": "Bed", "k": "mattress headboard upholstered single small double king superking grey velvet with a winged"},
   {"n": "Lilly Arched Bed", "u": "lilly-arched-bed.html", "p": "From £349", "i": "images/lilly-arched-bed/lilly-arched-bed-1-480.webp", "t": "Bed", "k": "mattress headboard upholstered single small double king superking grey velvet with a curved fluted"},
@@ -149,7 +146,7 @@ var BARKI_SEARCH_PAGES = [
 
     var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>';
     var DOC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>';
-    var QUICK = [['Corner sofas', 'corner-sofas.html'], ['U-shape sofas', 'u-shape-sofas.html'], ['Chesterfield sofas', 'chesterfield-sofas.html'], ['Sofa beds', 'chesterfield-sofa-beds.html'], ['Beds', 'beds.html'], ['Fabrics & colours', 'fabrics-and-colours.html']];
+    var QUICK = [['Corner sofas', 'corner-sofas.html'], ['U-shape sofas', 'u-shape-sofas.html'], ['Chesterfield sofas', 'chesterfield-sofas.html'], ['Sofa beds', 'madrid-sofa-bed.html'], ['Beds', 'beds.html'], ['Fabrics & colours', 'fabrics-and-colours.html']];
 
     function init() {
       var header = document.querySelector('header');
