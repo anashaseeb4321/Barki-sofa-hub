@@ -33,6 +33,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Lilly Armchair", "u": "lilly-armchair.html", "p": "£350", "i": "images/lilly-armchair/lilly-armchair-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair armchair lilly"},
   {"n": "Verona Armchair", "u": "verona-armchair.html", "p": "£300", "i": "images/verona-armchair/verona-armchair-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair armchair verona"},
   {"n": "Madrid Armchair", "u": "madrid-armchair.html", "p": "£450", "i": "images/madrid-armchair/madrid-armchair-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair armchair madrid"},
+  {"n": "Olympia Chesterfield Armchair", "u": "olympia-chesterfield-armchair.html", "p": "£450", "i": "images/olympia-chesterfield-armchair/olympia-chesterfield-armchair-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair armchair olympia chesterfield"},
   {"n": "Ashton Armchair", "u": "ashton-armchair.html", "p": "£400", "i": "images/ashton-armchair/ashton-armchair-1-480.webp", "t": "Armchair", "k": "sofa couch settee chair armchair ashton"},
   {"n": "Lilly Fluted Bed", "u": "lilly-fluted-bed.html", "p": "From £349", "i": "images/lilly-bed/lilly-bed-1-480.webp", "t": "Bed", "k": "mattress headboard upholstered single small double king superking grey velvet with a winged"},
   {"n": "Lilly Arched Bed", "u": "lilly-arched-bed.html", "p": "From £349", "i": "images/lilly-arched-bed/lilly-arched-bed-1-480.webp", "t": "Bed", "k": "mattress headboard upholstered single small double king superking grey velvet with a curved fluted"},
