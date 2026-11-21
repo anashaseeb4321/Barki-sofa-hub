@@ -13,7 +13,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Harrison Corner Sofa", "u": "harrison-corner-sofa.html", "p": "£699", "i": "images/shannon-corner/shannon-corner-2-480.webp", "t": "Sofa", "k": "couch settee mink"},
   {"n": "Borius Sofa", "u": "borius-sofa.html", "p": "£749", "i": "images/borius/borius-1-480.webp", "t": "Sofa", "k": "couch settee corner 2 seater footstool black white piping box arm"},
   {"n": "Lilly Alaska Sofa", "u": "lilly-alaska-sofa.html", "p": "£699", "i": "images/lilly-corner/lilly-corner-2-480.webp", "t": "Sofa", "k": "couch settee 2 seater 3 2+3 3+2 set straight cream corner shown with footstool"},
-  {"n": "Lilly Corner Sofa", "u": "alaska-corner-sofa.html", "p": "£679", "i": "images/lilly-corner/lilly-corner-3-480.webp", "t": "Sofa", "k": "couch settee grey shown with coffee table"},
+  {"n": "Lilly Corner Sofa", "u": "alaska-corner-sofa.html", "p": "£699", "i": "images/lilly-corner/lilly-corner-3-480.webp", "t": "Sofa", "k": "couch settee grey shown with coffee table"},
   {"n": "Ashton Sofa", "u": "ashton-l-shape-sofa.html", "p": "£799", "i": "images/ashton-lshape/ashton-lshape-1-480.webp", "t": "Sofa", "k": "couch settee l shape lshape chaise corner"},
   {"n": "Ashton Corner Sofa", "u": "ashton-corner-sofa.html", "p": "£749", "i": "images/ashton-corner/ashton-corner-1-480.webp", "t": "Sofa", "k": "couch settee"},
   {"n": "U-Shape Sofa", "u": "u-shape-sofa.html", "p": "£649", "i": "images/ushape/ushape-7-480.webp", "t": "Sofa", "k": "couch settee ushape grey"},
