@@ -17,6 +17,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Ashton Sofa", "u": "ashton-l-shape-sofa.html", "p": "£799", "i": "images/ashton-lshape/ashton-lshape-1-480.webp", "t": "Sofa", "k": "couch settee l shape lshape chaise corner"},
   {"n": "Ashton Corner Sofa", "u": "ashton-corner-sofa.html", "p": "£749", "i": "images/ashton-corner/ashton-corner-1-480.webp", "t": "Sofa", "k": "couch settee"},
   {"n": "U-Shape Sofa", "u": "u-shape-sofa.html", "p": "£649", "i": "images/ushape/ushape-7-480.webp", "t": "Sofa", "k": "couch settee ushape grey"},
+  {"n": "Bishop Mini U-Shape Sofa", "u": "bishop-mini-u-shape-sofa.html", "p": "£649", "i": "images/bishop-mini/bishop-mini-1-480.webp", "t": "Sofa", "k": "couch settee ushape u shape compact small mini bishop beige chaise"},
   {"n": "Lilly U-Shape Sofa", "u": "lilly-u-shape-sofa.html", "p": "£849", "i": "images/lilly-ushape/lilly-ushape-3-480.webp", "t": "Sofa", "k": "couch settee ushape cream"},
   {"n": "Lilly Chaise", "u": "l-shape-sofa.html", "p": "£649", "i": "images/lshape/lshape-cream-fluted-480.webp", "t": "Sofa", "k": "sofa couch settee l shape lshape"},
   {"n": "Lilly L-Shape Sofa", "u": "lilly-l-shape-sofa.html", "p": "£649", "i": "images/lilly-lshape/lilly-lshape-4-480.webp", "t": "Sofa", "k": "couch settee lshape chaise"},
