@@ -21,7 +21,7 @@ var BARKI_SEARCH_PRODUCTS = [
   {"n": "Lilly U-Shape Sofa", "u": "lilly-u-shape-sofa.html", "p": "£849", "i": "images/lilly-ushape/lilly-ushape-3-480.webp", "t": "Sofa", "k": "couch settee ushape cream"},
   {"n": "Lilly Chaise", "u": "l-shape-sofa.html", "p": "£729", "i": "images/lshape/lshape-cream-fluted-480.webp", "t": "Sofa", "k": "sofa couch settee l shape lshape"},
   {"n": "Lilly L-Shape Sofa", "u": "lilly-l-shape-sofa.html", "p": "£649", "i": "images/lilly-lshape/lilly-lshape-4-480.webp", "t": "Sofa", "k": "couch settee lshape chaise"},
-  {"n": "Olympia 2+3 Seater Sofa", "u": "olympia-2-3-seater-sofa.html", "p": "£649", "i": "images/verona-set/verona-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight"},
+  {"n": "Olympia 2+3 Seater Sofa", "u": "olympia-2-3-seater-sofa.html", "p": "£699", "i": "images/verona-set/verona-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight"},
   {"n": "Harrison 2+3 Seater Sofa", "u": "harrison-2-3-seater-sofa.html", "p": "£699", "i": "images/shannon-set/shannon-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight"},
   {"n": "Lilly 2+3 Seater Sofa", "u": "alaska-2-3-seater-sofa.html", "p": "£799", "i": "images/lilly-set/lilly-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 set straight 3 seater white channel tufted scatter cushions bolsters"},
   {"n": "Chesterfield 3+2 Sofa", "u": "ashton-2-3-seater-sofa.html", "p": "£999", "i": "images/ashton-set/ashton-set-1-480.webp", "t": "Sofa", "k": "couch settee 2 3 3+2 3+2+1 set straight buttoned italian chesterfield cream black coffee table"},
